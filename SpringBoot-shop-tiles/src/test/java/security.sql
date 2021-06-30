@@ -80,9 +80,91 @@ select * from authorities;
 
 commit
 
+create table tbl_goods (
+    gdsNum       number          not null, //상품번호
+    gdsName      varchar2(50)    not null, //상품이름
+    cateCode     varchar2(30)    not null, //분류
+    gdsPrice     number          not null, //가격
+    gdsStock     number          null,  //수량
+    gdsDes       varchar(500)    null, //설명
+    gdsImg       varchar(200)    null, //이미지
+    gdsDate      date            default sysdate, //등록날짜
+    primary key(gdsNum)  
+);
+---------------상품테이블-------------
+create table tbl_goods (
+    gdsNum       number          not null, 
+    gdsName      varchar2(50)    not null, 
+    cateCode     varchar2(30)    not null, 
+    gdsPrice     number          not null, 
+    gdsStock     number          null, 
+    gdsDes       varchar2(500)    null, 
+    gdsImg       varchar2(200)    null, 
+    gdsDate      date            default sysdate, 
+    primary key(gdsNum)  
+);
+select *from tbl_goods
+--------카테고리---------------------
+
+-- 2차분류 --
+create table goods_category (
+    cateName     varchar2(20)    not null, //카테고리이름
+    cateCode     varchar2(30)    not null,  //카테고리 코드
+    cateCodeRef  varchar2(30)    null, //카테고리 참조코드
+    primary key(cateCode),
+    foreign key(cateCodeRef) references goods_category(cateCode)
+);
+
+-- 2차분류 --
+drop table goods_category;
+select *from goods_category;
+
+create table goods_category (
+    cateName     varchar2(20)    not null,
+    cateCode     varchar2(30)    not null, 
+    cateCodeRef  varchar2(30)    null, 
+    primary key(cateCode),
+    foreign key(cateCodeRef) references goods_category(cateCode)
+);
+--카테고리 참조 코드는 상위 카테고리가 무엇인지 가르키는 코드--
+--https://kuzuro.blogspot.com/2018/09/2-vo.html--
+alter table tbl_goods add
+    constraint fk_goods_category
+    foreign key (cateCode)
+        references goods_category(cateCode);
+
+ create sequence tbl_goods_seq;
+ 
+ select *from goods_category;
+ insert into goods_category (cateName, cateCode) values('카테고리 ','100');
+ insert into goods_category (cateName, cateCode, cateCodeRef) values('카테고리1-1','101','100');
+ 
+ 
+ insert into goods_category(cateName, cateCode) values('카테고리2','200');      
+ insert into goods_category(cateName, cateCode, cateCodeRef) values('카테고리2-1','201','200');
+delete from goods_category;
+
+---------------------------------
+insert into goods_category(cateName, cateCode) values(' FURNITURES',100);
+insert into goods_category(cateName, cateCode, cateCodeRef) values('clock','101','100');
+insert into goods_category(cateName, cateCode, cateCodeRef) values('speaker','102','100');
+insert into goods_category(cateName, cateCode, cateCodeRef) values('clothesBox','103','100');
+ 
+ insert into goods_category(cateName, cateCode) values('BAGS',200);
+insert into goods_category(cateName, cateCode, cateCodeRef) values('broneCandle','201','200');
+insert into goods_category(cateName, cateCode, cateCodeRef) values('clothesBox','202','200'); 
 
 
+insert into goods_category(cateName, cateCode) values('DECORATION',300);
+insert into goods_category(cateName, cateCode, cateCodeRef) values('LiquidLily','301','300');
+insert into goods_category(cateName, cateCode, cateCodeRef) values('UneroSmallBag','302','300');
 
+insert into goods_category(cateName, cateCode) values('ACCESSORIES',400);
+insert into goods_category(cateName, cateCode, cateCodeRef) values('Glasses','401','400');
+insert into goods_category(cateName, cateCode, cateCodeRef) values('Sunglass','402','400');
+insert into goods_category(cateName, cateCode, cateCodeRef) values('rings','403','400');
+insert into goods_category(cateName, cateCode, cateCodeRef) values('earrings','404','400');
 
+commit;
 
-
+select *from goods_category;
