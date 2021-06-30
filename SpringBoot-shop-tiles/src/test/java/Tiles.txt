@@ -1,11 +1,11 @@
-**Spring + Tiles ¿¬µ¿**
- Tiles :  À¥ÆäÀÌÁö ÅÛÇÃ¸´À» À§ÇÑ ÇÁ·¹ÀÓ¿öÅ©
- ¹İº¹ÀûÀ¸·Î jsp include or jstl c import·Î Ã³¸®µÇ¾ú´ø view layoutÀ»  È¿°úÀûÀ¸·Î °³¹ßÇÏ°í
- À¯Áöº¸¼öÇÏ±â À§ÇÑ  ÇÁ·¹ÀÓ¿öÅ© 
+**Spring + Tiles ì—°ë™**
+ Tiles :  ì›¹í˜ì´ì§€ í…œí”Œë¦¿ì„ ìœ„í•œ í”„ë ˆì„ì›Œí¬
+ ë°˜ë³µì ìœ¼ë¡œ jsp include or jstl c importë¡œ ì²˜ë¦¬ë˜ì—ˆë˜ view layoutì„  íš¨ê³¼ì ìœ¼ë¡œ ê°œë°œí•˜ê³ 
+ ìœ ì§€ë³´ìˆ˜í•˜ê¸° ìœ„í•œ  í”„ë ˆì„ì›Œí¬ 
 
-**tiles Àû¿ë´Ü°è**
+**tiles ì ìš©ë‹¨ê³„**
 1. Maven : pom.xml  
- tiles dependency Ãß°¡ 
+ tiles dependency ì¶”ê°€ 
 
   <dependency>
         <groupId>org.apache.tiles</groupId>
@@ -19,17 +19,17 @@
     </dependency>
 
 
-2. template jsp ÀÛ¼º :  layout.jsp 
+2. template jsp ì‘ì„± :  layout.jsp 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- tiles framework ¼±¾ğºÎ --%>
+<%-- tiles framework ì„ ì–¸ë¶€ --%>
 <%@taglib prefix="tiles"  uri="http://tiles.apache.org/tags-tiles" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- titleÀÌ nullÀÎ °æ¿ì´Â ¹«½ÃµÈ´Ù -->
+  <!-- titleì´ nullì¸ ê²½ìš°ëŠ” ë¬´ì‹œëœë‹¤ -->
   <title>
   	<tiles:insertAttribute name="title" ignore="true" />	
   </title>
@@ -44,33 +44,33 @@
 </head>
 <body>
 	<div id="header">
-	<!-- Tiles header ¿µ¿ª -->
+	<!-- Tiles header ì˜ì—­ -->
 		<tiles:insertAttribute name="header" />
 	</div>
 	<div class="container-fluid text-center">    
      <div class="row content">
     <div id="left" class="col-sm-3 sidenav" >
-    <!-- Tiles left ¿µ¿ª -->
+    <!-- Tiles left ì˜ì—­ -->
  		<tiles:insertAttribute name="left" />
     </div>
 	<div id="main" class="col-sm-7 text-left">
-	<!-- Tiles main ¿µ¿ª -->
+	<!-- Tiles main ì˜ì—­ -->
 		<tiles:insertAttribute name="main" />
 	</div>
 	<div id="right" class="col-sm-2 sidenav">
-	<!-- Tiles right ¿µ¿ª -->
+	<!-- Tiles right ì˜ì—­ -->
 		<tiles:insertAttribute name="right" />
 	</div>
 	</div>
 	</div>
 	<div id="footer">
-	<!-- Tiles footer ¿µ¿ª -->
+	<!-- Tiles footer ì˜ì—­ -->
 		<tiles:insertAttribute name="footer" />
 	</div>
 </body>
 </html>   
 
-3.  tiles ¼³Á¤ ÆÄÀÏ Á¤ÀÇ : tiles-config.xml  
+3.  tiles ì„¤ì • íŒŒì¼ ì •ì˜ : tiles-config.xml  
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE tiles-definitions PUBLIC 
         "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
@@ -93,12 +93,12 @@
  </tiles-definitions>   
 
 
-if( Spring Legacy ÀÎ °æ¿ì¿¡´Â  ¾Æ·¡¿Í °°ÀÌ ¼³Á¤ ) 
+if( Spring Legacy ì¸ ê²½ìš°ì—ëŠ”  ì•„ë˜ì™€ ê°™ì´ ì„¤ì • ) 
 4. spring web config xml  :
-InternalResourceViewResolver ¿¡ ¾Æ·¡ order¸¦ ¼³Á¤ 
+InternalResourceViewResolver ì— ì•„ë˜ orderë¥¼ ì„¤ì • 
 <property name="order" value="1"/>
-<!-- TilesViewResolver ¼³Á¤
-	  : ÀÏ¹İ JSP ÀÀ´äÀÌ ¾Æ´Ï¶ó Tiles LayoutÀÌ Àû¿ëµÈ È­¸éÀ¸·Î ÀÀ´äÇÏ±â À§ÇØ ¼³Á¤ 	
+<!-- TilesViewResolver ì„¤ì •
+	  : ì¼ë°˜ JSP ì‘ë‹µì´ ì•„ë‹ˆë¼ Tiles Layoutì´ ì ìš©ëœ í™”ë©´ìœ¼ë¡œ ì‘ë‹µí•˜ê¸° ìœ„í•´ ì„¤ì • 	
  -->
 
 <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -106,8 +106,8 @@ InternalResourceViewResolver ¿¡ ¾Æ·¡ order¸¦ ¼³Á¤
 <property name="order" value="0"/>
 </bean>
 
-<!--  Tiles Framework ¼³Á¤
-	   : spring framework¿¡¼­ Tiles Config xml À» ·ÎµùÇÏ±â À§ÇÑ ¼³Á¤ 
+<!--  Tiles Framework ì„¤ì •
+	   : spring frameworkì—ì„œ Tiles Config xml ì„ ë¡œë”©í•˜ê¸° ìœ„í•œ ì„¤ì • 
  -->
 
 <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" >
@@ -116,7 +116,7 @@ InternalResourceViewResolver ¿¡ ¾Æ·¡ order¸¦ ¼³Á¤
 </property>
 </bean>
 
-if(SpringBoot ÀÎ  °æ¿ì¿¡´Â ¾Æ·¡¿Ü °°ÀÌ ¼³Á¤) 
+if(SpringBoot ì¸  ê²½ìš°ì—ëŠ” ì•„ë˜ì™¸ ê°™ì´ ì„¤ì •) 
 
 	@Configuration 
 public class TilesConfiguration {
@@ -136,7 +136,7 @@ public class TilesConfiguration {
 }
 
 
-5. Controller¿¡ Àû¿ëÇØ º»´Ù 
+5. Controllerì— ì ìš©í•´ ë³¸ë‹¤ 
 
 
 
