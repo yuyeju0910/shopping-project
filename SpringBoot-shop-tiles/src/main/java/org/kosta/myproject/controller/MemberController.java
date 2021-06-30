@@ -98,10 +98,12 @@ public class MemberController {
 	@RequestMapping(value = "user/registerMember", method = RequestMethod.POST)
 	public String register(MemberVO vo) {
 		memberService.registerMember(vo);
-		return "redirect:/";
+		return "redirect:register-ok";
 	}
-
-	
+	@RequestMapping("user/register-ok")
+	public String registerOk() {
+		return "member/register-ok.tiles";
+	}
 
 	@RequestMapping("user/idcheckAjax")
 	@ResponseBody

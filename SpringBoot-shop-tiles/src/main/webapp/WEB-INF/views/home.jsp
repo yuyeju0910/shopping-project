@@ -50,7 +50,7 @@
                         <div class="offset__single">
                             <h4 class="offset__title">Language</h4>
                             <ul>
-                                <li><a href="#"> Engish </a></li>
+                                <li><a href="#"> English </a></li>
                                 <li><a href="#"> French </a></li>
                                 <li><a href="#"> German </a></li>
                             </ul>
