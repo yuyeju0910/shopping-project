@@ -192,18 +192,14 @@
                             <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                 <form class="login" method="post" action="${pageContext.request.contextPath}/user/registerMember" id="regForm">
                                     <sec:csrfInput/><%-- csrf 토큰 --%>
-                                    <input type="text"  name="id"placeholder="아이디"><span id="idCheckView"></span>
-                                    <input type="password" name="password" placeholder="비밀번호">
-                                    <input type="text"  name="name"placeholder="닉네임">
-                                    <input type="text" name="phone" placeholder="전화번호">
-                                    <input type="submit" value="가입하기">
+                                    <input type="text"  name="id" placeholder="아이디" required="required"><span id="idCheckView"></span>
+                                    <input type="password" name="password" placeholder="비밀번호" required="required">
+                                    <input type="text"  name="name" placeholder="닉네임" required="required">
+                                    <input type="text" name="phone" placeholder="전화번호" required="required">
+                                    <strong><input type="submit" class="btn-register" value="회원가입 완료" name="register-ok"></strong>
                                 </form>
-                              
-                                
-                                <div class="htc__login__btn mt--30">
-                                    <a href="register">register</a>
-                                </div>
-                                <div class="htc__social__connect">
+                                </div>                      
+				                 <div class="htc__social__connect">
                                     <h2>Or Login With</h2>
                                     <ul class="htc__soaial__list">
                                         <li><a class="bg--twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>

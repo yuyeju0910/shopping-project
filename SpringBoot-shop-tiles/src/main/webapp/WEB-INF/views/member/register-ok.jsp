@@ -2,6 +2,6 @@
     pageEncoding="UTF-8"%>
 
 <script type="text/javascript">
-alert("회원가입 완료");
+alert("회원가입이 완료되었습니다~");
 location.href="${pageContext.request.contextPath}/home";
 </script>

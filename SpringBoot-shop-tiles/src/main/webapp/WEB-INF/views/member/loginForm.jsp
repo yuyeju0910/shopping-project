@@ -192,14 +192,15 @@
 						<form class="login" method="post"
 							action="${pageContext.request.contextPath}/login">
 							<sec:csrfInput />
-							<input type="text" placeholder="아이디" name="id"> <input
-								type="password" name="password" placeholder="비밀번호">
-							<div style="padding: 10px;">
-								<button type="submit">login</button>
+							<input type="text" placeholder="아이디" name="id" required="required">
+							<input type="password" name="password" placeholder="비밀번호" required="required">
+							<strong><input type="submit" class="btn-register" value="로그인" name="login"></strong>
+							<strong><input type="submit" class="btn-register" value="회원가입" name="registerform" onClick="location.href='${pageContext.request.contextPath}/user/registerForm'"></strong>
+							</form>
 							</div>
-						</form>
-						<div class="htc__login__btn mt--30">
-							<a href="${pageContext.request.contextPath}/user/registerForm">register</a>
+						
+						<%-- <div class="htc__login__btn mt--30">
+							<a href="${pageContext.request.contextPath}/user/registerForm">register</a> --%>
 						</div>
 					</div>
 				</div>

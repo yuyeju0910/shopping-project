@@ -4299,6 +4299,10 @@ a.shipping-calculator-button:hover {
     color: #f8cd35;
 }
 
+.btn-register:hover {
+	color: white;
+	background-color: #ff4136;
+}
 
 
 
