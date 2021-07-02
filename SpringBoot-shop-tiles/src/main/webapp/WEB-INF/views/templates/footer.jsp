@@ -10,7 +10,7 @@
                             <div class="ft__widget">
                                 <div class="ft__logo">
                                     <a href="index.html">
-                                        <img src="${pageContext.request.contextPath}/myweb/images/logo/logo.png" alt="footer logo">
+                                        <img src="${pageContext.request.contextPath}/myweb/images/logo/logo2.png" alt="footer logo">
                                     </a>
                                 </div>
                                 <div class="footer-address">
