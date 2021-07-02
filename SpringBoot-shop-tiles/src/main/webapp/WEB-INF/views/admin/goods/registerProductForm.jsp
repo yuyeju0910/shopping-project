@@ -4,6 +4,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
    uri="http://www.springframework.org/security/tags"%>
+   <head>
+   
+   <style>
+.inputArea { margin:10px 0; }
+select { width:100px; }
+label { display:inline-block; width:70px; padding:5px; }
+label[for='gdsDes'] { display:block; }
+input { width:150px; }
+textarea#gdsDes { width:400px; height:180px; }
+
+.select_img img { margin:20px 0; }
+
+</style>
+   
+   
+   </head>
 <sec:authorize access="hasRole('ROLE_ADMIN')">
    <sec:authentication var="mvo" property="principal" />
 
@@ -183,19 +199,84 @@
             </div>
          </div>
         <div class="single-checkout-box select-option mt--40">
-         <label>1차 분류</label>
+         <label> </label>
             <select id="category" >
              <option>전체</option>
              <c:forEach items="${category}" var="item">
                <option value="${item.CATECODE}">${item.CATENAME}</option>
                </c:forEach>
             </select>
-             <label>2차 분류</label>
+             <label></label>
               <select id="category2">
                <option value="">전체</option>
             </select>
 
       </div>
+      <form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
+			
+		
+			<div class="inputArea">
+				<label for="gdsName">상품명</label>
+				<input type="text"  calss="form-control"id="gdsName" aria-label="sizing example input" name="gdsName" />
+			</div>
+			
+			<div class="inputArea">
+				<label for="gdsPrice">상품가격</label>
+				<input type="text" id="gdsPrice" name="gdsPrice" />
+			</div>
+			
+			<div class="inputArea">
+				<label for="gdsStock">상품수량</label>
+				<input type="text" id="gdsStock" name="gdsStock" />
+			</div>
+			
+			<div class="inputArea">
+				<label for="gdsDes">상품소개</label>
+				<textarea rows="5" cols="50" id="gdsDes" name="gdsDes"></textarea>
+				
+				<script>
+					var ckeditor_config = {
+							resize_enaleb : false,
+							enterMode : CKEDITOR.ENTER_BR,
+							shiftEnterMode : CKEDITOR.ENTER_P,
+							filebrowserUploadUrl : "/admin/goods/ckUpload"
+					};
+					
+					CKEDITOR.replace("gdsDes", ckeditor_config);
+				</script>
+				
+			</div>
+			
+			<div class="inputArea">
+				<label for="gdsImg">이미지</label>
+				<input type="file" id="gdsImg" name="file" />
+				<div class="select_img"><img src="" /></div>
+				
+				<script>
+					$("#gdsImg").change(function(){
+						if(this.files && this.files[0]) {
+							var reader = new FileReader;
+							reader.onload = function(data) {
+								$(".select_img img").attr("src", data.target.result).width(500);								
+							}
+							reader.readAsDataURL(this.files[0]);
+						}
+					});
+				</script>
+				
+				<%=request.getRealPath("/") %> 
+				
+			</div>
+			
+			<div class="inputArea">
+				<button type="submit" id="register_Btn" class="btn btn-primary">등록</button>			
+			</div>
+			
+			</form>
+      
+      
+      
+      
    </div>
    <script>
    //1. 위에 대분류 카테고리 선택

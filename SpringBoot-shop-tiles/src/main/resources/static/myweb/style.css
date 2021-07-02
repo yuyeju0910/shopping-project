@@ -3739,8 +3739,8 @@ a.shipping-calculator-button:hover {
     opacity: 1 !important;
 }
 .single-checkout-box select {
-    margin-right: 30px;
-    width: 48%;
+    margin-right: -5%;
+    width: 30%;
 }
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
