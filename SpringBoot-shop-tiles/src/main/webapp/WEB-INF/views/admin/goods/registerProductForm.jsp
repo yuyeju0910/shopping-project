@@ -10,9 +10,10 @@
 .inputArea { margin:10px 0; }
 select { width:100px; }
 label { display:inline-block; width:70px; padding:5px; }
-label[for='gdsDes'] { display:block; }
-input { width:150px; }
-textarea#gdsDes { width:400px; height:180px; }
+
+input#gdsName {
+    margin-top: 30px;
+}
 
 .select_img img { margin:20px 0; }
 
@@ -215,17 +216,17 @@ textarea#gdsDes { width:400px; height:180px; }
       <form role="form" method="post" autocomplete="off" enctype="multipart/form-data">
 			
 		
-			<div class="inputArea">
+			<div class="single-checkout-box">
 				<label for="gdsName">상품명</label>
 				<input type="text"  calss="form-control"id="gdsName" aria-label="sizing example input" name="gdsName" />
 			</div>
 			
-			<div class="inputArea">
+			<div class="single-checkout-box">
 				<label for="gdsPrice">상품가격</label>
 				<input type="text" id="gdsPrice" name="gdsPrice" />
 			</div>
 			
-			<div class="inputArea">
+			<div class="single-checkout-box">
 				<label for="gdsStock">상품수량</label>
 				<input type="text" id="gdsStock" name="gdsStock" />
 			</div>
