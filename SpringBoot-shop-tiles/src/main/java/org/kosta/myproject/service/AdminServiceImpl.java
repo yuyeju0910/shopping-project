@@ -1,0 +1,28 @@
+package org.kosta.myproject.service;
+
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.kosta.myproject.model.mapper.AdminMapper;
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class AdminServiceImpl implements AdminService{
+	@Resource
+	private AdminMapper adminMapper;
+
+	@Override
+	public List<Map<String, String>> category() {
+		return adminMapper.category();
+	}
+	@Override
+	public List<Map<String, String>> categoryMiddle(String categoryCode){
+		return adminMapper.categoryMiddle(categoryCode);
+	}
+
+	
+}
+

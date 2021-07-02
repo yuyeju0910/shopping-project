@@ -67,7 +67,7 @@ create table authorities(
 	constraint fk_authorities foreign key(username) references tbl_member(id),
 	constraint member_authorities primary key(username,authority)
 )
-delete from authorities;
+delete * from authorities;
 -- -- 어플리케이션에서 회원가입을 하면 ROLE_MEMBER가 등록된다 
 -- insert into authorities(username,authority) values('java','ROLE_MEMBER');
 -----------------------------------------------------------
@@ -79,7 +79,7 @@ insert into authorities(username,authority) values('admin','ROLE_ADMIN');
 select * from authorities;
 
 commit
-
+drop table tbl_goods;
 create table tbl_goods (
     gdsNum       number          not null, //상품번호
     gdsName      varchar2(50)    not null, //상품이름
@@ -106,26 +106,66 @@ create table tbl_goods (
 select *from tbl_goods
 --------카테고리---------------------
 
--- 2차분류 --
+ 
+
+
+-- n-차분류 ---------------------------------------
 create table goods_category (
-    cateName     varchar2(20)    not null, //카테고리이름
-    cateCode     varchar2(30)    not null,  //카테고리 코드
-    cateCodeRef  varchar2(30)    null, //카테고리 참조코드
-    primary key(cateCode),
-    foreign key(cateCodeRef) references goods_category(cateCode)
+    cateName     varchar2(20)    not null, 
+    cateCode     varchar2(30)    not null,  
+    primary key(cateCode)
 );
+delete table goods_category;
+insert into goods_category(cateName,cateCode) values('Top',100);
+insert into goods_category(cateName,cateCode) values('bottom',200);
+
+select *from goods_category;
+
+select middlecateCode,middlecateName from middle_category where cateCode=100;
+
+create table middle_category(
+middlecateCode varchar2(30)  not null primary key,
+ middlecateName  varchar2(20) not null,
+ cateCode 			varchar2(30) not null,
+ constraint fk_goods_category foreign key (cateCode) references goods_category(cateCode)
+);
+----
+select *from middle_category;
+insert into middle_category(middlecatecode,middlecatename,catecode) values('101','neat',100);
+insert into middle_category(middlecatecode,middlecatename,catecode) values('201','pants',200);
+
+create table tbl_goods (
+    gdsNum       number          not null primary key,
+    gdsName      varchar2(50)    not null, 
+   middlecateCode varchar2(30)    not null, 
+    gdsPrice     number          not null, 
+    gdsStock     number          null, 
+    gdsDes       varchar2(500)    null, 
+    gdsImg       varchar2(200)    null, 
+    gdsDate      date            default sysdate, 
+  constraint fk_middle_category foreign key (middlecateCode) references middle_category(middlecateCode)
+);
+
+select *from tbl_goods
+select *from goods_category
+select *from middle_category
+
+-------------------------------------------------------------------------------------
+
+
+
+select *from middle_category;
+
+----
+
+DROP TABLE goods_category CASCADE CONSTRAINTS;
+select cateName,cateCode from goods_category where level
 
 -- 2차분류 --
 drop table goods_category;
 select *from goods_category;
 
-create table goods_category (
-    cateName     varchar2(20)    not null,
-    cateCode     varchar2(30)    not null, 
-    cateCodeRef  varchar2(30)    null, 
-    primary key(cateCode),
-    foreign key(cateCodeRef) references goods_category(cateCode)
-);
+
 --카테고리 참조 코드는 상위 카테고리가 무엇인지 가르키는 코드--
 --https://kuzuro.blogspot.com/2018/09/2-vo.html--
 alter table tbl_goods add

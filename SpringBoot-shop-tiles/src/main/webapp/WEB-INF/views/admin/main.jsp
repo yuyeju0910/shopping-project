@@ -186,7 +186,7 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">상품 등록</a></p>
+                                            <p class="blog__des"><a href="${pageContext.request.contextPath}/admin/goods/registerProductForm">상품 등록</a></p>
                                             <ul class="bl__meta">
                                                 <li>By :<a href="#">Admin</a></li>
                                                 <li>Product</li>
