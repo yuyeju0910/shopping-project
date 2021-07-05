@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.kosta.myproject.model.Authority;
+import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.model.MemberVO;
 @Mapper
 public interface MemberMapper {
@@ -25,5 +26,7 @@ public interface MemberMapper {
 	List<Authority> selectAuthorityByUsername(String username);
 
 	void registerRole(Authority authority);
+	
+	void productUpdate(GoodsVO goods);
 
 }

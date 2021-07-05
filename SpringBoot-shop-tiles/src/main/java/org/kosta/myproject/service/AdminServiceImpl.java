@@ -36,6 +36,17 @@ public class AdminServiceImpl implements AdminService{
 	public GoodsVO view(int gNum) {
 		return adminMapper.view(gNum);
 	}
+	@Override
+	public void productUpdate(GoodsVO goods) {
+		adminMapper.productUpdate(goods);
+	}
+	@Override
+	public List<Map<String, String>> showcategory(String middlecateCode) {
+		return adminMapper.showcategory(middlecateCode);
+	}
+	
+	
+
 
 	
 }

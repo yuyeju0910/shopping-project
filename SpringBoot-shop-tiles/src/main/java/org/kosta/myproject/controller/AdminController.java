@@ -7,6 +7,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.kosta.myproject.model.CategoryVO;
 import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.service.AdminService;
 import org.springframework.security.access.annotation.Secured;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("admin")
@@ -84,13 +86,24 @@ public class AdminController {
 		return "admin/goods/view.tiles";
 	}
 
-	@RequestMapping("goods/productUpdate")
+	@RequestMapping("goods/productUpdate")//form
 	public String productUpdate(@RequestParam("n") int gNum,Model model) {
-		System.out.println("productUpdate");
-		GoodsVO  goods = 
-				adminService.view(gNum);
-		 model.addAttribute("goods", goods);
+		List<Map<String,String>>category =null;// CatagoryVO 형태의 List형 변수 category 선언
+		GoodsVO vo=adminService.view(gNum);		  
+		category=adminService.showcategory(vo.getMiddlecateCode());
+		model.addAttribute("goods",vo );
+		model.addAttribute("category", category);
 		return "admin/goods/productUpdate.tiles";
+	}
+	
+
+	
+	@RequestMapping("goods/productUpdateSuccess")//수정
+	public ModelAndView productUpdateSuccess(GoodsVO update,Model model) {
+		System.out.println("productUpdate");
+		adminService.productUpdate(update);
+		return new ModelAndView("redirect:admin/goods/view.tiles?n="
+				+ update.getGdsNum());
 	}
 	
 	

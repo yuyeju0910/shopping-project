@@ -215,6 +215,14 @@ input#gdsName {
             </select>
 
       </div>
+    
+    
+      
+      
+      
+      
+      
+      
 		
 <div class="inputArea"> 
 <input type="hidden" name="n" value="${goods.gdsNum}">

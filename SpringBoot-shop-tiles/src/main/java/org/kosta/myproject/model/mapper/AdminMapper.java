@@ -13,4 +13,6 @@ public interface AdminMapper {
 	void registergoods(GoodsVO vo);
 	List<GoodsVO>productList();
 	GoodsVO view(int gNum);
+	void productUpdate(GoodsVO goods);
+	List<Map<String, String>>showcategory(String middlecateCode); 
 }

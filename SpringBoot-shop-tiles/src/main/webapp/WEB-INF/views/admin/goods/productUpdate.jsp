@@ -200,23 +200,26 @@ input#gdsName {
             </div>
          </div>
       
-      <form role="form" method="post" autocomplete="off" action="${pageContext.request.contextPath}/admin/goods/registergoods">
+      <form role="form" method="post" autocomplete="off" action="${pageContext.request.contextPath}/admin/goods/productUpdateSuccess" id="updateForm">
 			  <sec:csrfInput/><%-- csrf 토큰 --%>
 			  <div class="single-checkout-box select-option mt--40">
          <label> </label>
-            <select id="category">
-             <option>전체</option>
+            <select id="category">       
              <c:forEach items="${category}" var="item">
+             <c:choose>
+             <c:when test="${item.CATECODE==goods.middlecateCode}">
+               <option value="${item.CATECODE}" selected>${item.CATENAME}</option>
+               </c:when>
+               <c:otherwise>
                <option value="${item.CATECODE}">${item.CATENAME}</option>
-               </c:forEach>
+               </c:otherwise>
+             </c:choose>
+             </c:forEach>
             </select>
-             <label></label>
-              <select id="category2" name="middlecateCode">
-               <option value="">전체</option>
-            </select>
-
+ 
+ 
       </div>
-		
+			${goods}
 			<div class="single-checkout-box">
 				<label for="gdsName">상품명</label>
 				<input type="text"  calss="form-control"id="gdsName" aria-label="sizing example input" name="gdsName" value="${goods.gdsName}" />
@@ -249,7 +252,7 @@ input#gdsName {
 			</div>
 			
 			<div class="inputArea">
-				<button type="submit" id="register_Btn" class="btn btn-primary">등록</button>			
+				<button type="submit" class="btn btn-primary">수정</button>			
 			</div>
 			
 			</form>
@@ -259,15 +262,23 @@ input#gdsName {
       
    </div>
    <script>
+   $(documet).ready(function() {
+   	  $("#updateForm").submit(function() {
+   	  	return true;
+   	  });
+   }); 
+   
+   
+   
    //1. 위에 대분류 카테고리 선택
-   $(document).ready(function() {
+/*    $(document).ready(function() {
       $("#category").change(function(){
       //var category1={}  //이부분 필요 없음
          category1 =$("#category").val(); //2. 여기로 카테고리 코드 들고와짐
          $("#category2").empty();
          $.ajax({
                type:"get",
-               url:"registerAjax?categoryCode="+category1,      //
+               url:"registerAjax?categoryCode="+category1,      
                  dataType:"json",
                success:function(data){
                   //alert(data.length);
@@ -279,7 +290,7 @@ input#gdsName {
                }
             });//ajax
          });//change     
-      });//ready
+      });//ready */
 
    </script>
 </sec:authorize>

@@ -50,6 +50,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from tbl_goods
 		where gdsNum=#{gdsNum}
 	</select>
+	
+	<select id="productUpdate" resultType="goodsVO">
+		update tbl_goods
+		set gdsName=#{gdsName},middlecateCode=#{middlecateCode},gdsPrice=#{gdsPrice},gdsStock=#{gdsStock},gdsDes=#{gdsDes}, gdsImg=#{gdsImg},gdsDate=#{gdsDate}		
+		where gdsNum=#{gdsNum}
+	</select>
+
+<!-- <select id="productUpdate" resultType="goodsVO">
+		update tbl_goods
+		set gdsName=#{gdsName},middlecateCode=#{middlecateCode},gdsPrice=#{gdsPrice},gdsStock=#{gdsStock},gdsDes=#{gdsDes}, gdsImg=#{gdsImg},gdsDate=#{gdsDate}		
+		where gdsNum=#{gdsNum}
+	</select> -->
+	
+<select id="showcategory"  resultType="map">
+select c.cateCode,c.cateName, m.middlecateCode,m.middlecateName
+from  goods_category c, middle_category m
+where  m.middlecateCode=#{middlecateCode}
+</select>
+
 
 
 

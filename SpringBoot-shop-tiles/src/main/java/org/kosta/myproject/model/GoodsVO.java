@@ -86,6 +86,13 @@ public String getGdsThumbImg() {
 public void setGdsThumbImg(String gdsThumbImg) {
 	this.gdsThumbImg = gdsThumbImg;
 }
+
+@Override
+public String toString() {
+	return "GoodsVO [gdsNum=" + gdsNum + ", gdsName=" + gdsName + ", middlecateCode=" + middlecateCode + ", gdsPrice="
+			+ gdsPrice + ", gdsStock=" + gdsStock + ", gdsDes=" + gdsDes + ", gdsImg=" + gdsImg + ", gdsDate=" + gdsDate
+			+ ", gdsThumbImg=" + gdsThumbImg + "]";
+}
 	
 	
 	

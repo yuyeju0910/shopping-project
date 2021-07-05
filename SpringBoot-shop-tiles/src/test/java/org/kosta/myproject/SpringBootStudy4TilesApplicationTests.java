@@ -20,11 +20,17 @@ class SpringBootStudy4TilesApplicationTests {
 		/*
 		 * List<Map<String,String>> list =ad.category(); for(Map<String,String> map
 		 * :list) System.out.println(map);
-		 */
+		
 		String cateCode="100";
 		List<Map<String,String>> list2=ad.categoryMiddle(cateCode);
 		for(Map<String,String> map2 :list2)
+					System.out.println(map2); */
+
+		String middlecateCode="101";
+		List<Map<String,String>> list2=ad.showcategory(middlecateCode);
+		for(Map<String,String> map2 :list2)
 					System.out.println(map2);
+		
 		
 		
 	}

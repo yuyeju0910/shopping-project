@@ -121,7 +121,7 @@ insert into goods_category(cateName,cateCode) values('bottom',200);
 
 select *from goods_category;
 
-select middlecateCode,middlecateName from middle_category where cateCode=100;
+select cateCode,middlecateName from middle_category where cateCode=100;
 
 create table middle_category(
 middlecateCode varchar2(30)  not null primary key,
@@ -217,3 +217,8 @@ insert into goods_category(cateName, cateCode, cateCodeRef) values('earrings','4
 commit;
 
 select *from goods_category;
+
+
+select c.cateCode,c.cateName, m.middlecateCode,m.middlecateName
+from  goods_category c, middle_category m
+where  m.middlecateCode=101;
