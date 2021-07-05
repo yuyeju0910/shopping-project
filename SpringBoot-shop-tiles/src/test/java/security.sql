@@ -105,7 +105,7 @@ create table tbl_goods (
 );
 select *from tbl_goods
 --------카테고리---------------------
-
+select *from
  
 
 
@@ -149,6 +149,15 @@ create table tbl_goods (
 select *from tbl_goods
 select *from goods_category
 select *from middle_category
+create sequence tbl_goods_seq;
+select tbl_goods_seq.nextval from dual
+
+insert into tbl_goods (gdsNum ,gdsName,middlecateCode,gdsPrice,gdsStock,gdsDes)
+values(tbl_goods_seq.nextval,'pinkneat',101,23000,30,'상품설명');
+
+select gdsNum, gdsName,middlecateCode,gdsPrice,gdsStock,gdsDes
+from tbl_goods
+order by gdsNum desc;
 
 -------------------------------------------------------------------------------------
 

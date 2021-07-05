@@ -4,9 +4,13 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.kosta.myproject.model.GoodsVO;
 @Mapper
 public interface AdminMapper {
 
 	List<Map<String,String>> category();
 	List<Map<String,String>> categoryMiddle(String cateCode);
+	void registergoods(GoodsVO vo);
+	List<GoodsVO>productList();
+	GoodsVO view(int gNum);
 }

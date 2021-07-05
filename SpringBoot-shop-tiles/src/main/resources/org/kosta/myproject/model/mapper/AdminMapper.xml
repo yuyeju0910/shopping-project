@@ -4,31 +4,55 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.kosta.myproject.model.mapper.AdminMapper">
- <!-- 카테고리 호출 -->
-<!-- <resultMap type="categoryVO" id="categoryListRM">
-		<result column="cateName"
-			property="categoryVO.cateName" />
-</resultMap> -->
-<select id="category" resultType="map">
-select catecode,catename
-from goods_category
-order by catecode asc
-</select>
-
-<!-- 컨트롤러매핑 -->
-<select id="categoryMiddle" resultType="map">
-select middlecateCode,middlecateName,cateCode
- from middle_category
- where cateCode=#{value}
-</select>
-
- 
-	<!-- Spring Security에서 권한 체크를 위해 사용 -->
-	<select id="selectAuthorityByUsername"  resultType="authority">
-		SELECT	username,authority
-		FROM	authorities
-		WHERE	username=#{username}
+	<!-- 카테고리 호출 -->
+	<!-- <resultMap type="categoryVO" id="categoryListRM"> <result column="cateName" 
+		property="categoryVO.cateName" /> </resultMap> -->
+	<select id="category" resultType="map">
+		select catecode,catename
+		from goods_category
+		order by catecode asc
 	</select>
+	<!--상품등록 -->
+	<insert id="registergoods" parameterType="goodsVO">
+		insert into tbl_goods
+		(gdsNum,gdsName,middlecateCode,gdsPrice,gdsStock,gdsDes)
+		values(tbl_goods_seq.nextval,#{gdsName},#{middlecateCode},#{gdsPrice},#{gdsStock},#{gdsDes})
+	</insert>
+
+
+	<!-- 컨트롤러매핑 -->
+	<select id="categoryMiddle" resultType="map">
+		select middlecateCode,middlecateName,cateCode
+		from middle_category
+		where cateCode=#{value}
+	</select>
+
+
+	<!-- Spring Security에서 권한 체크를 위해 사용 -->
+	<select id="selectAuthorityByUsername" resultType="authority">
+		SELECT
+		username,authority
+		FROM authorities
+		WHERE username=#{username}
+	</select>
+
+	<select id="productList" resultType="goodsVO">
+		select gdsNum,gdsName,middlecateCode,gdsPrice,gdsStock,gdsDes, gdsImg,
+		gdsDate
+		from tbl_goods
+		order by gdsNum desc
+	</select>
+
+	<select id="view" resultType="goodsVO">
+		select
+		gdsNum,gdsName,middlecateCode,gdsPrice,gdsStock,gdsDes, gdsImg,
+		gdsDate
+		from tbl_goods
+		where gdsNum=#{gdsNum}
+	</select>
+
+
+
 </mapper>
 
 

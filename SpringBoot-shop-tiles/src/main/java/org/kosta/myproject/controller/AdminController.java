@@ -2,15 +2,19 @@ package org.kosta.myproject.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale.Category;
 import java.util.Map;
 
 import javax.annotation.Resource;
+
+import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.service.AdminService;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -52,15 +56,39 @@ public class AdminController {
 		return categoryMiddle;
 	}
 	
-
-	
-	@PostMapping("goods/registerProduct")	
-	
-	public void registerProduct(Model model) {
-	
-	
-		//model.addAttribute("category", JSONArray.fromObject(category));// 변수 category를 제이슨(json)타입으로 변환하여 category 세션에 부여
+	@PostMapping("goods/registergoods")	
+	public String registergoods(GoodsVO vo) {
+		System.out.println("registergoods 시작");
+		adminService.registergoods(vo);
+		System.out.println("registergoods 완료");
+		return "redirect:/admin/goods/registergoods-result";	
 	}
+	
+	@RequestMapping("goods/registergoods-result")
+	public String registerend() {
+		return "admin/goods/registergoods-ok.tiles";
+	}
+	
+	@RequestMapping("goods/productList")
+	public String productList(Model model) {
+		List<GoodsVO>productlist =adminService.productList();
+		model.addAttribute("productList", productlist);
+		return "admin/goods/productList.tiles";
+	}
+	
+	@RequestMapping("goods/view")
+	public String view(@RequestParam("n") int gNum,Model model) {
+		GoodsVO  goods = 
+		adminService.view(gNum);
+		 model.addAttribute("goods", goods);
+		return "admin/goods/view.tiles";
+	}
+
+	@RequestMapping("goods/productUpdate")
+	public String productUpdate(@RequestParam("n") int gNum,Model model) {S
+		return "admin/goods/productUpdate.tiles";
+	}
+	
 	
 	
 	

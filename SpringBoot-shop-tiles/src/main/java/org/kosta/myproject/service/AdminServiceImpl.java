@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.model.mapper.AdminMapper;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,19 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public List<Map<String, String>> categoryMiddle(String categoryCode){
 		return adminMapper.categoryMiddle(categoryCode);
+	}
+	@Override
+	public void registergoods(GoodsVO vo) {
+		adminMapper.registergoods(vo);
+	}
+	
+	@Override
+	public List<GoodsVO>productList(){
+	 return adminMapper.productList();
+	}
+	@Override
+	public GoodsVO view(int gNum) {
+		return adminMapper.view(gNum);
 	}
 
 	

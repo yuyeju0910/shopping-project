@@ -217,41 +217,46 @@ input#gdsName {
 
       </div>
 		
-			<div class="single-checkout-box">
-				<label for="gdsName">상품명</label>
-				<input type="text"  calss="form-control"id="gdsName" aria-label="sizing example input" name="gdsName" />
-			</div>
-			
-			<div class="single-checkout-box">
-				<label for="gdsPrice">상품가격</label>
-				<input type="text" id="gdsPrice" name="gdsPrice" />
-			</div>
-			
-			<div class="single-checkout-box">
-				<label for="gdsStock">상품수량</label>
-				<input type="text" id="gdsStock" name="gdsStock" />
-			</div>
-			
-			<div class="inputArea">
-				<label for="gdsDes">상품소개</label>
-				<textarea rows="5" cols="50" id="gdsDes" name="gdsDes"></textarea>
-				
-				
-				
-			</div>
-			
-			<div class="inputArea">
-				<label for="gdsImg">이미지</label>
-				<input type="file" id="gdsImg" name="file" />
-				<div class="select_img"><img src="" /></div>
-				
-				
-			</div>
-			
-			<div class="inputArea">
-				<button type="submit" id="register_Btn" class="btn btn-primary">등록</button>			
-			</div>
-			
+<div class="inputArea"> 
+<input type="hidden" name="n" value="${goods.gdsNum}">
+ <label>1차 분류</label>
+ <span class="category1"></span>        
+ <label>2차 분류</label>
+ <span class="category2">${goods.middlecateCode}</span>
+</div>
+ <label for="gdsName">상품명</label>
+ <span>${goods.gdsName}</span>
+</div>
+
+<div class="inputArea">
+ <label for="gdsPrice">상품가격</label>
+ <span><fmt:formatNumber value="${goods.gdsPrice}" pattern="###,###,###"/></span>
+</div>
+
+<div class="inputArea">
+ <label for="gdsStock">상품수량</label>
+ <span>${goods.gdsStock}</span>
+</div>
+
+<div class="inputArea">
+ <label for="gdsDes">상품소개</label>
+ <span>${goods.gdsDes}</span>
+</div>
+
+<div class="inputArea">
+ 
+ <button form="deleteForm" type="submit">삭제</button>
+ <button form="updateForm" type="submit">수정</button>
+ 
+ <form action="${pageContext.request.contextPath}/admin/goods/productUpdate" id="updateForm" method="POST">
+  <input type="hidden" name="n" value="${goods.gdsNum}">
+ </form>
+ 
+ <form action="${pageContext.request.contextPath}/admin/goods/deleteview" id="deleteForm"  method="POST">
+ <input type="hidden" name="n" value="${goods.gdsNum}">
+ </form>
+</div>
+	
 			</form>
       
       
