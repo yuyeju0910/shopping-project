@@ -200,8 +200,7 @@ input#gdsName {
             </div>
          </div>
       
-      <form role="form" method="post" autocomplete="off" action="${pageContext.request.contextPath}/admin/goods/registergoods">
-			  <sec:csrfInput/><%-- csrf 토큰 --%>
+     
 			  <div class="single-checkout-box select-option mt--40">
          <label> </label>
             <select id="category">
@@ -248,21 +247,21 @@ input#gdsName {
  <button form="deleteForm" type="submit">삭제</button>
  <button form="updateForm" type="submit">수정</button>
  
- <form action="${pageContext.request.contextPath}/admin/goods/productUpdate" id="updateForm" method="POST">
+ <form action="${pageContext.request.contextPath}/admin/goods/productUpdate" id="updateForm" method="get">
   <input type="hidden" name="n" value="${goods.gdsNum}">
  </form>
  
- <form action="${pageContext.request.contextPath}/admin/goods/deleteview" id="deleteForm"  method="POST">
+ <form action="${pageContext.request.contextPath}/admin/goods/deleteview" id="deleteForm"  method="get">
  <input type="hidden" name="n" value="${goods.gdsNum}">
  </form>
 </div>
-	
-			</form>
+			
+			
+		
       
       
       </div>
-      
-   </div>
+
    <script>
    //1. 위에 대분류 카테고리 선택
    $(document).ready(function() {

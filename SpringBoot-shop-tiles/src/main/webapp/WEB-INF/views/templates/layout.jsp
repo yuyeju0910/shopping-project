@@ -37,10 +37,7 @@
     <script src="${pageContext.request.contextPath}/myweb/js/vendor/modernizr-2.8.3.min.js"></script>
 	   <!-- jquery latest version -->
     <script src="${pageContext.request.contextPath}/myweb/js/vendor/jquery-1.12.0.min.js"></script>
-<script src="/resources/jquery/jquery-3.3.1.min.js"></script>
-
-<link rel="stylesheet" href="/resources/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css">
+<!-- <link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css"> -->
 <script src="${pageContext.request.contextPath}/myweb/ckeditor/ckeditor.js"></script>
 	
 

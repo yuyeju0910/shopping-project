@@ -85,7 +85,11 @@ public class AdminController {
 	}
 
 	@RequestMapping("goods/productUpdate")
-	public String productUpdate(@RequestParam("n") int gNum,Model model) {S
+	public String productUpdate(@RequestParam("n") int gNum,Model model) {
+		System.out.println("productUpdate");
+		GoodsVO  goods = 
+				adminService.view(gNum);
+		 model.addAttribute("goods", goods);
 		return "admin/goods/productUpdate.tiles";
 	}
 	
