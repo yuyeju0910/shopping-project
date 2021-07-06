@@ -67,7 +67,7 @@
                         <!-- Start Single Footer Widget -->
                         <div class="col-md-3 col-lg-2 col-sm-6 smt-30 xmt-30">
                             <div class="ft__widget">
-                                <h2 class="ft__title">Infomation</h2>
+                                <h2 class="ft__title">Information</h2>
                                 <ul class="footer-categories">
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="contact.html">Contact Us</a></li>

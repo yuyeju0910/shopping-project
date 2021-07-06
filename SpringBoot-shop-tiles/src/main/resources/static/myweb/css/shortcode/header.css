@@ -840,7 +840,7 @@ h4.offset__title {
 }
 .sidebar__thumd li a::after {
     color: #fff;
-    content: "";
+    content: "";
     font-family: themify;
     left: 40%;
     opacity: 0;

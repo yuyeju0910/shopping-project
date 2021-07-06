@@ -240,7 +240,7 @@
                                                     <td>
                                                         <strong><span class="amount">£215.00</span></strong>
                                                     </td>
-                                                </tr>                                           
+                                                </tr>                                        
                                             </tbody>
                                         </table>
                                         <div class="wc-proceed-to-checkout">
