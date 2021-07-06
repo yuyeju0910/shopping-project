@@ -200,7 +200,7 @@ input#gdsName {
             </div>
          </div>
       
-      <form role="form" method="post" autocomplete="off" action="${pageContext.request.contextPath}/admin/goods/registergoods">
+      <form role="form" method="post" autocomplete="off" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/goods/registergoods">
 			  <sec:csrfInput/><%-- csrf 토큰 --%>
 			  <div class="single-checkout-box select-option mt--40">
          <label> </label>
@@ -232,13 +232,20 @@ input#gdsName {
 				<input type="text" id="gdsStock" name="gdsStock" />
 			</div>
 			
-			<div class="inputArea">
-				<label for="gdsDes">상품소개</label>
-				<textarea rows="5" cols="50" id="gdsDes" name="gdsDes"></textarea>
-				
-				
-				
-			</div>
+				<div class="inputArea">
+                        <label for="gdsDes">상품소개</label>
+                        <textarea rows="5" cols="50" id="gdsDes" name="gdsDes"></textarea>
+                        <script>
+						 var ckeditor_config = {
+						   resize_enaleb : false,
+						   enterMode : CKEDITOR.ENTER_BR,
+						   shiftEnterMode : CKEDITOR.ENTER_P,
+						   filebrowserUploadUrl : "${pageContext.request.contextPath}/admin/goods/registergoods"
+						 };
+						 
+						 CKEDITOR.replace("gdsDes", ckeditor_config);
+						</script>
+                    </div>
 			
 			<div class="inputArea">
 				<label for="gdsImg">이미지</label>
@@ -247,6 +254,26 @@ input#gdsName {
 				
 				
 			</div>
+		
+
+ 
+ <script>
+ 
+
+ 
+  $("#gdsImg").change(function(){
+   if(this.files && this.files[0]) {
+    var reader = new FileReader;
+    reader.onload = function(data) {
+     $(".select_img img").attr("src", data.target.result).width(500);        
+    }
+    reader.readAsDataURL(this.files[0]);
+   }
+  });
+ </script>
+ <%=request.getRealPath("/") %>
+ 
+</div>
 			
 			<div class="inputArea">
 				<button type="submit" id="register_Btn" class="btn btn-primary">등록</button>			

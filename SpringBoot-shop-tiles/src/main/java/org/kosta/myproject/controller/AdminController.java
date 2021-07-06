@@ -1,12 +1,16 @@
 package org.kosta.myproject.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale.Category;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
+import org.kosta.myproject.controller.utils.UpLoadFileUtils;
 import org.kosta.myproject.model.CategoryVO;
 import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.service.AdminService;
@@ -15,9 +19,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
 
 @Controller
 @RequestMapping("admin")
@@ -59,8 +66,35 @@ public class AdminController {
 	}
 	
 	@PostMapping("goods/registergoods")	
-	public String registergoods(GoodsVO vo) {
+	public String registergoods(GoodsVO vo,MultipartFile file,HttpServletRequest req) throws IOException, Exception {
 		System.out.println("registergoods 시작");
+		String uploadPath = req.getSession().getServletContext().getRealPath("/");
+		System.out.println(uploadPath);
+		//String uploadPath="C:\\Users\\user\\git\\shopping-project\\SpringBoot-shop-tiles\\src\\main\\resources\\static\\myweb";
+		
+		String imgUploadPath = uploadPath + File.separator + "imgUpload";  // 이미지를 업로드할 폴더를 설정 = /uploadPath/imgUpload
+		 String ymdPath = UpLoadFileUtils.calcPath(imgUploadPath);  // 위의 폴더를 기준으로 연월일 폴더를 생성	
+		 String fileName = null;  // 기본 경로와 별개로 작성되는 경로 + 파일이름
+		 System.out.println("imgUploadPath:"+imgUploadPath);
+		 if(file.getOriginalFilename() != null && !file.getOriginalFilename().equals("")) {
+			 System.out.println("파일업로드시작!!");
+			  // 파일 인풋박스에 첨부된 파일이 없다면(=첨부된 파일이 이름이 없다면)  
+              fileName=UpLoadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+              System.out.println("업로드할파일명"+fileName);
+			  // gdsImg에 원본 파일 경로 + 파일명 저장
+			  vo.setGdsImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+			  // gdsThumbImg에 썸네일 파일 경로 + 썸네일 파일명 저장			  
+			  System.out.println(vo);			  		  
+			  vo.setGdsThumbImg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);  
+			 } else {  // 첨부된 파일이 없으면
+			  fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
+			  // 미리 준비된 none.png파일을 대신 출력함
+			  System.out.println("업로드파일:"+fileName);
+			  vo.setGdsImg(fileName);
+			  vo.setGdsThumbImg(fileName);
+			 }
+			 System.out.println("fileName : "+fileName);
+			 System.out.println();
 		adminService.registergoods(vo);
 		System.out.println("registergoods 완료");
 		return "redirect:/admin/goods/registergoods-result";	
@@ -83,14 +117,27 @@ public class AdminController {
 		GoodsVO  goods = 
 		adminService.view(gNum);
 		 model.addAttribute("goods", goods);
+		System.out.println(goods);
 		return "admin/goods/view.tiles";
 	}
+	
+	
+	
 
 	@RequestMapping("goods/productUpdate")//form
 	public String productUpdate(@RequestParam("n") int gNum,Model model) {
 		List<Map<String,String>>category =null;// CatagoryVO 형태의 List형 변수 category 선언
 		GoodsVO vo=adminService.view(gNum);		  
 		category=adminService.showcategory(vo.getMiddlecateCode());
+		String middleCateCategoryName=null;
+		for(int i=0;i<category.size();i++) {
+			Map<String,String> map=category.get(i);
+			if(map.get("MIDDLECATECODE").equals(vo.getMiddlecateCode())) {
+				middleCateCategoryName=map.get("MIDDLECATENAME");
+				break;
+			}
+		}
+		model.addAttribute("middleCateCategoryName",middleCateCategoryName);
 		model.addAttribute("goods",vo );
 		model.addAttribute("category", category);
 		return "admin/goods/productUpdate.tiles";
@@ -107,6 +154,7 @@ public class AdminController {
 	}
 	
 	
+
 	
 	
 }

@@ -35,41 +35,39 @@
 
     <!-- Modernizr JS -->
     <script src="${pageContext.request.contextPath}/myweb/js/vendor/modernizr-2.8.3.min.js"></script>
-	   <!-- jquery latest version -->
+      <!-- jquery latest version -->
     <script src="${pageContext.request.contextPath}/myweb/js/vendor/jquery-1.12.0.min.js"></script>
 <!-- <link rel="stylesheet" href="/resources/bootstrap/bootstrap-theme.min.css"> -->
 <script src="${pageContext.request.contextPath}/myweb/ckeditor/ckeditor.js"></script>
-	
-
- 
+   
 </head>
 <body>
-	  <div class="wrapper fixed__footer">
-	<header id="header" class="htc-header header--3 bg__white">
-		<!-- Tiles header 영역 -->
-		<tiles:insertAttribute name="header" />
-	</header>
-	<div class="container-fluid text-center">
-		<div class="row content">
-			<div id="left" class="col-sm-3 sidenav">
-				<!-- Tiles left 영역 
-				<tiles:insertAttribute name="left" />-->
-			</div>
-			<div id="main">
-				<!-- Tiles main 영역 -->
-				<tiles:insertAttribute name="main" />
-			</div>
-			<div id="right" class="col-sm-2 sidenav">
-				<!-- Tiles right 영역 
-				<tiles:insertAttribute name="right" />-->
-			</div>
-		</div>
-	</div>
-	<div id="footer">
-		<!-- Tiles footer 영역 -->
-		<tiles:insertAttribute name="footer" />
-	</div>
-	</div>
+<!-- <div class="wrapper fixed__footer"> register, login 하단 공백 삭제-->
+   <header id="header" class="htc-header header--3 bg__white">
+      <!-- Tiles header 영역 -->
+      <tiles:insertAttribute name="header" />
+   </header>
+   <div class="container-fluid text-center">
+      <div class="row content">
+         <div id="left" class="col-sm-3 sidenav">
+            <!-- Tiles left 영역 
+            <tiles:insertAttribute name="left" />-->
+         </div>
+         <div id="main">
+            <!-- Tiles main 영역 -->
+            <tiles:insertAttribute name="main" />
+         </div>
+         <div id="right" class="col-sm-2 sidenav">
+            <!-- Tiles right 영역 
+            <tiles:insertAttribute name="right" />-->
+         </div>
+      </div>
+   </div>
+   <div id="footer">
+      <!-- Tiles footer 영역 -->
+      <tiles:insertAttribute name="footer" />
+   </div>
+
 
     <!-- jquery latest version -->
     <script src="${pageContext.request.contextPath}/myweb/js/vendor/jquery-1.12.0.min.js"></script>
@@ -86,7 +84,6 @@
 
 </body>
 </html>
-
 
 
 

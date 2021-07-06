@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.kosta.myproject.model.GoodsVO;
+import org.kosta.myproject.model.GoodsViewVO;
 @Mapper
 public interface AdminMapper {
 
@@ -15,4 +16,5 @@ public interface AdminMapper {
 	GoodsVO view(int gNum);
 	void productUpdate(GoodsVO goods);
 	List<Map<String, String>>showcategory(String middlecateCode); 
+	
 }

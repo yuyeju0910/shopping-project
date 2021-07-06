@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
-
+import org.kosta.myproject.model.GoodsViewVO;
 import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.model.mapper.AdminMapper;
 import org.springframework.stereotype.Service;
@@ -27,7 +27,7 @@ public class AdminServiceImpl implements AdminService{
 	public void registergoods(GoodsVO vo) {
 		adminMapper.registergoods(vo);
 	}
-	
+	 
 	@Override
 	public List<GoodsVO>productList(){
 	 return adminMapper.productList();
@@ -44,7 +44,8 @@ public class AdminServiceImpl implements AdminService{
 	public List<Map<String, String>> showcategory(String middlecateCode) {
 		return adminMapper.showcategory(middlecateCode);
 	}
-	
+
+
 	
 
 

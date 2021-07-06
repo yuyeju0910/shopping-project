@@ -105,7 +105,7 @@ create table tbl_goods (
 );
 select *from tbl_goods
 --------카테고리---------------------
-select *from
+alter table tbl_goods add (gdsThumbImg varchar(200));
  
 
 

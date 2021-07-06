@@ -3,6 +3,7 @@ package org.kosta.myproject.service;
 import java.util.List;
 import java.util.Map;
 
+import org.kosta.myproject.model.GoodsViewVO;
 import org.kosta.myproject.model.CategoryVO;
 import org.kosta.myproject.model.GoodsVO;
 
@@ -13,5 +14,6 @@ public interface AdminService {
 	List<GoodsVO>productList();
 	GoodsVO view(int gNum);
 	void productUpdate(GoodsVO goods);
-	List<Map<String, String>>showcategory(String middlecateCode); 
+	List<Map<String, String>>showcategory(String middlecateCode);
+
 }
