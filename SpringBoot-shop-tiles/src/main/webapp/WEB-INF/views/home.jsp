@@ -62,7 +62,7 @@
                             </ul>
                         </div>
                     </div> -->
-                    <br><br>
+                   
                     <div class="offset__sosial__share">
                         <h4 class="offset__title">Follow Us On Social</h4>
                         <ul class="off__soaial__link">
@@ -75,7 +75,7 @@
                             <li><a class="bg--googleplus" href="#" title="Google Plus"><i class="zmdi zmdi-google-plus"></i></a></li>
 
                             <li><a class="bg--google" href="#" title="Google"><i class="zmdi zmdi-google"></i></a></li>
-                        </ul><br><br><br><br>
+                        </ul><br><br>
                     </div>
                 </div>
             </div>
