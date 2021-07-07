@@ -6,6 +6,6 @@ import org.kosta.myproject.model.GoodsVO;
 
 public interface ShopService {
 
-	List<GoodsVO> list(String middlecateCode);
-
+	List<GoodsVO> categorylist(String cateCode);
+	List<GoodsVO> categorylist2(String middlecateCode);
 }

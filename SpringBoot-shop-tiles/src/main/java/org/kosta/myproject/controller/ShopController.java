@@ -16,13 +16,22 @@ public class ShopController {
 	@Resource
 	private ShopService shopserivce;
 
-	@RequestMapping("list")
-	public String getList(Model model, @RequestParam("m")String middleCateCode,@RequestParam("c")String cateCode) {
-		List<GoodsVO> list =shopserivce.list(middleCateCode);
-		model.addAttribute("list",list);		
-		return "views/shop/list.tiles";
-		
+	@RequestMapping("views/shop/list")
+	public String getList(@RequestParam("c") String cateCode, Model model) {
+		List<GoodsVO> categorylist = shopserivce.categorylist(cateCode);
+		model.addAttribute("list", categorylist);
+		return "shop/list.tiles";
+
 	}
 	
+	@RequestMapping("views/shop/list2")
+	public String getList2(@RequestParam("m") String middlecateCode, Model model) {
+		List<GoodsVO> categorylist2 = shopserivce.categorylist2(middlecateCode);
+		model.addAttribute("list2", categorylist2);
+		return "shop/list2.tiles";
+
+	}
 	
+
+
 }

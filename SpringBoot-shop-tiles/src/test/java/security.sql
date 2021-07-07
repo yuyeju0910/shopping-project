@@ -163,6 +163,38 @@ select *from middle_category;
  where g.middlecateCode =101;
  
  
+  select g.gdsNum, g.gdsName, g.middlecateCode
+ ,g.gdsStock
+, g.gdsDes
+, g.gdsImg
+, g.gdsDate
+, g.gdsImg
+, g.gdsThumbImg
+, m.middlecateName
+, c.cateCode
+, c.cateName
+ from tbl_goods g inner join  middle_category m on g.middlecateCode =m.middlecateCode
+ inner join  goods_category c on m.cateCode =c.cateCode
+ where c.cateCode =100;
+ -----
+   select g.gdsNum, g.gdsName, g.middlecateCode
+ ,g.gdsStock
+, g.gdsDes
+, g.gdsImg
+, g.gdsDate
+, g.gdsImg
+, g.gdsThumbImg
+, m.middlecateName
+, c.cateCode
+, c.cateName
+ from tbl_goods g inner join  middle_category m on g.middlecateCode =m.middlecateCode
+ inner join  goods_category c on m.cateCode =c.cateCode
+ where c.cateCode  =100 and g.middlecateCode =101;
+ 
+ 
+ 
+ 
+ 
 
  select *from 
  

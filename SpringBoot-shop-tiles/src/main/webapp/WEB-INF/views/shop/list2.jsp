@@ -281,13 +281,13 @@
 			<div class="row">
 				<div class="product__list another-product-style">
 					<ul>
-						<c:forEach items="${list}" var="list">
+						<c:forEach items="${list2}" var="list2">
 							<li>
 								<div class="goodsThumb">
-									<img src="${list.gdsThumbImg}">
+									<img src="${list2.gdsThumbImg}">
 								</div>
 								<div class="goodsName">
-									<a href="/shop/view?n=${list.gdsNum}">${list.gdsName}</a>
+									<a href="/shop/view?n=${list2.gdsNum}">${list2.gdsName}</a>
 								</div>
 							</li>
 						</c:forEach>
