@@ -285,16 +285,7 @@
 				<div class="product__list another-product-style">
 					<!-- Start Single Product -->
 					<ul>
-						<c:forEach items="${list}" var="list">
-							<li>
-								<div class="goodsThumb">
-									<img src="${list.gdsThumbImg}">
-								</div>
-								<div class="goodsName">
-									
-								</div>
-							</li>
-						</c:forEach>
+				
 					</ul>
 
 

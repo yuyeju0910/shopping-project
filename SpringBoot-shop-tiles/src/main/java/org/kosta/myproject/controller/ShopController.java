@@ -20,7 +20,7 @@ public class ShopController {
 	public String getList(Model model, @RequestParam("m")String middleCateCode,@RequestParam("c")String cateCode) {
 		List<GoodsVO> list =shopserivce.list(middleCateCode);
 		model.addAttribute("list",list);		
-		return "shop/list.tiles";
+		return "views/shop/list.tiles";
 		
 	}
 	
