@@ -13,11 +13,11 @@ public class ShopServiceImpl implements ShopService{
 	private ShopMapper shopMapper;
 
 	@Override
-	public List<GoodsVO> list(String cateCode,String middlecateCode) {
-			return shopMapper.list(cateCode,middlecateCode);
+	public List<GoodsVO> list(String middlecateCode) {
+		
+		return  shopMapper.list(middlecateCode);
 	}
 
-
 }
 
 
@@ -27,5 +27,5 @@ public class ShopServiceImpl implements ShopService{
 
 
 	
-}
+
 

@@ -8,7 +8,7 @@ import org.kosta.myproject.model.GoodsVO;
 @Mapper
 public interface ShopMapper {
 
-	List<GoodsVO> list(String cateCode,String middlecateCode);
+	List<GoodsVO> list(String middlecateCode);
 
 	
 }

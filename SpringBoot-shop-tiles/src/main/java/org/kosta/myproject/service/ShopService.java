@@ -8,5 +8,4 @@ public interface ShopService {
 
 	List<GoodsVO> list(String middlecateCode);
 
-	List<GoodsVO> list(String cateCode, String middlecateCode);
 }

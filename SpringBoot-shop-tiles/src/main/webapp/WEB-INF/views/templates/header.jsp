@@ -16,7 +16,7 @@
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu">
                                     <li class="drop"><a href="/">Home</a></li>
-                                    <li class="drop"><a href="views/shop/list?c=100">Top</a>
+                                    <li class="drop"><a href="views/shop/list">Top</a>
                                         <ul class="dropdown">
                                             <li><a href="shop/list?c=100&m=101">Neat</a></li>
                                             <li><a href="views/list?c=100&m=102shop/">Single portfolio</a></li>
