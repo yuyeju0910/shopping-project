@@ -18,8 +18,8 @@
                                     <li class="drop"><a href="/">Home</a></li>
                                     <li class="drop"><a href="views/shop/list?c=100">Top</a>
                                         <ul class="dropdown">
-                                            <li><a href="views/shop/list?c=100&m=101">Neat</a></li>
-                                            <li><a href="views/shop/list?c=100&m=102">Single portfolio</a></li>
+                                            <li><a href="shop/list?c=100&m=101">Neat</a></li>
+                                            <li><a href="views/list?c=100&m=102shop/">Single portfolio</a></li>
                                         </ul>
                                     </li>
                                     <li class="drop"><a href="/shop/list?c=200&m=201">Blog</a>
