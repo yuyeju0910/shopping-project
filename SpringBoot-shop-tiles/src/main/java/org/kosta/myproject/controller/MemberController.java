@@ -57,11 +57,7 @@ public class MemberController {
 	/* @Secure 어노테이션을 이용해 권한이 부여된 대상들만 서비스를 제공받도록 설정한다 
 	  권한이 ROLE_MEMBER 일때만 아래 메서드가 실행된다 */
 	//@Secured("ROLE_MEMBER")
-	@RequestMapping("enterCafe")
-	public ModelAndView enterCafe() {
-		//System.out.println("enterCafe");
-		return new ModelAndView("member/cafe.tiles", "count", memberService.getMemberCount());
-	}
+	
 
 	//@Secured("ROLE_MEMBER")
 	@RequestMapping("updateForm")

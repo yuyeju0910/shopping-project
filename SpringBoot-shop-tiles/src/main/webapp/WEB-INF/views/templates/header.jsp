@@ -16,15 +16,15 @@
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu">
                                     <li class="drop"><a href="/">Home</a></li>
-                                    <li class="drop"><a href="portfolio">portfolio</a>
+                                    <li class="drop"><a href="views/shop/list?c=100">Top</a>
                                         <ul class="dropdown">
-                                            <li><a href="portfolio">portfolio</a></li>
-                                            <li><a href="single-portfolio.html">Single portfolio</a></li>
+                                            <li><a href="views/shop/list?c=100&m=101">Neat</a></li>
+                                            <li><a href="views/shop/list?c=100&m=102">Single portfolio</a></li>
                                         </ul>
                                     </li>
-                                    <li class="drop"><a href="blog.html">Blog</a>
+                                    <li class="drop"><a href="/shop/list?c=200&m=201">Blog</a>
                                         <ul class="dropdown">
-                                            <li><a href="blog.html">blog 3 column</a></li>
+                                            <li><a href="/shop/list?c=200&m=201">blog 3 column</a></li>
                                             <li><a href="blog-details.html">Blog details</a></li>
                                         </ul>
                                     </li>

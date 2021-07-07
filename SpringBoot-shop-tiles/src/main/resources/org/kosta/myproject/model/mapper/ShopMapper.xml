@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sql Mapper -->
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.kosta.myproject.model.mapper.ShopMapper">
+<select id="list" resultType="goodsVO">
+ select g.gdsNum, g.gdsName, g.middlecateCode
+ ,g.gdsStock
+, g.gdsDes
+, g.gdsImg
+, g.gdsDate
+, g.gdsImg
+, g.gdsThumbImg
+, m.middlecateName
+, c.cateCode
+, c.cateName
+ from tbl_goods g inner join  middle_category m on g.middlecateCode =m.middlecateCode
+ inner join  goods_category c on m.cateCode =c.cateCode
+ where g.middlecateCode =#{middlecateCode};
+</select>
+ 	
+ 	
+</mapper>
+
+
+
+
+
+
+
+
+
+
