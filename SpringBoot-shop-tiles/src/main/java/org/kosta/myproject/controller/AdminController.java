@@ -146,12 +146,12 @@ public class AdminController {
 
 	
 	@RequestMapping("goods/productUpdateSuccess")//수정
-	public ModelAndView productUpdateSuccess(GoodsVO vo, MultipartFile file, HttpServletRequest req,Model model) throws IOException, Exception {
+	public String productUpdateSuccess(GoodsVO vo, MultipartFile file, HttpServletRequest req,Model model) throws IOException, Exception {
 		String uploadPath = req.getSession().getServletContext().getRealPath("/");
-		System.out.println("productUpdate");
+		System.out.println("productUpdate"+vo);
 
 	
-		
+			//기존에 있던거 삭제
 		 if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
 			 new File(uploadPath + req.getParameter("gdsImg")).delete();
 			new File(uploadPath + req.getParameter("gdsThumbImg")).delete();
@@ -167,18 +167,10 @@ public class AdminController {
 			
 			  vo.setGdsImg(req.getParameter("gdsImg"));
 			  vo.setGdsThumbImg(req.getParameter("gdsThumbImg"));
-			 }
-		
-		
-		
-		
+			 }		
 		adminService.productUpdate(vo);
-		
-		
-		
-		
-		return new ModelAndView("redirect:admin/goods/view.tiles?n="
-				+ vo.getGdsNum());
+	   
+		return "redirect:/admin/goods/productList"; //타일즈를 붙이면안댄다
 	}
 	
 	

@@ -220,7 +220,7 @@ select#category2 {
       <form role="form" method="post" id="updateForm" autocomplete="off" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/goods/productUpdateSuccess">
 			  <sec:csrfInput/><%-- csrf 토큰 --%>
 			  <div class="single-checkout-box select-option mt--40">
-       <input type="hidden" name="no" value="${goods.gdsNum}">
+       <input type="hidden" name="gdsNum" value="${goods.gdsNum}">
       
 		
       </div>
@@ -271,6 +271,7 @@ select#category2 {
 						<button type="submit" class="btn">수정</button>
 						<button type="reset" class="btn">취소</button>
 					</div>	
+					
 
  </form>
  <script>
