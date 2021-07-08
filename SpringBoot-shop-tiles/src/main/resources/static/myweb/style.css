@@ -55,6 +55,22 @@
   02. Scroll To Top
 ----------------------------------------*/
 
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
 #scrollUp {
     border: 3px solid rgba(0, 0, 0, 0.1);
     border-radius: 100%;
@@ -1381,6 +1397,7 @@ h3.widget-title-modal {
     width: 20%;
     float: left;
     overflow: hidden;
+    
 }
 .popular__product__container {
     margin-right: -15px;
@@ -3740,7 +3757,8 @@ a.shipping-calculator-button:hover {
 }
 .single-checkout-box select {
     margin-right: -5%;
-    width: 30%;
+    width: 20%;
+    margin-left:-19%;
 }
 .radio input[type="radio"],
 .radio-inline input[type="radio"],

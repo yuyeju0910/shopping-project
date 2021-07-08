@@ -53,8 +53,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="productUpdate" resultType="goodsVO">
 		update tbl_goods
-		set gdsName=#{gdsName},middlecateCode=#{middlecateCode},gdsPrice=#{gdsPrice},gdsStock=#{gdsStock},gdsDes=#{gdsDes}, gdsImg=#{gdsImg},gdsDate=#{gdsDate}		
-		where gdsNum=#{gdsNum}
+    	 set
+         gdsName = #{gdsName},
+         gdsPrice = #{gdsPrice},
+         gdsStock = #{gdsStock},
+         gdsDes = #{gdsDes},
+        
+         gdsImg = #{gdsImg},
+         gdsThumbImg = #{gdsThumbImg}
+        
+     where gdsNum = ${gdsNum}
 	</select>
 
 <!-- <select id="productUpdate" resultType="goodsVO">

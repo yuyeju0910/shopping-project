@@ -32,6 +32,15 @@ public class ShopController {
 
 	}
 	
+	// 상품 조회
+	@RequestMapping("views/shop/view")
+	public String view(@RequestParam("n") int gNum,Model model) {
+		GoodsVO  goods = 
+				shopserivce.view(gNum);
+		 model.addAttribute("goods", goods);
+		System.out.println(goods);
+		return "shop/view.tiles";
+	}
 
 
 }

@@ -24,6 +24,12 @@ public class ShopServiceImpl implements ShopService{
 		return shopMapper.categorylist2(middlecateCode);
 	}
 
+	@Override
+	public GoodsVO view(int gNum) {
+		
+		return shopMapper.view(gNum);
+	}
+
 	
 
 }

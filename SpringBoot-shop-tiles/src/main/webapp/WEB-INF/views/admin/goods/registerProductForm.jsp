@@ -7,6 +7,9 @@
    <head>
    
    <style>
+   .single-checkout-box.select-option.mt--40 {
+    margin-left: 5%;
+}
 .inputArea { margin:10px 0; }
 select { width:100px; }
 label { display:inline-block; width:70px; padding:5px; }
@@ -17,6 +20,13 @@ input#gdsName {
 
 .select_img img { margin:20px 0; }
 
+form{
+margin-left: -400px;
+}
+
+select#category2 {
+    margin-left: 10px;
+}
 </style>
    
    
@@ -203,7 +213,7 @@ input#gdsName {
       <form role="form" method="post" autocomplete="off" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/goods/registergoods">
 			  <sec:csrfInput/><%-- csrf 토큰 --%>
 			  <div class="single-checkout-box select-option mt--40">
-         <label> </label>
+       
             <select id="category">
              <option>전체</option>
              <c:forEach items="${category}" var="item">
@@ -232,6 +242,7 @@ input#gdsName {
 				<input type="text" id="gdsStock" name="gdsStock" />
 			</div>
 			
+			</form>
 				<div class="inputArea">
                         <label for="gdsDes">상품소개</label>
                         <textarea rows="5" cols="50" id="gdsDes" name="gdsDes"></textarea>

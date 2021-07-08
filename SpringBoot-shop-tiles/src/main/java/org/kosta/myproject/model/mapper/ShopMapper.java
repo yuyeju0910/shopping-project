@@ -10,6 +10,6 @@ public interface ShopMapper {
 
 	List<GoodsVO> categorylist(String cateCode);
 	List<GoodsVO> categorylist2(String middlecateCode);
-
-	
+	GoodsVO view(int gNum);
+		
 }

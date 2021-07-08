@@ -126,31 +126,59 @@ public class AdminController {
 
 	@RequestMapping("goods/productUpdate")//form
 	public String productUpdate(@RequestParam("n") int gNum,Model model) {
-		List<Map<String,String>>category =null;// CatagoryVO 형태의 List형 변수 category 선언
+//		List<Map<String,String>>category =null;// CatagoryVO 형태의 List형 변수 category 선언*/
 		GoodsVO vo=adminService.view(gNum);		  
-		category=adminService.showcategory(vo.getMiddlecateCode());
-		String middleCateCategoryName=null;
-		for(int i=0;i<category.size();i++) {
-			Map<String,String> map=category.get(i);
-			if(map.get("MIDDLECATECODE").equals(vo.getMiddlecateCode())) {
-				middleCateCategoryName=map.get("MIDDLECATENAME");
-				break;
-			}
-		}
-		model.addAttribute("middleCateCategoryName",middleCateCategoryName);
+//	category=adminService.showcategory(vo.getMiddlecateCode());
+//		String middleCateCategoryName=null;
+//		for(int i=0;i<category.size();i++) {
+//			Map<String,String> map=category.get(i);
+//			if(map.get("MIDDLECATECODE").equals(vo.getMiddlecateCode())) {
+//				middleCateCategoryName=map.get("MIDDLECATENAME");
+//				break;
+//			}
+//		}
+//		model.addAttribute("middleCateCategoryName",middleCateCategoryName);
 		model.addAttribute("goods",vo );
-		model.addAttribute("category", category);
+//	model.addAttribute("category", category);
 		return "admin/goods/productUpdate.tiles";
 	}
 	
 
 	
 	@RequestMapping("goods/productUpdateSuccess")//수정
-	public ModelAndView productUpdateSuccess(GoodsVO update,Model model) {
+	public ModelAndView productUpdateSuccess(GoodsVO vo, MultipartFile file, HttpServletRequest req,Model model) throws IOException, Exception {
+		String uploadPath = req.getSession().getServletContext().getRealPath("/");
 		System.out.println("productUpdate");
-		adminService.productUpdate(update);
+
+	
+		
+		 if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
+			 new File(uploadPath + req.getParameter("gdsImg")).delete();
+			new File(uploadPath + req.getParameter("gdsThumbImg")).delete();
+			 
+			String imgUploadPath = uploadPath + File.separator + "imgUpload"; 
+			 String ymdPath = UpLoadFileUtils.calcPath(imgUploadPath);  
+			String fileName=UpLoadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+			   
+	
+			  vo.setGdsImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);		  		  
+			  vo.setGdsThumbImg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);  
+			 } else {  
+			
+			  vo.setGdsImg(req.getParameter("gdsImg"));
+			  vo.setGdsThumbImg(req.getParameter("gdsThumbImg"));
+			 }
+		
+		
+		
+		
+		adminService.productUpdate(vo);
+		
+		
+		
+		
 		return new ModelAndView("redirect:admin/goods/view.tiles?n="
-				+ update.getGdsNum());
+				+ vo.getGdsNum());
 	}
 	
 	

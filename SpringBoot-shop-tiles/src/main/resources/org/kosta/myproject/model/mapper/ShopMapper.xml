@@ -51,6 +51,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  inner join  goods_category c on m.cateCode =c.cateCode
  where g.middlecateCode =#{middlecateCode}
 </select> 	
+<select id="view" resultType="goodsVO">
+		select
+		gdsNum,gdsName,middlecateCode,gdsPrice,gdsStock,gdsDes, gdsImg,
+		gdsDate,gdsThumbImg
+		from tbl_goods
+		where gdsNum=#{gdsNum}
+	</select>
  	
 </mapper>
 

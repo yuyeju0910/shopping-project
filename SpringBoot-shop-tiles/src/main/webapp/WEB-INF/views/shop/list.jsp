@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -278,10 +279,11 @@
          <!-- End Filter Menu -->
          <!-- End Product MEnu -->
          <div class="row">
-            <div class="product__list another-product-style">
+          <c:forEach items="${list}" var="list">
+           //
     
      <div class="col-md-3 single__pro col-lg-3 hidden-sm col-xs-12 cat--3">
-              <c:forEach items="${list}" var="list">
+             
                                 <div class="product foo">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
@@ -298,18 +300,18 @@
                                         </div>
                                     </div>
                                     <div class="product__details">
-                                        <h2><<a href="/shop/view?n=${list.gdsNum}">${list.gdsName}</a></h2>
+                                        <h2><a href="/views/shop/view?n=${list.gdsNum}">${list.gdsName}</a></h2>
                                         <ul class="product__price">
                                             <li class="old__price">$16.00</li>
                                             <li class="new__price">$10.00</li>
                                         </ul>
                                     </div>
                                 </div>
-                                  </c:forEach>
+                              
                             </div>
-                            
 
-              </div>
+             
+                  </c:forEach>
                   </div>
                   
                   
