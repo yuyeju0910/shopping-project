@@ -16,5 +16,5 @@ public interface AdminMapper {
 	GoodsVO view(int gNum);
 	void productUpdate(GoodsVO goods);
 	List<Map<String, String>>showcategory(String middlecateCode); 
-	
+	void deletePost(int n);
 }

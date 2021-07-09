@@ -174,7 +174,11 @@ public class AdminController {
 	}
 	
 	
+	@RequestMapping("goods/deleteview")
+	public String deletePost(int n) {
+		adminService.deletePost(n);
+		return "redirect:/admin/goods/productList";
+	}
 
-	
 	
 }

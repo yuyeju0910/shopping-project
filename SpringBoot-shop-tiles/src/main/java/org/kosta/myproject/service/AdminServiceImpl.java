@@ -44,6 +44,10 @@ public class AdminServiceImpl implements AdminService{
 	public List<Map<String, String>> showcategory(String middlecateCode) {
 		return adminMapper.showcategory(middlecateCode);
 	}
+	@Override
+	public void deletePost(int n) {
+		adminMapper.deletePost(n);
+	}
 
 
 	

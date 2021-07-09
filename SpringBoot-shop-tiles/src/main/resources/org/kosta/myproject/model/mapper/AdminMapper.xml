@@ -77,6 +77,11 @@ from  goods_category c, middle_category m
 where  m.middlecateCode=#{middlecateCode}
 </select>
 
+<!-- 6. 게시글 삭제 -->
+	<delete id="deletePost" parameterType="int">
+		DELETE FROM tbl_goods
+		WHERE gdsNum=#{gdsNum}
+	</delete>
 
 
 
