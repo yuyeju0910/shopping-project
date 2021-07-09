@@ -2,6 +2,9 @@ package org.kosta.myproject.service;
 
 import java.util.List;
 import javax.annotation.Resource;
+
+import org.kosta.myproject.model.CartListVO;
+import org.kosta.myproject.model.CartVO;
 import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.model.mapper.ShopMapper;
 import org.springframework.stereotype.Service;
@@ -28,6 +31,17 @@ public class ShopServiceImpl implements ShopService{
 	public GoodsVO view(int gNum) {
 		
 		return shopMapper.view(gNum);
+	}
+
+	@Override
+	public void addCart(CartVO cart) {
+		 shopMapper.addCart(cart);
+	}
+
+	@Override
+	public List<CartListVO> cartList(String id) {
+		
+		return shopMapper.cartList(id);
 	}
 
 	

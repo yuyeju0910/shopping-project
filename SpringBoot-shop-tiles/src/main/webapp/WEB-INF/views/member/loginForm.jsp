@@ -431,7 +431,7 @@
                         <sec:csrfInput />
                      </form>
                                     <li><span><a href="${pageContext.request.contextPath}/updateForm">회원정보수정</a></span>Update</li>
-                                     
+                                     <li><span><a href="${pageContext.request.contextPath}/views/shop/cartList">CartList</a></span>CartList</li>
                                     <%-- 아래는 회원관리자이자 일 때 보이는 메뉴 --%>
                                     <li><span><sec:authorize
                      access="hasRole('ROLE_ADMIN') and hasRole('ROLE_MEMBER')">

@@ -58,6 +58,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from tbl_goods
 		where gdsNum=#{gdsNum}
 	</select>
+	
+	<insert id="addCart">
+	insert into tbl_cart(cartNum, id, gdsNum, cartStock)
+		values(tbl_cart_seq.nextval,#{id},#{gdsNum},#{cartStock})	
+	</insert>
+	
+	<select id="cartList" resultType="CartListVO">
+ select
+     row_number() over(order by c.cartNum desc) as num,
+     c.cartNum, c.id, c.gdsNum, c.cartStock, c.addDate,
+     g.gdsName, g.gdsPrice, g.gdsThumbImg
+ from tbl_cart c
+     inner join tbl_goods g
+         on c.gdsNum = g.gdsNum   
+     where c.id = #{id}
+</select>
+	
  	
 </mapper>
 

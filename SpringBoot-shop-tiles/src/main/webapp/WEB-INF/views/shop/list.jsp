@@ -280,7 +280,7 @@
          <!-- End Product MEnu -->
          <div class="row">
           <c:forEach items="${list}" var="list">
-           //
+  
     
      <div class="col-md-3 single__pro col-lg-3 hidden-sm col-xs-12 cat--3">
              

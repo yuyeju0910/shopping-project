@@ -2,6 +2,64 @@
 /* SPRING SECURITY 를 적용할 경우 
  * 회원 가입시 비즈니스 계층(서비스)에서  회원가입과 권한을 함께 insert하도록 처리한다 (트랜잭션 처리 필요!)
  */
+----------------------------
+//cart 카트테이블 생성
+create table tbl_cart (
+    cartNum     number          not null,
+    id      varchar2(50)    not null,
+    gdsNum      number          not null,
+    cartStock   number          not null,
+    addDate     date            default sysdate,
+    primary key(cartNum, id) 
+);
+//카트 번호 시퀀스
+create sequence tbl_cart_seq;
+
+select *from tbl_member;
+-----------
+alter table tbl_cart
+    add constraint tbl_cart_id foreign key(id)
+    references tbl_member(id);
+    
+
+alter table tbl_cart
+    add constraint tbl_cart_gdsNum foreign key(gdsNum)
+    references tbl_goods(gdsNum);    
+    
+  select *from tbl_cart;  
+    --카트담기-
+ insert into tbl_cart(cartNum,id,gdsNum,cartStock)  
+ values(tbl_cart_seq.nextval,'yyj1',89,99);
+
+select*from tbl_goods;
+--------------------
+--카트테이블 조인
+--row_number() over(order by c.cartNum desc) as num ->출력된 결과에순서 표시
+<!-- 카트 리스트 -->
+<select id="cartList" resultType="CartListVO">
+ select
+     row_number() over(order by c.cartNum desc) as num,
+     c.cartNum, c.id, c.gdsNum, c.cartStock, c.addDate,
+     g.gdsName, g.gdsPrice, g.gdsThumbImg
+ from tbl_cart c
+     inner join tbl_goods g
+         on c.gdsNum = g.gdsNum   
+     where c.id = #{id}
+</select>
+---
+ select
+     row_number() over(order by c.cartNum desc) as num,
+     c.cartNum, c.id, c.gdsNum, c.cartStock, c.addDate,
+     g.gdsName, g.gdsPrice, g.gdsThumbImg
+ from tbl_cart c
+     inner join tbl_goods g
+         on c.gdsNum = g.gdsNum   
+     where c.id = 'admin';
+
+---
+
+
+---------------------------
 
 
 commit
@@ -94,7 +152,7 @@ create table tbl_goods (
   constraint fk_middle_category foreign key (middlecateCode) references middle_category(middlecateCode)
 );
 
-select *from tbl_goods
+select *from tbl_goods;
 
 select *from middle_category
 ------------------------------------------
