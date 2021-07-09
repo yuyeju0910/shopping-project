@@ -15,5 +15,5 @@ public interface ShopMapper {
 	GoodsVO view(int gNum);
 	void addCart(CartVO cart);
 	List<CartListVO> cartList(String id); 
-		
+	void deleteCart(CartVO cartvo);	
 }

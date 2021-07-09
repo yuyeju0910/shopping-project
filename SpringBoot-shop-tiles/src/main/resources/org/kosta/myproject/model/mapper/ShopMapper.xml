@@ -74,6 +74,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
          on c.gdsNum = g.gdsNum   
      where c.id = #{id}
 </select>
+
+<delete id="deleteCart">
+delete tbl_cart  
+where cartNum = #{cartNum}
+         and id = #{id}
+</delete>
 	
  	
 </mapper>

@@ -5,6 +5,7 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+
 <div class="body__overlay"></div>
 <!-- Start Offset Wrapper -->
 <div class="offset__wrapper">
@@ -193,9 +194,9 @@
 		<div class="row">
 
 			<div class="col-md-12 col-sm-12 col-xs-12">
-${cartList}
+				${cartList}
 				<form action="#">
-<c:forEach items="${cartList}" var="list">
+
 					<div class="table-content table-responsive">
 
 						<table>
@@ -211,21 +212,33 @@ ${cartList}
 								</tr>
 							</thead>
 							<tbody>
-								
+								<c:forEach items="${cartList}" var="list">
 									<tr>
 										<td class="product-thumbnail"><a href="#"><img
-												src="${list.gdsThumbImg}" /></a></td>
+												src="${list.gdsThumImg}" /></a></td>
 										<td class="product-name"><a href="#">${list.gdsName}</a></td>
-										<td class="product-price"><span class="amount"><fmt:formatNumber
-													pattern="###,###,###" value="${list.gdsPrice}" /></span></td>
+										<td class="product-price"><span class="amount"><%-- ${list.gdsPrice} --%><fmt:formatNumber
+													pattern="###,###,###" value="${list.gdsPrice*1}" /></span></td>
 										<td class="product-quantity">${list.cartStock}</td>
 										<td class="product-subtotal"><fmt:formatNumber
 												pattern="###,###,###"
 												value="${list.gdsPrice * list.cartStock}" /></td>
-										<td class="product-remove"><a href="#">X</a></td>
+										<td class="product-remove"><a href="#">X</a>
+											<input type="hidden" name="gdsName" value="${list.gdsNum}">
+										</td>
 									</tr>
-								
+									<script>
+									//삭제 버튼 클릭 이벤트
 
+								/* 	$(document).on('click', '.product-remove', function(){
+								    var url = "${pageContext.request.contextPath}/board/deleteBoard";
+								    url = url + "?bid=" + ${boardContent.bid};
+										location.href = url;
+									}); */
+									
+									</script>
+
+								</c:forEach>
 							</tbody>
 
 						</table>
@@ -267,9 +280,9 @@ ${cartList}
 										<tr class="order-total">
 											<th>Total</th>
 											<td><strong><span class="amount"><fmt:formatNumber
-												pattern="###,###,###"
-												value="${cartList.gdsPrice * cartList.cartStock}" /></span></strong>
-											</td>
+															pattern="###,###,###"
+															value="${totalPrice}" /> 
+															</span></strong></td>
 										</tr>
 									</tbody>
 								</table>
@@ -279,7 +292,6 @@ ${cartList}
 							</div>
 						</div>
 					</div>
-</c:forEach>
 				</form>
 
 			</div>

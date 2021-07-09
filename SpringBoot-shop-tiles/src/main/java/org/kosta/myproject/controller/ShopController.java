@@ -66,10 +66,25 @@ public class ShopController {
 	MemberVO member =(MemberVO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 	String id= member.getId();
 	List<CartListVO>cartList =shopserivce.cartList(id);
+	int totalPrice=0;
+	for(int i =0; i<cartList.size(); i++) {
+	 System.out.println(cartList.get(i).getGdsPrice() *cartList.get(i).getCartStock());
+	 int price = cartList.get(i).getGdsPrice() *cartList.get(i).getCartStock();
+	 
+	 totalPrice+=price;
+	}
+	System.out.println(totalPrice);
+	
+	model.addAttribute("totalPrice",totalPrice);
+	//${cartList.gdsPrice * cartList.cartStock}"
 	model.addAttribute("cartList", cartList);
-	System.out.println(cartList);
+	//System.out.println(cartList);
 	return "shop/cartList.tiles"; 
 	}
+	/*
+	 * @RequestMapping("views/shop/cartList") public String deleteCart(CartVO
+	 * cartvo) { shopserivce.deleteCart(cartvo); return "shop/cartList.tiles"; }
+	 */
 	
 	
 }

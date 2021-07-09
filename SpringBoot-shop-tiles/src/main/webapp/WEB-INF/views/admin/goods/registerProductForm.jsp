@@ -229,7 +229,7 @@ select#category2 {
 		
 			<div class="single-checkout-box">
 				<label for="gdsName">상품명</label>
-				<input type="text"  calss="form-control"id="gdsName" aria-label="sizing example input" name="gdsName" />
+				<input type="text" id="gdsName" aria-label="sizing example input" name="gdsName" />
 			</div>
 			
 			<div class="single-checkout-box">
@@ -242,7 +242,7 @@ select#category2 {
 				<input type="text" id="gdsStock" name="gdsStock" />
 			</div>
 			
-			</form>
+	
 				<div class="inputArea">
                         <label for="gdsDes">상품소개</label>
                         <textarea rows="5" cols="50" id="gdsDes" name="gdsDes"></textarea>
@@ -267,11 +267,9 @@ select#category2 {
 			</div>
 		
 
- 
+ 		
  <script>
- 
 
- 
   $("#gdsImg").change(function(){
    if(this.files && this.files[0]) {
     var reader = new FileReader;
@@ -284,7 +282,7 @@ select#category2 {
  </script>
  <%=request.getRealPath("/") %>
  
-</div>
+
 			
 			<div class="inputArea">
 				<button type="submit" id="register_Btn" class="btn btn-primary">등록</button>			
@@ -294,8 +292,8 @@ select#category2 {
       
       
       </div>
-      
-   </div>
+      </div>
+   
    <script>
    //1. 위에 대분류 카테고리 선택
    $(document).ready(function() {

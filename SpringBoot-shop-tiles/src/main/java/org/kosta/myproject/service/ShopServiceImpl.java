@@ -44,6 +44,12 @@ public class ShopServiceImpl implements ShopService{
 		return shopMapper.cartList(id);
 	}
 
+	@Override
+	public void deleteCart(CartVO cartvo) {
+		 shopMapper.deleteCart(cartvo);
+	}
+
+
 	
 
 }
