@@ -78,7 +78,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <delete id="deleteCart">
 delete tbl_cart  
 where cartNum = #{cartNum}
-         and id = #{id}
+  
 </delete>
 	
  	

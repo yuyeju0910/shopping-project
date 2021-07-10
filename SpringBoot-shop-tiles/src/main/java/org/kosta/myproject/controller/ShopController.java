@@ -86,5 +86,20 @@ public class ShopController {
 	 * cartvo) { shopserivce.deleteCart(cartvo); return "shop/cartList.tiles"; }
 	 */
 	
+	@RequestMapping("views/shop/deleteCart")
+	public String deleteCart(int cartNum){
+		 shopserivce.deleteCart(cartNum);
+		return "redirect:deleteProduct";
+				
+	}
+	
+	@RequestMapping("views/shop/deleteProduct")
+	public String deleteProduct() {
+		return "shop/deleteProduct.tiles";
+	}
+   
+	
+	
+	
 	
 }

@@ -45,8 +45,8 @@ public class ShopServiceImpl implements ShopService{
 	}
 
 	@Override
-	public void deleteCart(CartVO cartvo) {
-		 shopMapper.deleteCart(cartvo);
+	public void deleteCart(int cartNum) {
+		 shopMapper.deleteCart(cartNum);
 	}
 
 

@@ -223,7 +223,7 @@
 										<td class="product-subtotal"><fmt:formatNumber
 												pattern="###,###,###"
 												value="${list.gdsPrice * list.cartStock}" /></td>
-										<td class="product-remove"><a href="#">X</a>
+										<td class="product-remove"><a href="${pageContext.request.contextPath}/views/shop/deleteCart?cartNum=${list.cartNum}">X</a>
 											<input type="hidden" name="gdsName" value="${list.gdsNum}">
 										</td>
 									</tr>
