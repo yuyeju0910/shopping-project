@@ -77,7 +77,7 @@
                                             <li><a href="loginForm">login & register</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact">contact</a></li>
+                                    <li><a href="/contact">contact</a></li>
                                 </ul>
                             </nav>
                             <div class="mobile-menu clearfix visible-xs visible-sm">
@@ -120,8 +120,8 @@
                             <ul class="menu-extra">
                      
                                 <li class="search search__open hidden-xs"><span class="ti-search"></span></li>
-                                <li><a href="loginForm"><span class="ti-user"></span></a></li>
-                                 <li><a href="cartList"><span class="ti-shopping-cart"></span></a></li>
+                                <li><a href="/loginForm"><span class="ti-user"></span></a></li>
+                                 <li><a href="/views/shop/cartList"><span class="ti-shopping-cart"></span></a></li>
                                 <li class="toggle__menu hidden-xs hidden-sm"><span class="ti-menu"></span></li>
                             </ul>
                         </div>
