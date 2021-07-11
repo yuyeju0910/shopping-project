@@ -40,12 +40,12 @@
 
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Admin Table</h1>
+                    <div class="container">
+                        <h2 class="section-title-3">Admin Table</h2>
                       <br>
                         <div class="card mb-4">
                             <div class="card-body">
-                                미뇽플레이스
+                                Mignon Place
                             </div>
                         </div>
                         <div class="card mb-4">
