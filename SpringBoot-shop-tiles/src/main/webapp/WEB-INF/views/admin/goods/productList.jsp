@@ -42,12 +42,10 @@
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Admin Table</h1>
-                      
+                      <br>
                         <div class="card mb-4">
                             <div class="card-body">
-                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
-                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
-                                .
+                                미뇽플레이스
                             </div>
                         </div>
                         <div class="card mb-4">
@@ -60,24 +58,14 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
+                                            <th>상품정보</th>
                                             <th>상품명</th>
-                                            <th>상품가격</th>
                                             <th>상품코드</th>
+                                            <th>상품가격</th>
                                             <th>상품재고</th>
-                                            <th>업상품소개</th>
-                                            <th>상품업데이트</th>
+                                            <th>업데이트시간</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                          <c:forEach items="${productList}" var="list">
                      <tr>

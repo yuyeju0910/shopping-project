@@ -7,9 +7,6 @@
    <head>
    
    <style>
-   .single-checkout-box.select-option.mt--40 {
-    margin-left: 5%;
-}
 .inputArea { margin:10px 0; }
 select { width:100px; }
 label { display:inline-block; width:70px; padding:5px; }
@@ -20,13 +17,6 @@ input#gdsName {
 
 .select_img img { margin:20px 0; }
 
-form{
-margin-left: -400px;
-}
-
-select#category2 {
-    margin-left: 10px;
-}
 </style>
    
    
@@ -197,52 +187,77 @@ select#category2 {
    </div>
    <!-- End Offset Wrapper -->
    <!-- Start Login Register Area -->
-   <div class="htc__login__register bg__white ptb--130"
-      style="background: rgba(0, 0, 0, 0) url(${pageContext.request.contextPath}/myweb/images/bg/5.jpg) no-repeat scroll center center / cover ;">
+<!--    상단부분 회색 배경 삽입 -->
+   <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(/myweb/images/bg/2.jpg) no-repeat scroll center center / cover ;">
+	<div class="ht__bradcaump__wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="bradcaump__inner text-center">
+						<h2 class="bradcaump-title">Product Register</h2>
+						<nav class="bradcaump-inner">
+							<a class="breadcrumb-item" href="#">Product register</a>
+							<span class="brd-separetor">/</span> <span class="breadcrumb-item active">Update</span>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+   <div class="our-checkout-area ptb--120 bg__white" style="justify-content: center;">
       <div class="container">
          <div class="row">
             <div class="col-md-6 col-md-offset-3">
-               <ul class="login__register__menu" role="tablist">
+               <!-- 주황색 register <ul class="login__register__menu" role="tablist">
                   <li role="presentation" class="login active"><a
                      href="register" role="tab" data-toggle="tab">Register</a></li>
-
-               </ul>
+               </ul> -->
+               <div class="checkout-form">
+						<h2 class="section-title-3">Register</h2>
+						<div class="checkout-form-inner">
+						</div>
+						</div>
             </div>
          </div>
-      
-      <form role="form" method="post" autocomplete="off" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/goods/registergoods">
+          <div class="col-xs-6"><br><br>
+      <img src="/myweb/images/mypage/5.png"></div>
+     <form role="form" method="post" autocomplete="off" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/goods/registergoods">
 			  <sec:csrfInput/><%-- csrf 토큰 --%>
+			  <div class="checkout-form" style="display:block; justify-content: center;">
 			  <div class="single-checkout-box select-option mt--40">
-       
+				
+         <label style="visibility:hidden;">대분류</label>
             <select id="category">
-             <option>전체</option>
+             <option>대분류*</option>
              <c:forEach items="${category}" var="item">
                <option value="${item.CATECODE}">${item.CATENAME}</option>
                </c:forEach>
-            </select>
-             <label></label>
+            </select><br><br>
+            
+             <label style="visibility:hidden;">중분류</label>
               <select id="category2" name="middlecateCode">
-               <option value="">전체</option>
+               <option value="">중분류*</option>
             </select>
 
       </div>
 		
 			<div class="single-checkout-box">
-				<label for="gdsName">상품명</label>
-				<input type="text" id="gdsName" aria-label="sizing example input" name="gdsName" />
+				<label for="gdsName"></label>
+				<input type="text" id="gdsName" aria-label="sizing example input" name="gdsName" placeholder="상품명*" />
 			</div>
 			
 			<div class="single-checkout-box">
-				<label for="gdsPrice">상품가격</label>
-				<input type="text" id="gdsPrice" name="gdsPrice" />
+				<label for="gdsPrice"></label>
+				<input type="text" id="gdsPrice" name="gdsPrice" placeholder="상품가격*" />
 			</div>
 			
 			<div class="single-checkout-box">
-				<label for="gdsStock">상품수량</label>
-				<input type="text" id="gdsStock" name="gdsStock" />
-			</div>
-			
-	
+				<label for="gdsStock"></label>
+				<input type="text" id="gdsStock" name="gdsStock" placeholder="상품수량*"/>
+			</div><br><br><br><br>
+
 				<div class="inputArea">
                         <label for="gdsDes">상품소개</label>
                         <textarea rows="5" cols="50" id="gdsDes" name="gdsDes"></textarea>
@@ -257,18 +272,16 @@ select#category2 {
 						 CKEDITOR.replace("gdsDes", ckeditor_config);
 						</script>
                     </div>
-			
+
 			<div class="inputArea">
 				<label for="gdsImg">이미지</label>
 				<input type="file" id="gdsImg" name="file" />
 				<div class="select_img"><img src="" /></div>
 				
-				
-			</div>
-		
+				</div>
 
- 		
- <script>
+			</div>
+<script>
 
   $("#gdsImg").change(function(){
    if(this.files && this.files[0]) {
@@ -280,20 +293,15 @@ select#category2 {
    }
   });
  </script>
- <%=request.getRealPath("/") %>
- 
+ <%=request.getRealPath("/") %>		
 
-			
-			<div class="inputArea">
-				<button type="submit" id="register_Btn" class="btn btn-primary">등록</button>			
-			</div>
-			
-			</form>
+			<br><br><input type="submit" class="btn-register" value="등록"
+						style="border-radius: 25px; padding: 12px 10px; width: 7%">
+</form>
       
       
       </div>
       </div>
-   
    <script>
    //1. 위에 대분류 카테고리 선택
    $(document).ready(function() {
