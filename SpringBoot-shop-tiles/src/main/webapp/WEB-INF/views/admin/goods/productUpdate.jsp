@@ -273,7 +273,6 @@ label {
 							shiftEnterMode : CKEDITOR.ENTER_P,
 							  filebrowserUploadUrl : "${pageContext.request.contextPath}/admin/goods/registergoods"
 					};
-					
 					CKEDITOR.replace("gdsDes", ckeditor_config);
 				</script>
 				
