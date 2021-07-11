@@ -30,6 +30,13 @@ padding: 12px 10px;
 width: 7%;
 margin-right:5px;
 }
+
+label {
+	display: inline-block;
+	width: 100px;
+	padding: 5px;
+	font-size: 14px;
+}
 </style>
    
    
@@ -241,17 +248,17 @@ margin-right:5px;
       </div><br><br>
 		
 			<div class="single-checkout-box"">
-				<label for="gdsName">상품명</label>
+				<label for="gdsName">상품명*</label>
 				<input type="text"  calss="form-control" id="gdsName" aria-label="sizing example input" name="gdsName" value="${goods.gdsName}" />
 			</div>
 			
 			<div class="single-checkout-box">
-				<label for="gdsPrice">상품가격</label><br><br>
+				<label for="gdsPrice">상품가격*</label><br><br>
 				<input type="text" id="gdsPrice" name="gdsPrice" value="${goods.gdsPrice}" />
 			</div>
 			
 			<div class="single-checkout-box">
-				<label for="gdsStock">상품수량</label><br><br>
+				<label for="gdsStock">상품수량*</label><br><br>
 				<input type="text" id="gdsStock" name="gdsStock" value="${goods.gdsStock}" />
 			</div>
 			
