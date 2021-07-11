@@ -121,7 +121,8 @@
                      
                                 <li class="search search__open hidden-xs"><span class="ti-search"></span></li>
                                 <li><a href="loginForm"><span class="ti-user"></span></a></li>
-                                <p></p><li class="toggle__menu hidden-xs hidden-sm"><span class="ti-menu"></span></li>
+                                 <li><a href="cartList"><span class="ti-shopping-cart"></span></a></li>
+                                <li class="toggle__menu hidden-xs hidden-sm"><span class="ti-menu"></span></li>
                             </ul>
                         </div>
                   
