@@ -36,8 +36,8 @@
 </head>
 <sec:authorize access="hasRole('ROLE_ADMIN')">
    <sec:authentication var="mvo" property="principal" />
+   
 <body class="sb-nav-fixed">
-
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container">

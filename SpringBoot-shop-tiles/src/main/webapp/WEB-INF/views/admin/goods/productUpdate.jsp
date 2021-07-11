@@ -14,9 +14,6 @@
 	});
 </script>
    <style>
-   .single-checkout-box.select-option.mt--40 {
-    margin-left: 5%;
-}
 .inputArea { margin:10px 0; }
 select { width:100px; }
 label { display:inline-block; width:70px; padding:5px; }
@@ -27,12 +24,11 @@ input#gdsName {
 
 .select_img img { margin:20px 0; }
 
-form{
-margin-left: -400px;
-}
-
-select#category2 {
-    margin-left: 10px;
+.btn-register {
+border-radius: 25px; 
+padding: 12px 10px; 
+width: 7%;
+margin-right:5px;
 }
 </style>
    
@@ -204,44 +200,62 @@ select#category2 {
    </div>
    <!-- End Offset Wrapper -->
    <!-- Start Login Register Area -->
-   <div class="htc__login__register bg__white ptb--130"
-      style="background: rgba(0, 0, 0, 0) url(${pageContext.request.contextPath}/myweb/images/bg/5.jpg) no-repeat scroll center center / cover ;">
+   <!--    상단부분 회색 배경 삽입 -->
+   <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(/myweb/images/bg/2.jpg) no-repeat scroll center center / cover ;">
+	<div class="ht__bradcaump__wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="bradcaump__inner text-center">
+						<h2 class="bradcaump-title">Product Update</h2>
+						<nav class="bradcaump-inner">
+							<span class="breadcrumb-item">Product register</span>
+							<span class="brd-separetor">/</span> <span class="breadcrumb-item active">Update</span>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <div class="our-checkout-area ptb--120 bg__white" style="justify-content: center;">
       <div class="container">
          <div class="row">
             <div class="col-md-6 col-md-offset-3">
-               <ul class="login__register__menu" role="tablist">
-                  <li role="presentation" class="login active"><a
-                     href="register" role="tab" data-toggle="tab">Register</a></li>
-
-               </ul>
+                <div class="checkout-form">
+						<h2 class="section-title-3">Update</h2>
+						<div class="checkout-form-inner">
+						</div>
+						</div>
             </div>
          </div>
-      <div>
+         <div class="col-xs-6"><br><br>
+      <img src="/myweb/images/mypage/5.png"></div>
       <form role="form" method="post" id="updateForm" autocomplete="off" enctype="multipart/form-data" action="${pageContext.request.contextPath}/admin/goods/productUpdateSuccess">
 			  <sec:csrfInput/><%-- csrf 토큰 --%>
 			  <div class="single-checkout-box select-option mt--40">
        <input type="hidden" name="gdsNum" value="${goods.gdsNum}">
       
 		
-      </div>
+      </div><br><br>
 		
-			<div class="single-checkout-box">
+			<div class="single-checkout-box"">
 				<label for="gdsName">상품명</label>
 				<input type="text"  calss="form-control" id="gdsName" aria-label="sizing example input" name="gdsName" value="${goods.gdsName}" />
 			</div>
 			
 			<div class="single-checkout-box">
-				<label for="gdsPrice">상품가격</label>
+				<label for="gdsPrice">상품가격</label><br><br>
 				<input type="text" id="gdsPrice" name="gdsPrice" value="${goods.gdsPrice}" />
 			</div>
 			
 			<div class="single-checkout-box">
-				<label for="gdsStock">상품수량</label>
+				<label for="gdsStock">상품수량</label><br><br>
 				<input type="text" id="gdsStock" name="gdsStock" value="${goods.gdsStock}" />
 			</div>
 			
-			
-					<div class="inputArea">
+					<div class="inputArea" style="margin-top:170px;">
 				<label for="gdsDes">상품소개</label>
 				<textarea rows="5" cols="50" id="gdsDes" name="gdsDes">${goods.gdsDes}</textarea>
 				
@@ -268,9 +282,9 @@ select#category2 {
 				</div>
 				</div>
 					<div class="btnArea">
-						<button type="submit" class="btn">수정</button>
-						<button type="reset" class="btn">취소</button>
-					</div>	
+						<button type="submit" class="btn-register">수정</button>
+						<button type="reset" class="btn-register">취소</button>
+					</div><br>
 					
 
  </form>
@@ -291,12 +305,7 @@ select#category2 {
  <%=request.getRealPath("/") %>
  
 </div>
-			
-		
-			
-			
-      
-      
+
       </div>
       
 

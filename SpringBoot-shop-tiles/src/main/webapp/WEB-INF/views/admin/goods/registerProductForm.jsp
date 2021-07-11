@@ -196,7 +196,7 @@ input#gdsName {
 					<div class="bradcaump__inner text-center">
 						<h2 class="bradcaump-title">Product Register</h2>
 						<nav class="bradcaump-inner">
-							<a class="breadcrumb-item" href="#">Product register</a>
+							<span class="breadcrumb-item">Product register</span>
 							<span class="brd-separetor">/</span> <span class="breadcrumb-item active">Update</span>
 						</nav>
 					</div>
@@ -256,7 +256,7 @@ input#gdsName {
 			<div class="single-checkout-box">
 				<label for="gdsStock"></label>
 				<input type="text" id="gdsStock" name="gdsStock" placeholder="상품수량*"/>
-			</div><br><br><br><br>
+			</div><br><br><br>
 
 				<div class="inputArea">
                         <label for="gdsDes">상품소개</label>
@@ -293,10 +293,11 @@ input#gdsName {
    }
   });
  </script>
+<input type="submit" class="btn-register" value="등록"
+						style="border-radius: 25px; padding: 12px 10px; width: 7%">
+						 <br><br>
  <%=request.getRealPath("/") %>		
 
-			<br><br><input type="submit" class="btn-register" value="등록"
-						style="border-radius: 25px; padding: 12px 10px; width: 7%">
 </form>
       
       
