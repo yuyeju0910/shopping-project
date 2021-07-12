@@ -198,6 +198,15 @@ public class ShopController {
 	}
 	
 	
+	// 주문 상세 목록 - 상태 변경
+	@RequestMapping("/views/shop/orderViewdelivery")
+	public String delivery(OrderVO order) throws Exception {
+	 shopserivce.delivery(order);
+	 return  "shop/register.tiles";
+		/* return "redirect:/shop/orderView?n=" + order.getOrderId(); */
+	}
+	
+	
 	
 	
 

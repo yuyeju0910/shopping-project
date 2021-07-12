@@ -24,5 +24,6 @@ public interface ShopMapper {
 	void cartAllDelete(String id);
 	List<OrderVO> orderList(OrderVO order);
 	List <OrderListVO> orderView(OrderVO order);
+	void delivery(OrderVO order);
 	
 }

@@ -235,9 +235,8 @@
 										</span></td>
 										</td>
 										${list.addr1} ${list.addr2} ${list.addr3}
-										<td class="product-remove"><!-- <a -->
-											<%-- href="${pageContext.request.contextPath}/views/shop/deleteCart?cartNum=${list.cartNum}"> --%>X</a>
-											<%-- <input type="hidden" name="gdsName" value="${list.gdsNum}"> --%>
+										<td class="product-remove">
+										  ${list.delivery}
 										</td>
 									</tr>
 									

@@ -32,6 +32,7 @@ private int cartStock;
 private String gdsName;
 private String gdsThumbImg;
 private  int gdsPrice;
+private String delivery;
 public String getOrderId() {
 	return orderId;
 }
@@ -122,15 +123,20 @@ public int getGdsPrice() {
 public void setGdsPrice(int gdsPrice) {
 	this.gdsPrice = gdsPrice;
 }
+public String getDelivery() {
+	return delivery;
+}
+public void setDelivery(String delivery) {
+	this.delivery = delivery;
+}
 @Override
 public String toString() {
 	return "OrderListVO [orderId=" + orderId + ", id=" + id + ", orderRec=" + orderRec + ", addr1=" + addr1 + ", addr2="
 			+ addr2 + ", addr3=" + addr3 + ", orderPhon=" + orderPhon + ", amount=" + amount + ", orderDate="
 			+ orderDate + ", orderDetailsNum=" + orderDetailsNum + ", gdsNum=" + gdsNum + ", cartStock=" + cartStock
-			+ ", gdsName=" + gdsName + ", gdsThumbImg=" + gdsThumbImg + ", gdsPrice=" + gdsPrice + "]";
+			+ ", gdsName=" + gdsName + ", gdsThumbImg=" + gdsThumbImg + ", gdsPrice=" + gdsPrice + ", delivery="
+			+ delivery + "]";
 }
-
-
 
 
 

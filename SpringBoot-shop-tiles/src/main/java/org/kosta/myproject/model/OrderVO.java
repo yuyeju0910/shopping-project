@@ -24,6 +24,7 @@ private String addr3;
 private String orderPhon;
 private int amount;
 private Date orderDate;
+private String delivery;
 public String getOrderId() {
 	return orderId;
 }
@@ -78,11 +79,17 @@ public Date getOrderDate() {
 public void setOrderDate(Date orderDate) {
 	this.orderDate = orderDate;
 }
+public String getDelivery() {
+	return delivery;
+}
+public void setDelivery(String delivery) {
+	this.delivery = delivery;
+}
 @Override
 public String toString() {
 	return "OrderVO [orderId=" + orderId + ", id=" + id + ", orderRec=" + orderRec + ", addr1=" + addr1 + ", addr2="
 			+ addr2 + ", addr3=" + addr3 + ", orderPhon=" + orderPhon + ", amount=" + amount + ", orderDate="
-			+ orderDate + "]";
+			+ orderDate + ", delivery=" + delivery + "]";
 }
 
 

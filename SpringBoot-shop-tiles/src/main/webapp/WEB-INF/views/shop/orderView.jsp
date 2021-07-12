@@ -41,6 +41,10 @@
 	background: #fff;
 	margin-right: 20px;
 }
+
+.deliveryChange { text-align:right; }
+.delivery1_btn,
+.delivery2_btn { font-size:16px; background:#fff; border:1px solid #999; margin-left:10px; }
 </style>
 
 <div class="body__overlay"></div>
@@ -232,7 +236,7 @@
 
 			<div class="col-md-12 col-sm-12 col-xs-12">
 			
-				<form action="#" >
+			
 
 					<div class="table-content table-responsive">
 
@@ -265,6 +269,36 @@
 												value="${orderView.amount}" />
 											원
 										</p>
+										<p><span>상태</span>${orderView.delivery}</p>
+										<div class="deliveryChange">
+										<form role="form" class="deliveryForm" action="${pageContext.request.contextPath}/views/shop/orderViewdelivery">
+						
+  						<input type="hidden" name="orderId" value="${orderView.orderId}" />
+ 			 			<input type="hidden" name="delivery" class="delivery" value="" />
+			
+										
+							<button type="button" class="delivery1_btn">배송중</button>
+						<button type="button" class="delivery2_btn">배송완료</button>
+						
+						<script>
+						
+						$(".delivery1_btn").click(function() {
+							$(".delivery").val("배송중");
+							run();
+						});
+						
+						$(".delivery2_btn").click(function() {
+							$(".delivery").val("배송완료");
+							run();
+						});
+						
+						function run (){
+							$(".deliveryForm").submit();
+						}
+						
+						</script>
+						</form>
+										</div>
 									</c:if>
 
 								</c:forEach>
@@ -284,6 +318,7 @@
      <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.gdsPrice}" /> 원<br />
      <span>구입 수량</span>${orderView.cartStock} 개<br />
      <span>최종 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.gdsPrice * orderView.cartStock}" /> 원                  
+    
     </p>
    </div>
   </li>     

@@ -2,6 +2,12 @@
 /* SPRING SECURITY 를 적용할 경우 
  * 회원 가입시 비즈니스 계층(서비스)에서  회원가입과 권한을 함께 insert하도록 처리한다 (트랜잭션 처리 필요!)
  */
+--tbl_order에 새로운 컬럼추가
+alter table tbl_order
+add(
+  	delivery varchar2(20) default '배송준비'
+);
+
 
 --
 select *from tbl_cart;

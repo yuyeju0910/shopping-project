@@ -101,14 +101,14 @@ insert into tbl_order_details(orderDetailsNum, orderId, gdsNum, cartStock)
 	<!-- 특정 유저의 주문 목록 -->
 	<select id="orderList" resultType="OrderVO">
 	select 
-		 orderId, id, orderRec, addr1, addr2, addr3,orderPhon,amount,orderDate
+		 orderId, id, orderRec, addr1, addr2, addr3,orderPhon,amount,orderDate,delivery
 	from tbl_order
 	where id =#{id}	 
 	</select>	
 <!-- 특정 주문목록 -->	
 	<select id="orderView" resultType="OrderListVO">
 	 select
-     o.orderId, o.id, o.orderRec, o.addr1, o.addr2, o.addr3, o.orderPhon, o.amount, o.orderDate,
+     o.orderId, o.id, o.orderRec, o.addr1, o.addr2, o.addr3, o.orderPhon, o.amount, o.orderDate,o.delivery,
      d.orderDetailsNum, d.gdsNum, d.cartStock,
      g.gdsName, g.gdsThumbImg, g.gdsPrice
  from tbl_order o
@@ -119,6 +119,15 @@ insert into tbl_order_details(orderDetailsNum, orderId, gdsNum, cartStock)
      where o.id = #{id}
          and o.orderId = #{orderId}
 </select>
+
+<update id="delivery">
+ update tbl_order
+ set delivery = #{delivery}
+ where orderId =#{orderId}
+
+
+</update>
+
 
  	
 </mapper>

@@ -79,6 +79,11 @@ public class ShopServiceImpl implements ShopService{
 		return shopMapper.orderView(order);
 	}
 
+	@Override
+	public void delivery(OrderVO order) {
+		shopMapper.delivery(order);
+	}
+
 
 	
 
