@@ -91,7 +91,7 @@ public class MemberController {
 	public String registerForm() {
 		return "member/registerForm.tiles";
 	}
-	@RequestMapping(value = "user/registerMember", method = RequestMethod.POST)
+	@RequestMapping(value = "user/rgisterMember", method = RequestMethod.POST)
 	public String register(MemberVO vo) {
 		memberService.registerMember(vo);
 		return "redirect:register-ok";

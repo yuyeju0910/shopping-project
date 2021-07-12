@@ -2,7 +2,48 @@
 /* SPRING SECURITY 를 적용할 경우 
  * 회원 가입시 비즈니스 계층(서비스)에서  회원가입과 권한을 함께 insert하도록 처리한다 (트랜잭션 처리 필요!)
  */
+
+--
+select *from tbl_cart;
+
+
+---주문테이블생성
+--orderRec 수신자
+create table tbl_order(
+orderId varchar2(50) not null,
+id  varchar2(50) not null,
+orderRec varchar2(50) not null,
+addr1 varchar2(50) not null,
+addr2 varchar2(50) not null,
+addr3 varchar2(50) not null,
+orderPhon varchar2(50) not null,
+amount number not null,
+orderDate Date default sysdate,
+primary key(orderId)
+);
 ----------------------------
+select *from tbl_order;
+--주문테이블과 멤버테이블 참조 설정
+alter table tbl_order
+add constraint tbl_order_id foreign key(id)
+references tbl_member(id);
+--------------
+--주문 상세 테이블 생성 카트테이블 데이터 가져옴
+create table tbl_order_details(
+orderDetailsNum number not null,
+orderId  varchar2(50) not null,
+gdsNum  number not null,
+cartStock number not null,
+primary key(orderDetailsNum)
+);
+--주문 상세번호 시퀀스
+create sequence tbl_order_details_seq;
+--주문상세 테이블 주문
+alter table tbl_order_details
+add constraint tbl_order_details_orderId foreign key(orderId)
+references tbl_order(orderId);
+
+-------------------
 //cart 카트테이블 생성
 create table tbl_cart (
     cartNum     number          not null,

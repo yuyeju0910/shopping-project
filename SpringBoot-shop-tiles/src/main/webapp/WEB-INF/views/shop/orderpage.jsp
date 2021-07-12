@@ -206,7 +206,7 @@
 		<div class="row">
 
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				${cartList}
+				
 				<form action="#">
 
 					<div class="table-content table-responsive">
@@ -291,7 +291,7 @@
 									</tbody>
 								</table>
 								<div class="wc-proceed-to-checkout">
-									<a href="${pageContext.request.contextPath}/views/shop/orderpage">Proceed to Checkout</a>
+									<a href="#">Proceed to Checkout</a>
 								
 								</div>
 						
@@ -305,72 +305,78 @@
 		</div>
 	</div>
 </div>
-<!-- cart-main-area end -->
-<!-- Start Footer Area -->
-<footer class="htc__foooter__area gray-bg">
+<section class="our-checkout-area ptb--120 bg__white">
 	<div class="container">
 		<div class="row">
-			<div class="footer__container clearfix">
-				<!-- Start Single Footer Widget -->
-				<div class="col-md-3 col-lg-3 col-sm-6">
-					<div class="ft__widget">
-						<div class="ft__logo">
-							<a href="index.html"> <img
-								src="${pageContext.request.contextPath}/myweb/images/logo/logo.png"
-								alt="footer logo">
-							</a>
+			<div class="col-md-8 col-lg-8">
+				<div class="ckeckout-left-sidebar">
+					<!-- Start Checkbox Area -->
+					<div class="checkout-form">
+						<h2 class="section-title-3">Member details</h2>
+						<div class="checkout-form-inner">
+							<%-- <sec:authorize access="hasRole('ROLE_MEMBER')"> --%>
+								<form class="login"  action="${pageContext.request.contextPath}/views/shop/order">
+								<sec:csrfInput />
+									<%-- csrf 토큰 --%>
+									<div class="single-checkout-box">
+									 <input type="hidden" name="amount" value="${totalPrice}" />
+										<input type="text" name="orderRec" placeholder="수령인"
+											value=""
+											> <input type="text" name="orderPhon"
+											placeholder="전화번호*">
+									</div>
+									<div class="single-checkout-box">
+										<input type="text" placeholder="우편번호*" name="addr1"
+											value=""
+											required="required"> <input type="text"
+											placeholder="우편번호 1차*" name="addr2"
+											value=""
+											required="required">
+									</div>
+
+									<div class="single-checkout-box">
+											<input type="text" placeholder="우편번호2차*" name="addr3"
+											value=""
+											required="required">
+									</div>
 						</div>
-						<div class="footer-address">
-							<ul>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-pin"></i>
-									</div>
-									<div class="address-text">
-										<p>
-											194 Main Rd T, FS Rayed <br> VIC 3057, USA
-										</p>
-									</div>
-								</li>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-email"></i>
-									</div>
-									<div class="address-text">
-										<a href="#"> info@example.com</a>
-									</div>
-								</li>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-phone-in-talk"></i>
-									</div>
-									<div class="address-text">
-										<p>+012 345 678 102</p>
-									</div>
-								</li>
-							</ul>
+					</div>
+					<!-- End Checkbox Area -->
+					<!-- Start Payment Box -->
+					<div class="payment-form">
+
+						<div class="payment-form-inner">
+							<div class="single-checkout-box"></div>
+							<div class="single-checkout-box select-option"></div>
 						</div>
-						<ul class="social__icon">
-							<li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
-						</ul>
+					</div>
+					<input type="submit" class="order_btn" value="주문" 
+					onClick="${pageContext.request.contextPath}/views/shop/register-ok"
+
+						style="border-radius: 25px; padding: 12px 10px; width: 12%">
+					</form>
+				<%-- 	</sec:authorize> --%>
+					<br> <br>
+
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4">
+				<div class="checkout-right-sidebar">
+					<div class="our-important-note">
+						<div class="single-portfolio-img">
+							<img src="/myweb/images/mypage/4.png" alt="정보수정페이지 사진">
+						</div>
 					</div>
 				</div>
-				<!-- End Single Footer Widget -->
-				<!-- Start Single Footer Widget -->
-				<div class="col-md-3 col-lg-2 col-sm-6 smt-30 xmt-30">
-					<div class="ft__widget">
-						<h2 class="ft__title">Categories</h2>
-						<ul class="footer-categories">
-							<li><a href="shop-sidebar.html">Men</a></li>
-							<li><a href="shop-sidebar.html">Women</a></li>
-							<li><a href="shop-sidebar.html">Accessories</a></li>
-							<li><a href="shop-sidebar.html">Shoes</a></li>
-							<li><a href="shop-sidebar.html">Dress</a></li>
-							<li><a href="shop-sidebar.html">Denim</a></li>
-						</ul>
-					</div>
+				<div class="puick-contact-area mt--60">
+					<h2 class="section-title-3">Customer Service</h2>
+					<a href="tel:010-1111-22220">010-1111-22220 </a>
 				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- cart-main-area end -->
+<!-- Start Footer Area -->
+
 				<!-- Start Footer Area -->

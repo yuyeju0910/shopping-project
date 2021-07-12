@@ -206,8 +206,8 @@
 		<div class="row">
 
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				${cartList}
-				<form action="#">
+				
+				<form action="#" >
 
 					<div class="table-content table-responsive">
 
@@ -224,25 +224,23 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${cartList}" var="list">
+								<c:forEach items="${orderList}" var="list">
 									<tr>
-										<td class="product-thumbnail"><a href="#"><img
-												src="${list.gdsThumImg}" /></a></td>
-										<td class="product-name"><a href="#">${list.gdsName}</a></td>
+										<td class="product-thumbnail"><a href="/views/shop/orderView?n=${list.orderId}">${list.orderId}</a><img
+												src="#" /></a></td>
+										<td class="product-name"><a href="#">${list.orderRec}</a></td>
 										<td class="product-price"><span class="amount">
 												<%-- ${list.gdsPrice} --%>
-												<fmt:formatNumber pattern="###,###,###"
-													value="${list.gdsPrice*1}" />
+												<fmt:formatNumber pattern="###,###,###" value="${list.amount}" />
 										</span></td>
-										<td class="product-quantity">${list.cartStock}</td>
-										<td class="product-subtotal"><fmt:formatNumber
-												pattern="###,###,###"
-												value="${list.gdsPrice * list.cartStock}" /></td>
-										<td class="product-remove"><a
-											href="${pageContext.request.contextPath}/views/shop/deleteCart?cartNum=${list.cartNum}">X</a>
-											<input type="hidden" name="gdsName" value="${list.gdsNum}">
+										</td>
+										${list.addr1} ${list.addr2} ${list.addr3}
+										<td class="product-remove"><!-- <a -->
+											<%-- href="${pageContext.request.contextPath}/views/shop/deleteCart?cartNum=${list.cartNum}"> --%>X</a>
+											<%-- <input type="hidden" name="gdsName" value="${list.gdsNum}"> --%>
 										</td>
 									</tr>
+									
 
 								</c:forEach>
 							</tbody>
@@ -286,7 +284,7 @@
 										<tr class="order-total">
 											<th>Total</th>
 											<td><strong><span class="amount"><fmt:formatNumber
-															pattern="###,###,###" value="${totalPrice}" /> </span></strong></td>
+															pattern="###,###,###" value="$" /> </span></strong></td>
 										</tr>
 									</tbody>
 								</table>

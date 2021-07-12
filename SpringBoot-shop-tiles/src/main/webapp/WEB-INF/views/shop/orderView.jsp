@@ -5,18 +5,43 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
-	<style>
-	.orderInfo { border:5px solid #eee; padding:20px; }
-.orderInfo .inputArea { margin:10px 0; }
-.orderInfo .inputArea label { display:inline-block; width:120px; margin-right:10px; }
-.orderInfo .inputArea input { font-size:14px; padding:5px; }
-#userAddr2, #userAddr3 { width:250px; }
+<style>
+.orderInfo {
+	border: 5px solid #eee;
+	padding: 20px;
+}
 
-.orderInfo .inputArea:last-child { margin-top:30px; }
-.orderInfo .inputArea button { font-size:20px; border:2px solid #ccc; padding:5px 10px; background:#fff; margin-right:20px;}
-	
-	
-	</style>
+.orderInfo .inputArea {
+	margin: 10px 0;
+}
+
+.orderInfo .inputArea label {
+	display: inline-block;
+	width: 120px;
+	margin-right: 10px;
+}
+
+.orderInfo .inputArea input {
+	font-size: 14px;
+	padding: 5px;
+}
+
+#userAddr2, #userAddr3 {
+	width: 250px;
+}
+
+.orderInfo .inputArea:last-child {
+	margin-top: 30px;
+}
+
+.orderInfo .inputArea button {
+	font-size: 20px;
+	border: 2px solid #ccc;
+	padding: 5px 10px;
+	background: #fff;
+	margin-right: 20px;
+}
+</style>
 
 <div class="body__overlay"></div>
 <!-- Start Offset Wrapper -->
@@ -206,8 +231,8 @@
 		<div class="row">
 
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				${cartList}
-				<form action="#">
+			
+				<form action="#" >
 
 					<div class="table-content table-responsive">
 
@@ -224,31 +249,46 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${cartList}" var="list">
-									<tr>
-										<td class="product-thumbnail"><a href="#"><img
-												src="${list.gdsThumImg}" /></a></td>
-										<td class="product-name"><a href="#">${list.gdsName}</a></td>
-										<td class="product-price"><span class="amount">
-												<%-- ${list.gdsPrice} --%>
-												<fmt:formatNumber pattern="###,###,###"
-													value="${list.gdsPrice*1}" />
-										</span></td>
-										<td class="product-quantity">${list.cartStock}</td>
-										<td class="product-subtotal"><fmt:formatNumber
-												pattern="###,###,###"
-												value="${list.gdsPrice * list.cartStock}" /></td>
-										<td class="product-remove"><a
-											href="${pageContext.request.contextPath}/views/shop/deleteCart?cartNum=${list.cartNum}">X</a>
-											<input type="hidden" name="gdsName" value="${list.gdsNum}">
-										</td>
-									</tr>
+								<c:forEach items="${orderView}" var="orderView"
+									varStatus="status">
+
+									<c:if test="${status.first}">
+										<p>
+											<span>수령인</span>${orderView.orderRec}</p>
+										<p>
+											<span>주소</span>(${orderView.addr1})
+											${orderView.addr2} ${orderView.addr3}
+										</p>
+										<p>
+											<span>가격</span>
+											<fmt:formatNumber pattern="###,###,###"
+												value="${orderView.amount}" />
+											원
+										</p>
+									</c:if>
 
 								</c:forEach>
 							</tbody>
 
 						</table>
 					</div>
+					 <ul class="orderView">
+  <c:forEach items="${orderView}" var="orderView">     
+  <li>
+   <div class="thumb">
+    <img src="${orderView.gdsThumbImg}" />
+   </div>
+   <div class="gdsInfo">
+    <p>
+     <span>상품명</span>${orderView.gdsName}<br />
+     <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.gdsPrice}" /> 원<br />
+     <span>구입 수량</span>${orderView.cartStock} 개<br />
+     <span>최종 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.gdsPrice * orderView.cartStock}" /> 원                  
+    </p>
+   </div>
+  </li>     
+  </c:forEach>
+ </ul>
 					<div class="row">
 						<div class="col-md-8 col-sm-7 col-xs-12">
 							<div class="buttons-cart">
@@ -291,10 +331,12 @@
 									</tbody>
 								</table>
 								<div class="wc-proceed-to-checkout">
-									<a href="${pageContext.request.contextPath}/views/shop/orderpage">Proceed to Checkout</a>
-								
+									<a
+										href="${pageContext.request.contextPath}/views/shop/orderpage">Proceed
+										to Checkout</a>
+
 								</div>
-						
+
 
 							</div>
 						</div>
