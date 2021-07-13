@@ -250,6 +250,26 @@ public class ShopController {
 	 return reply;
 	} 
 	
+	@RequestMapping("/views/shop/deleteReply")
+	@ResponseBody
+	public int getReplyList(ReplyVO reply) {
+		
+		int result =0;
+		MemberVO member = (MemberVO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();	
+		String id= shopserivce.replyUserIdCheck(reply.getRepNum());
+		 if(member.getId().equals(id)) {
+			 
+			 reply.setId(member.getId());
+			 shopserivce.deleteReply(reply);
+			 result =1;
+			 
+		 }
+		 
+		 return result;
+		
+		
+	}
+	
 
 
 	

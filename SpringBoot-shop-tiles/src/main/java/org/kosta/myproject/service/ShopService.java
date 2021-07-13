@@ -27,4 +27,6 @@ public interface ShopService {
 	void delivery(OrderVO order);
 	void registReply(ReplyVO reply);
 	List<ReplyListVO> replyList(int gdsNum);
+	void deleteReply(ReplyVO reply);
+	String replyUserIdCheck(int repNum);
 }

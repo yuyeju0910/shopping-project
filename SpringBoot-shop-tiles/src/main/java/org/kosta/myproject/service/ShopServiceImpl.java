@@ -98,6 +98,17 @@ public class ShopServiceImpl implements ShopService{
 		return shopMapper.replyList(gdsNum);
 	}
 
+	@Override
+	public void deleteReply(ReplyVO reply) {
+		shopMapper.deleteReply(reply);
+	}
+
+	@Override
+	public String replyUserIdCheck(int repNum) {
+		
+		return shopMapper.replyUserIdCheck(repNum);
+	}
+
 
 	
 

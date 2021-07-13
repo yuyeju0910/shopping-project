@@ -190,7 +190,7 @@
                         <div class="htc__login__register__wrap">
                             <!-- Start Single Content -->
                             <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
-                                <form class="login" method="post" action="${pageContext.request.contextPath}/user/registerMember" id="regForm">
+                                <form class="login" method="post" action="${pageContext.request.contextPath}/user/rgisterMember" id="regForm">
                                     <sec:csrfInput/><%-- csrf 토큰 --%>
                                     <input type="text"  name="id" placeholder="*아이디" required="required"><span id="idCheckView"></span>
                                     <br><br>

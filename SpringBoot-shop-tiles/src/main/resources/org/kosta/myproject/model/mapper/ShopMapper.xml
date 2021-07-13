@@ -141,7 +141,19 @@ insert into tbl_order_details(orderDetailsNum, orderId, gdsNum, cartStock)
      where gdsNum = #{gdsNum}
 </select>
 
+<!-- 댓글 삭제 -->
+<delete id="deleteReply">
+	delete tbl_reply
+	where repNum =#{repNum}
+	and id=#{id}
+</delete>
 
+<!-- 아이디 확인 -->
+<select id="replyUserIdCheck" resultType="String">
+select id
+from tbl_reply
+	where repNum =#{repNum}
+</select>
  	
 </mapper>
 
