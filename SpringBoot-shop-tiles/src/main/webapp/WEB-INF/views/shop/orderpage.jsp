@@ -5,18 +5,43 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
-	<style>
-	.orderInfo { border:5px solid #eee; padding:20px; }
-.orderInfo .inputArea { margin:10px 0; }
-.orderInfo .inputArea label { display:inline-block; width:120px; margin-right:10px; }
-.orderInfo .inputArea input { font-size:14px; padding:5px; }
-#userAddr2, #userAddr3 { width:250px; }
+<style>
+.orderInfo {
+	border: 5px solid #eee;
+	padding: 20px;
+}
 
-.orderInfo .inputArea:last-child { margin-top:30px; }
-.orderInfo .inputArea button { font-size:20px; border:2px solid #ccc; padding:5px 10px; background:#fff; margin-right:20px;}
-	
-	
-	</style>
+.orderInfo .inputArea {
+	margin: 10px 0;
+}
+
+.orderInfo .inputArea label {
+	display: inline-block;
+	width: 120px;
+	margin-right: 10px;
+}
+
+.orderInfo .inputArea input {
+	font-size: 14px;
+	padding: 5px;
+}
+
+#userAddr2, #userAddr3 {
+	width: 250px;
+}
+
+.orderInfo .inputArea:last-child {
+	margin-top: 30px;
+}
+
+.orderInfo .inputArea button {
+	font-size: 20px;
+	border: 2px solid #ccc;
+	padding: 5px 10px;
+	background: #fff;
+	margin-right: 20px;
+}
+</style>
 
 <div class="body__overlay"></div>
 <!-- Start Offset Wrapper -->
@@ -188,11 +213,10 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="bradcaump__inner text-center">
-						<h2 class="bradcaump-title">Member-Information</h2>
+						<h2 class="bradcaump-title">Order Product</h2>
 						<nav class="bradcaump-inner">
-							<a class="breadcrumb-item" href="index.html">MemberInformation</a>
-							<span class="brd-separetor">/</span> <span
-								class="breadcrumb-item active">Update</span>
+							<span class="breadcrumb-item">Order</span> <span
+								class="brd-separetor">/</span> <span class="breadcrumb-item">Delivery</span>
 						</nav>
 					</div>
 				</div>
@@ -206,7 +230,7 @@
 		<div class="row">
 
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				
+
 				<form action="#">
 
 					<div class="table-content table-responsive">
@@ -229,8 +253,7 @@
 										<td class="product-thumbnail"><a href="#"><img
 												src="${list.gdsThumImg}" /></a></td>
 										<td class="product-name"><a href="#">${list.gdsName}</a></td>
-										<td class="product-price"><span class="amount">
-												<%-- ${list.gdsPrice} --%>
+										<td class="product-price"><span class="amount"> <%-- ${list.gdsPrice} --%>
 												<fmt:formatNumber pattern="###,###,###"
 													value="${list.gdsPrice*1}" />
 										</span></td>
@@ -252,7 +275,7 @@
 					<div class="row">
 						<div class="col-md-8 col-sm-7 col-xs-12">
 							<div class="buttons-cart">
-								<input type="submit" value="Update Cart" /> <a href="#">Continue
+								<a href="/home">Main</a> <a href="/views/shop/list?c=100">Continue
 									Shopping</a>
 							</div>
 
@@ -264,21 +287,21 @@
 									<tbody>
 										<tr class="cart-subtotal">
 											<th>Subtotal</th>
-											<td><span class="amount">£215.00</span></td>
+											<td><span class="amount"><fmt:formatNumber
+														pattern="###,###,###" value="${totalPrice}" /> </span></td>
 										</tr>
 										<tr class="shipping">
 											<th>Shipping</th>
 											<td>
 												<ul id="shipping_method">
 													<li><input type="radio" /> <label> Flat Rate:
-															<span class="amount">£7.00</span>
+															<span class="amount">3000won</span>
 													</label></li>
-													<li><input type="radio" /> <label> Free
-															Shipping </label></li>
-													<li></li>
+													<!-- <li><input type="radio" /> <label> Free
+															Shipping </label></li> -->
 												</ul>
 												<p>
-													<a class="shipping-calculator-button" href="#">Calculate
+													<a class="shipping-calculator-button">Calculate
 														Shipping</a>
 												</p>
 											</td>
@@ -286,15 +309,16 @@
 										<tr class="order-total">
 											<th>Total</th>
 											<td><strong><span class="amount"><fmt:formatNumber
-															pattern="###,###,###" value="${totalPrice}" /> </span></strong></td>
+															pattern="###,###,###" value="${totalPrice+3000}" /> won
+												</span></strong></td>
 										</tr>
 									</tbody>
 								</table>
 								<div class="wc-proceed-to-checkout">
 									<a href="#">Proceed to Checkout</a>
-								
+
 								</div>
-						
+
 
 							</div>
 						</div>
@@ -312,50 +336,43 @@
 				<div class="ckeckout-left-sidebar">
 					<!-- Start Checkbox Area -->
 					<div class="checkout-form">
-						<h2 class="section-title-3">Member details</h2>
+						<h2 class="section-title-3">Delivery</h2>
 						<div class="checkout-form-inner">
 							<%-- <sec:authorize access="hasRole('ROLE_MEMBER')"> --%>
-								<form class="login"  action="${pageContext.request.contextPath}/views/shop/order">
+							<form class="login"
+								action="${pageContext.request.contextPath}/views/shop/order">
 								<sec:csrfInput />
-									<%-- csrf 토큰 --%>
-									<div class="single-checkout-box">
-									 <input type="hidden" name="amount" value="${totalPrice}" />
-										<input type="text" name="orderRec" placeholder="수령인"
-											value=""
-											> <input type="text" name="orderPhon"
-											placeholder="전화번호*">
-									</div>
-									<div class="single-checkout-box">
-										<input type="text" placeholder="우편번호*" name="addr1"
-											value=""
-											required="required"> <input type="text"
-											placeholder="우편번호 1차*" name="addr2"
-											value=""
-											required="required">
-									</div>
+								<%-- csrf 토큰 --%>
+								<div class="single-checkout-box">
+									<input type="hidden" name="amount" value="${totalPrice}" />
+								</div>
+								<div class="single-checkout-box">
+									<input type="text" name="orderRec" placeholder="수령인" value=""
+										required="required"> <input type="text"
+										name="orderPhon" placeholder="전화번호* (010-XXXX-XXXX)"
+										required="required" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}"
+										maxlength="13">
+								</div>
 
-									<div class="single-checkout-box">
-											<input type="text" placeholder="우편번호2차*" name="addr3"
-											value=""
-											required="required">
-									</div>
+								<div class="single-checkout-box">
+									<input type="text" placeholder="우편번호*" name="addr1" value=""
+										required="required"> <input type="text"
+										placeholder="주소 1차*" name="addr2" value="" required="required">
+								</div>
+
+								<div class="single-checkout-box">
+									<input type="text" placeholder="주소 2차*" name="addr3" value=""
+										required="required" style="width: 100%;">
+								</div>
 						</div>
 					</div>
 					<!-- End Checkbox Area -->
-					<!-- Start Payment Box -->
-					<div class="payment-form">
-
-						<div class="payment-form-inner">
-							<div class="single-checkout-box"></div>
-							<div class="single-checkout-box select-option"></div>
-						</div>
+					<div class="buttons-cart" style="margin-left: 350px;">
+						<input type="submit" value="order"
+							onClick="${pageContext.request.contextPath}/views/shop/register-ok">
 					</div>
-					<input type="submit" class="order_btn" value="주문" 
-					onClick="${pageContext.request.contextPath}/views/shop/register-ok"
-
-						style="border-radius: 25px; padding: 12px 10px; width: 12%">
 					</form>
-				<%-- 	</sec:authorize> --%>
+					<%-- 	</sec:authorize> --%>
 					<br> <br>
 
 				</div>
@@ -364,7 +381,7 @@
 				<div class="checkout-right-sidebar">
 					<div class="our-important-note">
 						<div class="single-portfolio-img">
-							<img src="/myweb/images/mypage/4.png" alt="정보수정페이지 사진">
+							<img src="/myweb/images/delivery/1.png" alt="배송지연 안내">
 						</div>
 					</div>
 				</div>
@@ -379,4 +396,4 @@
 <!-- cart-main-area end -->
 <!-- Start Footer Area -->
 
-				<!-- Start Footer Area -->
+<!-- Start Footer Area -->

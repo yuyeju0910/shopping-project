@@ -5,18 +5,6 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
-	<style>
-	.orderInfo { border:5px solid #eee; padding:20px; }
-.orderInfo .inputArea { margin:10px 0; }
-.orderInfo .inputArea label { display:inline-block; width:120px; margin-right:10px; }
-.orderInfo .inputArea input { font-size:14px; padding:5px; }
-#userAddr2, #userAddr3 { width:250px; }
-
-.orderInfo .inputArea:last-child { margin-top:30px; }
-.orderInfo .inputArea button { font-size:20px; border:2px solid #ccc; padding:5px 10px; background:#fff; margin-right:20px;}
-	
-	
-	</style>
 
 <div class="body__overlay"></div>
 <!-- Start Offset Wrapper -->
@@ -123,62 +111,7 @@
 		</div>
 	</div>
 	<!-- End Offset MEnu -->
-	<!-- Start Cart Panel -->
-	<div class="shopping__cart">
-		<div class="shopping__cart__inner">
-			<div class="offsetmenu__close__btn">
-				<a href="#"><i class="zmdi zmdi-close"></i></a>
-			</div>
-			<div class="shp__cart__wrap">
-				<div class="shp__single__product">
-					<div class="shp__pro__thumb">
-						<a href="#"> <img
-							src="${pageContext.request.contextPath}/myweb/images/product/sm-img/1.jpg"
-							alt="product images">
-						</a>
-					</div>
-					<div class="shp__pro__details">
-						<h2>
-							<a href="product-details.html">BO&Play Wireless Speaker</a>
-						</h2>
-						<span class="quantity">QTY: 1</span> <span class="shp__price">$105.00</span>
-					</div>
-					<div class="remove__btn">
-						<a href="#" title="Remove this item"><i
-							class="zmdi zmdi-close"></i></a>
-					</div>
-				</div>
-				<div class="shp__single__product">
-					<div class="shp__pro__thumb">
-						<a href="#"> <img
-							src="${pageContext.request.contextPath}/myweb/images/product/sm-img/2.jpg"
-							alt="product images">
-						</a>
-					</div>
-					<div class="shp__pro__details">
-						<h2>
-							<a href="product-details.html">Brone Candle</a>
-						</h2>
-						<span class="quantity">QTY: 1</span> <span class="shp__price">$25.00</span>
-					</div>
-					<div class="remove__btn">
-						<a href="#" title="Remove this item"><i
-							class="zmdi zmdi-close"></i></a>
-					</div>
-				</div>
-			</div>
-			<ul class="shoping__total">
-				<li class="subtotal">Subtotal:</li>
-				<li class="total__price">$130.00</li>
-			</ul>
-			<ul class="shopping__btn">
-				<li><a href="cart.html">View Cart</a></li>
-				<li class="shp__checkout"><a href="checkout.html">Checkout</a></li>
-			</ul>
-		</div>
-	</div>
-	<!-- End Cart Panel -->
-</div>
+	
 <!-- End Offset Wrapper -->
 <!-- Start Bradcaump area -->
 <div class="ht__bradcaump__area"
@@ -188,11 +121,11 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="bradcaump__inner text-center">
-						<h2 class="bradcaump-title">Member-Information</h2>
+						<h2 class="bradcaump-title">Order Product</h2>
 						<nav class="bradcaump-inner">
-							<a class="breadcrumb-item" href="index.html">MemberInformation</a>
-							<span class="brd-separetor">/</span> <span
-								class="breadcrumb-item active">Update</span>
+							<span class="breadcrumb-item">Order</span>
+							<span class="brd-separetor">/</span> 
+							<span class="breadcrumb-item">Delivery</span>
 						</nav>
 					</div>
 				</div>
@@ -229,20 +162,26 @@
 										<td class="product-thumbnail"><a href="#"><img
 												src="${list.gdsThumImg}" /></a></td>
 										<td class="product-name"><a href="#">${list.gdsName}</a></td>
-										<td class="product-price"><span class="amount">
-												<%-- ${list.gdsPrice} --%>
-												<fmt:formatNumber pattern="###,###,###"
-													value="${list.gdsPrice*1}" />
-										</span></td>
+										<td class="product-price"><span class="amount"><%-- ${list.gdsPrice} --%><fmt:formatNumber
+													pattern="###,###,###" value="${list.gdsPrice*1}" /></span></td>
 										<td class="product-quantity">${list.cartStock}</td>
 										<td class="product-subtotal"><fmt:formatNumber
 												pattern="###,###,###"
 												value="${list.gdsPrice * list.cartStock}" /></td>
-										<td class="product-remove"><a
-											href="${pageContext.request.contextPath}/views/shop/deleteCart?cartNum=${list.cartNum}">X</a>
+										<td class="product-remove"><a href="${pageContext.request.contextPath}/views/shop/deleteCart?cartNum=${list.cartNum}">X</a>
 											<input type="hidden" name="gdsName" value="${list.gdsNum}">
 										</td>
 									</tr>
+									<script>
+									//삭제 버튼 클릭 이벤트
+
+								/* 	$(document).on('click', '.product-remove', function(){
+								    var url = "${pageContext.request.contextPath}/board/deleteBoard";
+								    url = url + "?bid=" + ${boardContent.bid};
+										location.href = url;
+									}); */
+									
+									</script>
 
 								</c:forEach>
 							</tbody>
@@ -252,8 +191,8 @@
 					<div class="row">
 						<div class="col-md-8 col-sm-7 col-xs-12">
 							<div class="buttons-cart">
-								<input type="submit" value="Update Cart" /> <a href="#">Continue
-									Shopping</a>
+								<a href="/home">Main</a>
+								<a href="/views/shop/list?c=100">Continue Shopping</a>
 							</div>
 
 						</div>
@@ -264,21 +203,23 @@
 									<tbody>
 										<tr class="cart-subtotal">
 											<th>Subtotal</th>
-											<td><span class="amount">£215.00</span></td>
+											<td><span class="amount"><fmt:formatNumber
+															pattern="###,###,###"
+															value="${totalPrice}" /> 
+															</span></td>
 										</tr>
 										<tr class="shipping">
 											<th>Shipping</th>
 											<td>
 												<ul id="shipping_method">
 													<li><input type="radio" /> <label> Flat Rate:
-															<span class="amount">£7.00</span>
+															<span class="amount">3000won</span>
 													</label></li>
-													<li><input type="radio" /> <label> Free
-															Shipping </label></li>
-													<li></li>
+													<!-- <li><input type="radio" /> <label> Free
+															Shipping </label></li> -->
 												</ul>
 												<p>
-													<a class="shipping-calculator-button" href="#">Calculate
+													<a class="shipping-calculator-button">Calculate
 														Shipping</a>
 												</p>
 											</td>
@@ -286,19 +227,19 @@
 										<tr class="order-total">
 											<th>Total</th>
 											<td><strong><span class="amount"><fmt:formatNumber
-															pattern="###,###,###" value="${totalPrice}" /> </span></strong></td>
+															pattern="###,###,###"
+															value="${totalPrice+3000}" /> won
+															</span></strong></td>
 										</tr>
 									</tbody>
 								</table>
 								<div class="wc-proceed-to-checkout">
 									<a href="${pageContext.request.contextPath}/views/shop/orderpage">Proceed to Checkout</a>
-								
 								</div>
-						
-
+								</div>
 							</div>
 						</div>
-					</div>
+					
 				</form>
 
 			</div>
@@ -306,71 +247,4 @@
 	</div>
 </div>
 <!-- cart-main-area end -->
-<!-- Start Footer Area -->
-<footer class="htc__foooter__area gray-bg">
-	<div class="container">
-		<div class="row">
-			<div class="footer__container clearfix">
-				<!-- Start Single Footer Widget -->
-				<div class="col-md-3 col-lg-3 col-sm-6">
-					<div class="ft__widget">
-						<div class="ft__logo">
-							<a href="index.html"> <img
-								src="${pageContext.request.contextPath}/myweb/images/logo/logo.png"
-								alt="footer logo">
-							</a>
-						</div>
-						<div class="footer-address">
-							<ul>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-pin"></i>
-									</div>
-									<div class="address-text">
-										<p>
-											194 Main Rd T, FS Rayed <br> VIC 3057, USA
-										</p>
-									</div>
-								</li>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-email"></i>
-									</div>
-									<div class="address-text">
-										<a href="#"> info@example.com</a>
-									</div>
-								</li>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-phone-in-talk"></i>
-									</div>
-									<div class="address-text">
-										<p>+012 345 678 102</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<ul class="social__icon">
-							<li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- End Single Footer Widget -->
-				<!-- Start Single Footer Widget -->
-				<div class="col-md-3 col-lg-2 col-sm-6 smt-30 xmt-30">
-					<div class="ft__widget">
-						<h2 class="ft__title">Categories</h2>
-						<ul class="footer-categories">
-							<li><a href="shop-sidebar.html">Men</a></li>
-							<li><a href="shop-sidebar.html">Women</a></li>
-							<li><a href="shop-sidebar.html">Accessories</a></li>
-							<li><a href="shop-sidebar.html">Shoes</a></li>
-							<li><a href="shop-sidebar.html">Dress</a></li>
-							<li><a href="shop-sidebar.html">Denim</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- Start Footer Area -->
+
