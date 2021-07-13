@@ -10,6 +10,8 @@ import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.model.OrderDetailVO;
 import org.kosta.myproject.model.OrderListVO;
 import org.kosta.myproject.model.OrderVO;
+import org.kosta.myproject.model.ReplyListVO;
+import org.kosta.myproject.model.ReplyVO;
 @Mapper
 public interface ShopMapper {
 
@@ -25,5 +27,7 @@ public interface ShopMapper {
 	List<OrderVO> orderList(OrderVO order);
 	List <OrderListVO> orderView(OrderVO order);
 	void delivery(OrderVO order);
+	void registReply(ReplyVO reply);
+	List<ReplyListVO> replyList(int gdsNum);
 	
 }

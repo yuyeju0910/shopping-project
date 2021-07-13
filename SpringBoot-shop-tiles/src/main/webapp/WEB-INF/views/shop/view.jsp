@@ -1,9 +1,51 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <head>
 <meta name="_csrf" th:content="${_csrf.token}">
 <meta name="_csrf_header" th:content="${_csrf.headerName}">
+     <script>
+			function replyList() {
+                let gdsNum = ${goods.gdsNum};
+                 $.getJSON("${pageContext.request.contextPath}/views/shop/replyList" + "?n=" + gdsNum, function(data){
+                  let str = "";
+                  
+                  $(data).each(function(){
+                   
+                   console.log(data);
+                   
+                  let repDate = new Date(this.repDate);
+                   repDate = repDate.toLocaleDateString("ko-US") //시간뿌려주
+                   
+                   str += "<li data-gdsNum='" + this.gdsNum + "'>"
+                     + "<div class='userInfo'>"
+                     + "<span class='name'>" + this.name + "</span>"
+                     + "<span class='date'>" + repDate + "</span>"
+                     + "</div>"
+                     + "<div class='replyContent'>" + this.repCon + "</div>"
+                     + "</li>";           
+                  });
+                  
+                  $("section.replyList ol").html(str);
+                 });
+			}
+                </script>
+    <style>
+     section.replyForm { padding:30px 0; }
+ section.replyForm div.input_area { margin:10px 0; }
+ section.replyForm textarea { font-size:16px; font-family:'맑은 고딕', verdana; padding:10px; width:500px;; height:150px; }
+ section.replyForm button { font-size:20px; padding:5px 10px; margin:10px 0; background:#fff; border:1px solid #ccc; }
+ 
+ section.replyList { padding:30px 0; }
+ section.replyList ol { padding:0; margin:0; }
+ section.replyList ol li { padding:10px 0; border-bottom:2px solid #eee; }
+ section.replyList div.userInfo { }
+ section.replyList div.userInfo .userName { font-size:24px; font-weight:bold; }
+ section.replyList div.userInfo .date { color:#999; display:inline-block; margin-left:10px; }
+ section.replyList div.replyContent { padding:10px; margin:20px 0; }
+    </style>
 </head>
 <div class="body__overlay"></div>
 <!-- Start Offset Wrapper -->
@@ -351,7 +393,7 @@
                             xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
                         },
                         success: function(result){
-                        	 alert(result);
+                            alert(result);
                            if(result ==1){
                            alert("카트에 상품이 담겼습니다");
                            $(".cart-plus-minus-box").val("1");
@@ -389,7 +431,9 @@
 <!-- End Product Details -->
 <!-- Start Product tab -->
 <section class="htc__product__details__tab bg__white pb--120">
+ 
    <div class="container">
+    
       <div class="row">
          <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <ul class="product__deatils__tab mb--60" role="tablist">
@@ -402,7 +446,7 @@
             </ul>
          </div>
       </div>
-      <div class="row">
+      <div class="row"><!-- 상세설명 -->
          <div class="col-md-12">
             <div class="product__details__tab__content">
                <!-- Start Single Content -->
@@ -459,143 +503,89 @@
                </div>
                <!-- End Single Content -->
                <!-- Start Single Content -->
+               
                <div role="tabpanel" id="reviews"
                   class="product__tab__content fade">
                   <div class="review__address__inner">
                      <!-- Start Single Review -->
-                     <div class="pro__review">
+                    
+                   <div class="pro__review">
                         <div class="review__thumb">
                            <img
                               src="${pageContext.request.contextPath}/myweb/images/review/1.jpg"
                               alt="review images">
                         </div>
-                        <div class="review__details">
-                           <div class="review__info">
-                              <h4>
-                                 <a href="#">Gerald Barnes</a>
-                              </h4>
-                              <ul class="rating">
-                                 <li><i class="zmdi zmdi-star"></i></li>
-                                 <li><i class="zmdi zmdi-star"></i></li>
-                                 <li><i class="zmdi zmdi-star"></i></li>
-                                 <li><i class="zmdi zmdi-star-half"></i></li>
-                                 <li><i class="zmdi zmdi-star-half"></i></li>
-                              </ul>
-                              <div class="rating__send">
-                                 <a href="#"><i class="zmdi zmdi-mail-reply"></i></a> <a
-                                    href="#"><i class="zmdi zmdi-close"></i></a>
-                              </div>
-                           </div>
-                           <div class="review__date">
-                              <span>27 Jun, 2016 at 2:30pm</span>
-                           </div>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                              Integer accumsan egestas elese ifend. Phasellus a felis at
-                              estei to bibendum feugiat ut eget eni Praesent et messages in
-                              con sectetur posuere dolor non.</p>
+                     		<div id="reply">
+							 <section class="replyForm">
+							  <form role="form">
+							  
+							  <input type="hidden" name="gdsNum"  id="gdsNum" value="${goods.gdsNum}" >
+							 
+							   <div class="input_area">
+							    <textarea name="repCon" id="repCon"></textarea>
+							   </div>
+							   
+							   <div class="input_area">
+							    <button type="button" id="reply_btn">댓글써라</button>
+							    <script>
+									 $("#reply_btn").click(function(){
+									  
+									 let formObj = $(".replyForm form[role='form']");
+									  let gdsNum = $("#gdsNum").val();
+									  let repCon = $("#repCon").val()
+									  
+									  let data = {
+									    gdsNum : gdsNum,
+									    repCon : repCon
+									    };
+									  
+									  $.ajax({
+									   url : "/views/shop/registReply",
+									   type : "get",
+									   data : data,
+									   success : function(){
+									    replyList();//리스트 새로고침
+									    $("#repCon").val("");
+									   }
+									  });
+									 });
+</script>
+							   </div>
+							   
+							  </form>
+							 </section>
+					
+							 <section class="replyList">
+							  <ol>
+							   <li></li>
+							   </ol>   
+							   <script>
+ 									replyList();
+									</script> 
+							 </section>
+							</div>
+                  
                         </div>
-                     </div>
+                        
+                     </div> 
+                     
                      <!-- End Single Review -->
                      <!-- Start Single Review -->
-                     <div class="pro__review ans">
-                        <div class="review__thumb">
-                           <img
-                              src="${pageContext.request.contextPath}/myweb/images/review/2.jpg"
-                              alt="review images">
-                        </div>
-                        <div class="review__details">
-                           <div class="review__info">
-                              <h4>
-                                 <a href="#">Gerald Barnes</a>
-                              </h4>
-                              <ul class="rating">
-                                 <li><i class="zmdi zmdi-star"></i></li>
-                                 <li><i class="zmdi zmdi-star"></i></li>
-                                 <li><i class="zmdi zmdi-star"></i></li>
-                                 <li><i class="zmdi zmdi-star-half"></i></li>
-                                 <li><i class="zmdi zmdi-star-half"></i></li>
-                              </ul>
-                              <div class="rating__send">
-                                 <a href="#"><i class="zmdi zmdi-mail-reply"></i></a> <a
-                                    href="#"><i class="zmdi zmdi-close"></i></a>
-                              </div>
-                           </div>
-                           <div class="review__date">
-                              <span>27 Jun, 2016 at 2:30pm</span>
-                           </div>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                              Integer accumsan egestas elese ifend. Phasellus a felis at
-                              estei to bibendum feugiat ut eget eni Praesent et messages in
-                              con sectetur posuere dolor non.</p>
-                        </div>
-                     </div>
+               
                      <!-- End Single Review -->
                   </div>
                   <!-- Start RAting Area -->
-                  <div class="rating__wrap">
-                     <h2 class="rating-title">Write A review</h2>
-                     <h4 class="rating-title-2">Your Rating</h4>
-                     <div class="rating__list">
-                        <!-- Start Single List -->
-                        <ul class="rating">
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                        </ul>
-                        <!-- End Single List -->
-                        <!-- Start Single List -->
-                        <ul class="rating">
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                        </ul>
-                        <!-- End Single List -->
-                        <!-- Start Single List -->
-                        <ul class="rating">
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                        </ul>
-                        <!-- End Single List -->
-                        <!-- Start Single List -->
-                        <ul class="rating">
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                        </ul>
-                        <!-- End Single List -->
-                        <!-- Start Single List -->
-                        <ul class="rating">
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                           <li><i class="zmdi zmdi-star-half"></i></li>
-                        </ul>
-                        <!-- End Single List -->
-                     </div>
-                  </div>
+       
                   <!-- End RAting Area -->
-                  <div class="review__box">
-                     <form id="review-form">
-                        <div class="single-review-form">
-                           <div class="review-box name">
-                              <input type="text" placeholder="Type your name"> <input
-                                 type="email" placeholder="Type your email">
-                           </div>
-                        </div>
-                        <div class="single-review-form">
-                           <div class="review-box message">
-                              <textarea placeholder="Write your review"></textarea>
-                           </div>
-                        </div>
-                        <div class="review-btn">
-                           <a class="fv-btn" href="#">submit review</a>
-                        </div>
-                     </form>
-                  </div>
-               </div>
+                
+               
                <!-- End Single Content -->
             </div>
          </div>
       </div>
+    
    </div>
+ 
+   
 </section>
+ 

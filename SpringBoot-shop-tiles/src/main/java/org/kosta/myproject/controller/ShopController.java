@@ -14,6 +14,8 @@ import org.kosta.myproject.model.MemberVO;
 import org.kosta.myproject.model.OrderDetailVO;
 import org.kosta.myproject.model.OrderListVO;
 import org.kosta.myproject.model.OrderVO;
+import org.kosta.myproject.model.ReplyListVO;
+import org.kosta.myproject.model.ReplyVO;
 import org.kosta.myproject.service.ShopService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -49,7 +51,14 @@ public class ShopController {
 	public String view(@RequestParam("n") int gNum, Model model) {
 		GoodsVO goods = shopserivce.view(gNum);
 		model.addAttribute("goods", goods);
-		System.out.println(goods);
+		
+		/*
+		 * List<ReplyListVO> reply =shopserivce.replyList(gNum);
+		 * model.addAttribute("reply", reply);
+		 * System.out.println(reply);
+		 */
+		
+		
 		return "shop/view.tiles";
 	}
 
@@ -206,9 +215,49 @@ public class ShopController {
 		/* return "redirect:/shop/orderView?n=" + order.getOrderId(); */
 	}
 	
+	@RequestMapping("/views/shop/registReplyForm")
+	public String registReplyForm() {
+		return "shop/view.tiles";
+		
+	}
+	
+	/*
+	 * @RequestMapping("/views/shop/registReply") public String registReply(ReplyVO
+	 * reply) { MemberVO member = (MemberVO)
+	 * SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	 * reply.setId(member.getId()); shopserivce.registReply(reply); return
+	 * "redirect:/shop/view?n=" + reply.getGdsNum();
+	 * 
+	 * }
+	 */
+	
+	@RequestMapping("/views/shop/registReply")
+	@ResponseBody
+	public void registReply(ReplyVO reply) throws Exception {
+	 MemberVO member = (MemberVO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		 reply.setId(member.getId());
+	 shopserivce.registReply(reply);
+	 
+	} 
 	
 	
 	
+	@RequestMapping("/views/shop/replyList")
+	@ResponseBody
+	public List<ReplyListVO> getReplyList(@RequestParam("n") int gdsNum) {
+   
+	 List<ReplyListVO> reply = shopserivce.replyList(gdsNum);
+	 return reply;
+	} 
+	
+
+
+	
+	
+	
+	
+	
+
 
 
 

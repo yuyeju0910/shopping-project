@@ -9,6 +9,8 @@ import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.model.OrderDetailVO;
 import org.kosta.myproject.model.OrderListVO;
 import org.kosta.myproject.model.OrderVO;
+import org.kosta.myproject.model.ReplyListVO;
+import org.kosta.myproject.model.ReplyVO;
 import org.kosta.myproject.model.mapper.ShopMapper;
 import org.springframework.stereotype.Service;
 
@@ -82,6 +84,18 @@ public class ShopServiceImpl implements ShopService{
 	@Override
 	public void delivery(OrderVO order) {
 		shopMapper.delivery(order);
+	}
+
+	@Override
+	public void registReply(ReplyVO reply) {
+		shopMapper.registReply(reply);
+		
+	}
+
+	@Override
+	public List<ReplyListVO> replyList(int gdsNum) {
+		
+		return shopMapper.replyList(gdsNum);
 	}
 
 

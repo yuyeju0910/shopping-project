@@ -2,6 +2,37 @@
 /* SPRING SECURITY 를 적용할 경우 
  * 회원 가입시 비즈니스 계층(서비스)에서  회원가입과 권한을 함께 insert하도록 처리한다 (트랜잭션 처리 필요!)
  */
+
+select *from tbl_reply;
+---
+ select
+     r.gdsNum, r.id, r.repNum, r.repCon, r.repDate, m.name
+ from tbl_reply r
+     inner join tbl_member m
+         on r.id = m.id
+     where gdsNum =23
+
+--댓글
+create table tbl_reply (
+    gdsNum      number          not null,
+    id     varchar2(50)    not null,
+    repNum      number          not null,
+    repCon      varchar2(2000)  not null,
+    repDate     date            default sysdate,
+    primary key(gdsNum, repNum) 
+);
+create sequence tbl_reply_seq;
+--참조--id
+alter table tbl_reply
+    add constraint tbl_reply_gdsNum foreign key(gdsNum)
+    references tbl_goods(gdsNum);
+    
+alter table tbl_reply
+    add constraint tbl_reply_id foreign key(id)
+    references tbl_member(id);
+
+
+
 --tbl_order에 새로운 컬럼추가
 alter table tbl_order
 add(
