@@ -217,11 +217,11 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="bradcaump__inner text-center">
-						<h2 class="bradcaump-title">Member-Information</h2>
+						<h2 class="bradcaump-title">Order Management</h2>
 						<nav class="bradcaump-inner">
-							<a class="breadcrumb-item" href="index.html">MemberInformation</a>
-							<span class="brd-separetor">/</span> <span
-								class="breadcrumb-item active">Update</span>
+							<span class="breadcrumb-item">Order</span>
+							<span class="brd-separetor">/</span> 
+							<span class="breadcrumb-item">Delivery</span>
 						</nav>
 					</div>
 				</div>
@@ -233,53 +233,52 @@
 <div class="cart-main-area ptb--120 bg__white">
 	<div class="container">
 		<div class="row">
-
 			<div class="col-md-12 col-sm-12 col-xs-12">
-			
-			
-
 					<div class="table-content table-responsive">
-
+						<!-- 배송정보 start -->
 						<table>
-
 							<thead>
 								<tr>
-									<th class="product-thumbnail">Image</th>
-									<th class="product-name">Product</th>
+									<th class="customer-name">Customer Name</th>
+									<th class="customer-address1">Zip code</th>
+									<th class="customer-address2&3">Address</th>
 									<th class="product-price">Price</th>
-									<th class="product-quantity">Quantity</th>
-									<th class="product-subtotal">Total</th>
-									<th class="product-remove">Remove</th>
+									<th class="delivery-process">Process</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${orderView}" var="orderView"
-									varStatus="status">
-
+								<c:forEach items="${orderView}" var="orderView" varStatus="status">
 									<c:if test="${status.first}">
-										<p>
-											<span>수령인</span>${orderView.orderRec}</p>
-										<p>
-											<span>주소</span>(${orderView.addr1})
-											${orderView.addr2} ${orderView.addr3}
-										</p>
-										<p>
-											<span>가격</span>
-											<fmt:formatNumber pattern="###,###,###"
-												value="${orderView.amount}" />
-											원
-										</p>
-										<p><span>상태</span>${orderView.delivery}</p>
-										<div class="deliveryChange">
+										<tr>
+											<td>
+												${orderView.orderRec}
+											</td>
+											<td class="customer-address1">
+												${orderView.addr1}
+											</td>
+											<td class="customer-address2&3">
+												${orderView.addr2} ${orderView.addr3}
+											</td>
+											<td>
+												$ <fmt:formatNumber pattern="###,###,###" value="${orderView.amount}" />
+											</td>
+											<td>
+												${orderView.delivery}
+											</td>
+										</tr>
+									</tbody>
+											<%-- <td class="delivery-process">
+										  		${list.delivery}
+											</td> --%>
 										<form role="form" class="deliveryForm" action="${pageContext.request.contextPath}/views/shop/orderViewdelivery">
 						
   						<input type="hidden" name="orderId" value="${orderView.orderId}" />
  			 			<input type="hidden" name="delivery" class="delivery" value="" />
 			
-										
+						<div class="buttons-cart" style="margin-left: 1000px;">		
 							<button type="button" class="delivery1_btn">배송중</button>
-						<button type="button" class="delivery2_btn">배송완료</button>
-						
+							<button type="button" class="delivery2_btn">배송완료</button>
+						</div>		
 						<script>
 						
 						$(".delivery1_btn").click(function() {
@@ -297,157 +296,45 @@
 						}
 						
 						</script>
-						</form>
-										</div>
+						</form>	
 									</c:if>
-
 								</c:forEach>
 							</tbody>
-
 						</table>
-					</div>
-					 <ul class="orderView">
-  <c:forEach items="${orderView}" var="orderView">     
-  <li>
-   <div class="thumb">
-    <img src="${orderView.gdsThumbImg}" />
-   </div>
-   <div class="gdsInfo">
-    <p>
-     <span>상품명</span>${orderView.gdsName}<br />
-     <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.gdsPrice}" /> 원<br />
-     <span>구입 수량</span>${orderView.cartStock} 개<br />
-     <span>최종 가격</span><fmt:formatNumber pattern="###,###,###" value="${orderView.gdsPrice * orderView.cartStock}" /> 원                  
-    
-    </p>
-   </div>
-  </li>     
-  </c:forEach>
- </ul>
-					<div class="row">
-						<div class="col-md-8 col-sm-7 col-xs-12">
-							<div class="buttons-cart">
-								<input type="submit" value="Update Cart" /> <a href="#">Continue
-									Shopping</a>
-							</div>
+						<!-- 배송정보 end -->
+						<!-- 구매상품 정보 start -->
+						<table>
+							<thead>
+								<tr>
+									<th class="thumb">Image</th>
+									<th class="product-name">Product Name</th>
+									<th class="product-price">Product Price</th>
+									<th class="quantity">Quantity</th>
+									<th class="final-price">Final Price</th>
 
-						</div>
-						<div class="col-md-4 col-sm-5 col-xs-12">
-							<div class="cart_totals">
-								<h2>Cart Totals</h2>
-								<table>
-									<tbody>
-										<tr class="cart-subtotal">
-											<th>Subtotal</th>
-											<td><span class="amount">£215.00</span></td>
-										</tr>
-										<tr class="shipping">
-											<th>Shipping</th>
-											<td>
-												<ul id="shipping_method">
-													<li><input type="radio" /> <label> Flat Rate:
-															<span class="amount">£7.00</span>
-													</label></li>
-													<li><input type="radio" /> <label> Free
-															Shipping </label></li>
-													<li></li>
-												</ul>
-												<p>
-													<a class="shipping-calculator-button" href="#">Calculate
-														Shipping</a>
-												</p>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${orderView}" var="orderView">  
+										<tr>
+											<td class="thumb">
+    										<img src="${orderView.gdsThumbImg}" />
+   											</td>
+											<td clas="product-name">
+												${orderView.gdsName}
 											</td>
-										</tr>
-										<tr class="order-total">
-											<th>Total</th>
-											<td><strong><span class="amount"><fmt:formatNumber
-															pattern="###,###,###" value="${totalPrice}" /> </span></strong></td>
-										</tr>
-									</tbody>
-								</table>
-								<div class="wc-proceed-to-checkout">
-									<a
-										href="${pageContext.request.contextPath}/views/shop/orderpage">Proceed
-										to Checkout</a>
-
-								</div>
-
-
-							</div>
-						</div>
-					</div>
-				</form>
-
-			</div>
-		</div>
-	</div>
-</div>
-<!-- cart-main-area end -->
-<!-- Start Footer Area -->
-<footer class="htc__foooter__area gray-bg">
-	<div class="container">
-		<div class="row">
-			<div class="footer__container clearfix">
-				<!-- Start Single Footer Widget -->
-				<div class="col-md-3 col-lg-3 col-sm-6">
-					<div class="ft__widget">
-						<div class="ft__logo">
-							<a href="index.html"> <img
-								src="${pageContext.request.contextPath}/myweb/images/logo/logo.png"
-								alt="footer logo">
-							</a>
-						</div>
-						<div class="footer-address">
-							<ul>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-pin"></i>
-									</div>
-									<div class="address-text">
-										<p>
-											194 Main Rd T, FS Rayed <br> VIC 3057, USA
-										</p>
-									</div>
-								</li>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-email"></i>
-									</div>
-									<div class="address-text">
-										<a href="#"> info@example.com</a>
-									</div>
-								</li>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-phone-in-talk"></i>
-									</div>
-									<div class="address-text">
-										<p>+012 345 678 102</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<ul class="social__icon">
-							<li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- End Single Footer Widget -->
-				<!-- Start Single Footer Widget -->
-				<div class="col-md-3 col-lg-2 col-sm-6 smt-30 xmt-30">
-					<div class="ft__widget">
-						<h2 class="ft__title">Categories</h2>
-						<ul class="footer-categories">
-							<li><a href="shop-sidebar.html">Men</a></li>
-							<li><a href="shop-sidebar.html">Women</a></li>
-							<li><a href="shop-sidebar.html">Accessories</a></li>
-							<li><a href="shop-sidebar.html">Shoes</a></li>
-							<li><a href="shop-sidebar.html">Dress</a></li>
-							<li><a href="shop-sidebar.html">Denim</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- Start Footer Area -->
+											
+											<td class="product-price">
+												$ <fmt:formatNumber pattern="###,###,###" value="${orderView.gdsPrice}" /><br />
+											</td>
+											<td class="quantity">
+												${orderView.cartStock} 개<br />
+											</td>
+											<td class="final-price">
+												$ <fmt:formatNumber pattern="###,###,###" value="${orderView.gdsPrice * orderView.cartStock}" />
+											</td>
+										</tr></c:forEach>
+									</tbody></table>
+								<!-- 구매상품 정보 end -->
+					</div></div></div></div></div>
+<br><br>&nbsp;

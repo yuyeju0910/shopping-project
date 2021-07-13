@@ -14,8 +14,7 @@
 
 .orderInfo .inputArea:last-child { margin-top:30px; }
 .orderInfo .inputArea button { font-size:20px; border:2px solid #ccc; padding:5px 10px; background:#fff; margin-right:20px;}
-	
-	
+
 	</style>
 
 <div class="body__overlay"></div>
@@ -188,11 +187,11 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="bradcaump__inner text-center">
-						<h2 class="bradcaump-title">Member-Information</h2>
+						<h2 class="bradcaump-title">Order Management</h2>
 						<nav class="bradcaump-inner">
-							<a class="breadcrumb-item" href="index.html">MemberInformation</a>
-							<span class="brd-separetor">/</span> <span
-								class="breadcrumb-item active">Update</span>
+							<span class="breadcrumb-item">Order</span>
+							<span class="brd-separetor">/</span> 
+							<span class="breadcrumb-item">Delivery</span>
 						</nav>
 					</div>
 				</div>
@@ -206,36 +205,36 @@
 		<div class="row">
 
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				
-				<form action="#" >
-
 					<div class="table-content table-responsive">
 
 						<table>
 
 							<thead>
 								<tr>
-									<th class="product-thumbnail">Image</th>
-									<th class="product-name">Product</th>
+									<th class="order-number">Order Number</th>
+									<th class="customer-name">Customer Name</th>
 									<th class="product-price">Price</th>
-									<th class="product-quantity">Quantity</th>
-									<th class="product-subtotal">Total</th>
-									<th class="product-remove">Remove</th>
+									<th class="customer-address1">Zip code</th>
+									<th class="customer-address2&3">Address</th>
+									<th class="delivery-process">process</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${orderList}" var="list">
 									<tr>
-										<td class="product-thumbnail"><a href="/views/shop/orderView?n=${list.orderId}">${list.orderId}</a><img
-												src="#" /></a></td>
-										<td class="product-name"><a href="#">${list.orderRec}</a></td>
+										<td class="order-number"><a href="/views/shop/orderView?n=${list.orderId}">${list.orderId}</a><!-- <img src="#"> --></td>
+										<td class="customer-name"><a href="/views/shop/orderView?n=${list.orderId}">${list.orderRec}</a></td>
 										<td class="product-price"><span class="amount">
 												<%-- ${list.gdsPrice} --%>
 												<fmt:formatNumber pattern="###,###,###" value="${list.amount}" />
-										</span></td>
+										</span>
+										<td class="customer-address1">
+											${list.addr1}
 										</td>
-										${list.addr1} ${list.addr2} ${list.addr3}
-										<td class="product-remove">
+										<td class="customer-address2&3">
+											${list.addr2} ${list.addr3}
+										</td>
+										<td class="delivery-process">
 										  ${list.delivery}
 										</td>
 									</tr>
@@ -249,125 +248,15 @@
 					<div class="row">
 						<div class="col-md-8 col-sm-7 col-xs-12">
 							<div class="buttons-cart">
-								<input type="submit" value="Update Cart" /> <a href="#">Continue
-									Shopping</a>
+								<a href="/home">Main</a>
+								<a href="/admin/main">Admin Page</a>
 							</div>
 
 						</div>
-						<div class="col-md-4 col-sm-5 col-xs-12">
-							<div class="cart_totals">
-								<h2>Cart Totals</h2>
-								<table>
-									<tbody>
-										<tr class="cart-subtotal">
-											<th>Subtotal</th>
-											<td><span class="amount">£215.00</span></td>
-										</tr>
-										<tr class="shipping">
-											<th>Shipping</th>
-											<td>
-												<ul id="shipping_method">
-													<li><input type="radio" /> <label> Flat Rate:
-															<span class="amount">£7.00</span>
-													</label></li>
-													<li><input type="radio" /> <label> Free
-															Shipping </label></li>
-													<li></li>
-												</ul>
-												<p>
-													<a class="shipping-calculator-button" href="#">Calculate
-														Shipping</a>
-												</p>
-											</td>
-										</tr>
-										<tr class="order-total">
-											<th>Total</th>
-											<td><strong><span class="amount"><fmt:formatNumber
-															pattern="###,###,###" value="$" /> </span></strong></td>
-										</tr>
-									</tbody>
-								</table>
-								<div class="wc-proceed-to-checkout">
-									<a href="${pageContext.request.contextPath}/views/shop/orderpage">Proceed to Checkout</a>
-								
-								</div>
 						
-
-							</div>
-						</div>
 					</div>
-				</form>
-
 			</div>
 		</div>
 	</div>
 </div>
 <!-- cart-main-area end -->
-<!-- Start Footer Area -->
-<footer class="htc__foooter__area gray-bg">
-	<div class="container">
-		<div class="row">
-			<div class="footer__container clearfix">
-				<!-- Start Single Footer Widget -->
-				<div class="col-md-3 col-lg-3 col-sm-6">
-					<div class="ft__widget">
-						<div class="ft__logo">
-							<a href="index.html"> <img
-								src="${pageContext.request.contextPath}/myweb/images/logo/logo.png"
-								alt="footer logo">
-							</a>
-						</div>
-						<div class="footer-address">
-							<ul>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-pin"></i>
-									</div>
-									<div class="address-text">
-										<p>
-											194 Main Rd T, FS Rayed <br> VIC 3057, USA
-										</p>
-									</div>
-								</li>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-email"></i>
-									</div>
-									<div class="address-text">
-										<a href="#"> info@example.com</a>
-									</div>
-								</li>
-								<li>
-									<div class="address-icon">
-										<i class="zmdi zmdi-phone-in-talk"></i>
-									</div>
-									<div class="address-text">
-										<p>+012 345 678 102</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<ul class="social__icon">
-							<li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-							<li><a href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- End Single Footer Widget -->
-				<!-- Start Single Footer Widget -->
-				<div class="col-md-3 col-lg-2 col-sm-6 smt-30 xmt-30">
-					<div class="ft__widget">
-						<h2 class="ft__title">Categories</h2>
-						<ul class="footer-categories">
-							<li><a href="shop-sidebar.html">Men</a></li>
-							<li><a href="shop-sidebar.html">Women</a></li>
-							<li><a href="shop-sidebar.html">Accessories</a></li>
-							<li><a href="shop-sidebar.html">Shoes</a></li>
-							<li><a href="shop-sidebar.html">Dress</a></li>
-							<li><a href="shop-sidebar.html">Denim</a></li>
-						</ul>
-					</div>
-				</div>
-				<!-- Start Footer Area -->

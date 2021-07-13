@@ -295,7 +295,7 @@
 											<td>
 												<ul id="shipping_method">
 													<li><input type="radio" /> <label> Flat Rate:
-															<span class="amount">3000won</span>
+															<span class="amount">$3</span>
 													</label></li>
 													<!-- <li><input type="radio" /> <label> Free
 															Shipping </label></li> -->
@@ -309,7 +309,7 @@
 										<tr class="order-total">
 											<th>Total</th>
 											<td><strong><span class="amount"><fmt:formatNumber
-															pattern="###,###,###" value="${totalPrice+3000}" /> won
+															pattern="###,###,###" value="${totalPrice+3}" /> dollar
 												</span></strong></td>
 										</tr>
 									</tbody>
