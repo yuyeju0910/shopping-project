@@ -15,8 +15,8 @@
          <div class="row">
             <div class="col-md-12">
                <div class="search__inner">
-                  <form action="/views/shop/searchGoods" >
-                     <input placeholder="Search here... " type="text" name="gdsName">
+                  <form action="#" method="get">
+                     <input placeholder="Search here... " type="text">
                      <button type="submit"></button>
                   </form>
                   <div class="search__close__btn">
@@ -279,7 +279,7 @@
          <!-- End Filter Menu -->
          <!-- End Product MEnu -->
          <div class="row">
-          <c:forEach items="${list}" var="list">
+          <c:forEach items="${searchGoods}" var="list">
   
     
      <div class="col-md-3 single__pro col-lg-3 hidden-sm col-xs-12 cat--3">

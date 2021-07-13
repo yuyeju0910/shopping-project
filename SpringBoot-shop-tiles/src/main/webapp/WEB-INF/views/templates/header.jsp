@@ -16,19 +16,19 @@
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu">
                                     <li class="drop"><a href="/">Home</a></li>
-                                    <li class="drop"><a href="/views/shop/list?c=100">Top</a>
+                                    <li class="drop"><a href="/views/shop/list?c=100">Best</a>
                                         <ul class="dropdown">
                                             <li><a href="/views/shop/list2?m=101">Neat</a></li>
                                             <li><a href="/views/list2?c=100&m=102">Single portfolio</a></li>
                                         </ul>
                                     </li>
-                                    <li class="drop"><a href="/shop/list?c=200&m=201">Blog</a>
+                                    <li class="drop"><a href="/views/shop/list?c=200">Ring</a>
                                         <ul class="dropdown">
                                             <li><a href="/shop/list?c=200&m=201">blog 3 column</a></li>
                                             <li><a href="blog-details.html">Blog details</a></li>
                                         </ul>
                                     </li>
-                                    <li class="drop"><a href="shop.html">Shop</a>
+                                    <li class="drop"><a href="/views/shop/list?c=300">Neckless</a>
                                         <ul class="dropdown mega_dropdown">
                                             <!-- Start Single Mega MEnu -->
                                             <li><a class="mega__title" href="shop.html">shop layout</a>

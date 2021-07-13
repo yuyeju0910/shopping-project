@@ -2,8 +2,23 @@
 /* SPRING SECURITY 를 적용할 경우 
  * 회원 가입시 비즈니스 계층(서비스)에서  회원가입과 권한을 함께 insert하도록 처리한다 (트랜잭션 처리 필요!)
  */
-
+select *from tbl_goods;
 select *from tbl_reply;
+select *from tbl_member;
+---
+
+select * from tbl_goods where gdsName=#{value};
+select *
+		from tbl_goods
+		where gdsName like '니트여유';
+		
+select *
+		from tbl_goods
+		where gdsName '%'||#{value}||'%'
+---
+	select *
+		from post p, a_member m
+		where title like '%'||#{value}||'%' and p.member_id=m.member_id
 ---
  select
      r.gdsNum, r.id, r.repNum, r.repCon, r.repDate, m.name
@@ -30,7 +45,19 @@ alter table tbl_reply
 alter table tbl_reply
     add constraint tbl_reply_id foreign key(id)
     references tbl_member(id);
+    ---
 
+ select *from tbl_goods--------------------------------------------------------51
+ 	add constraint tbl_goods_id foreign key(id)
+    references tbl_member(id);
+    
+    ALTER TABLE tbl_goods ADD id VARCHAR(25);
+    
+    ---
+  select *from tbl_member;
+
+    --
+----
 
 
 --tbl_order에 새로운 컬럼추가
@@ -38,8 +65,8 @@ alter table tbl_order
 add(
   	delivery varchar2(20) default '배송준비'
 );
-
-
+---gds price 추가
+alter table 
 --
 select *from tbl_cart;
 
@@ -205,7 +232,7 @@ create table goods_category (
 delete table goods_category;
 insert into goods_category(cateName,cateCode) values('Top',100);
 insert into goods_category(cateName,cateCode) values('bottom',200);
-
+insert into goods_category(cateName,cateCode) values('neckless',300);
 select *from goods_category;
 
 create table middle_category(
@@ -216,6 +243,7 @@ middlecateCode varchar2(30)  not null primary key,
 );
 --------------
 select *from middle_category;
+insert into middle_category(middlecatecode,middlecatename,catecode) values('301','gold',300);
 insert into middle_category(middlecatecode,middlecatename,catecode) values('101','neat',100);
 -------------------------
 create table tbl_goods (
@@ -306,6 +334,7 @@ select *from middle_category;
 , g.gdsDate
 , g.gdsImg
 , g.gdsThumbImg
+,g.gdsPrice
 , m.middlecateName
 , c.cateCode
 , c.cateName

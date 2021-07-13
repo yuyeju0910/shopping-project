@@ -1,11 +1,22 @@
 package org.kosta.myproject.controller;
 
-import org.springframework.security.core.context.SecurityContextHolder;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.kosta.myproject.model.GoodsVO;
+import org.kosta.myproject.service.ShopService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+	@Resource
+	private ShopService shopserivce;
+	
+
+	
 	@RequestMapping(value={"/","home"})
 	public String home() {
 		// db, model 과 연동 

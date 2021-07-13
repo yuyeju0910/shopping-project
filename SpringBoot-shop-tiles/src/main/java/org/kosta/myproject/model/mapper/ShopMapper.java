@@ -31,5 +31,7 @@ public interface ShopMapper {
 	List<ReplyListVO> replyList(int gdsNum);
 	void deleteReply(ReplyVO reply);
 	String replyUserIdCheck(int repNum);
+	List<GoodsVO> findGoods(String gdsName);
+	List<GoodsVO> searchGoods(String gdsName);
 	
 }

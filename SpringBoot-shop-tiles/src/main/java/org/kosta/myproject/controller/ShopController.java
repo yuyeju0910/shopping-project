@@ -29,11 +29,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ShopController {
 	@Resource
 	private ShopService shopserivce;
+	
+
+	
 
 	@RequestMapping("views/shop/list")
 	public String getList(@RequestParam("c") String cateCode, Model model) {
 		List<GoodsVO> categorylist = shopserivce.categorylist(cateCode);
 		model.addAttribute("list", categorylist);
+		
 		return "shop/list.tiles";
 
 	}
@@ -51,7 +55,7 @@ public class ShopController {
 	public String view(@RequestParam("n") int gNum, Model model) {
 		GoodsVO goods = shopserivce.view(gNum);
 		model.addAttribute("goods", goods);
-		
+	
 		/*
 		 * List<ReplyListVO> reply =shopserivce.replyList(gNum);
 		 * model.addAttribute("reply", reply);
@@ -269,9 +273,16 @@ public class ShopController {
 		
 		
 	}
+	@RequestMapping("/views/shop/searchGoods")
 	
+public String searchGoods(@RequestParam("gdsName")String gdsName,Model model)
+{
+		model.addAttribute("searchGoods",shopserivce.searchGoods(gdsName));
+	  return "shop/searchList.tiles";
+}
 
-
+	
+	
 	
 	
 	

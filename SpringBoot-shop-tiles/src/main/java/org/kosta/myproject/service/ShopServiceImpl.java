@@ -109,6 +109,20 @@ public class ShopServiceImpl implements ShopService{
 		return shopMapper.replyUserIdCheck(repNum);
 	}
 
+	@Override
+	public List<GoodsVO> findGoods(String gdsName) {
+		
+		return shopMapper.findGoods(gdsName);
+	}
+
+	@Override
+	public List<GoodsVO> searchGoods(String gdsName) {
+		
+		return shopMapper.searchGoods(gdsName);
+	}
+
+	
+
 
 	
 
