@@ -161,10 +161,9 @@
                             <div class="filter__menu__container">
                                 <div class="product__menu">
                                     <button data-filter="*"  class="is-checked">All</button>
-                                    <button data-filter=".cat--1">Furnitures</button>
-                                    <button data-filter=".cat--2">Bags</button>
-                                    <button data-filter=".cat--3">Decoration</button>
-                                    <button data-filter=".cat--4">Accessories</button>
+                                    <button data-filter=".cat--1">Best</button>
+                                    <button data-filter=".cat--2">Ring/Earrings</button>
+                                    <button data-filter=".cat--3">Necklaces</button>
                                 </div>
                                 <div class="filter__box">
                                     <a class="filter__menu" href="#">filter</a>
@@ -244,6 +243,7 @@
                     </div>
                     <!-- End Filter Menu -->
                     <!-- End Product MEnu -->
+                    <!-- 카테고리 1-best 2-ring 3-necklaces 4-earrings -->
                     <div class="row">
                         <div class="product__list another-product-style">
                             <!-- Start Single Product -->
@@ -252,24 +252,40 @@
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/1.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/1.jpg" alt="product images">
                                             </a>
                                         </div>
-                                        <div class="product__hover__info">
+                                        <!-- <div class="product__hover__info">
                                             <ul class="product__action">
                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
                                                 <li><a title="Add TO Cart" href="cart"><span class="ti-shopping-cart"></span></a></li>
                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                             </ul>
+                                        </div> -->
+                                        <!-- 실험용 -->
+                                        <div class="product__hover__info">
+                                            <div class="product__action">
+                                                <a href="/views/shop/view?n=${list.gdsNum}">view details
+                                            </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="product__details">
+                                    <!-- 실험용 끝-->
+                                    <!-- <div class="product__details">
                                         <h2><a href="product-details">Simple Black Clock</a></h2>
                                         <ul class="product__price">
                                             <li class="old__price">$16.00</li>
                                             <li class="new__price">$10.00</li>
                                         </ul>
+                                    </div> -->
+                                    <!-- 실험용 -->
+                                    <div class="product__details">
+                                        <h2><a href="/views/shop/view?n=${list.gdsNum}">${list.gdsName}</a></h2>
+                                        <ul class="product__price">
+                                            <li class="new__price">$${list.gdsPrice}</li>
+                                        </ul>
                                     </div>
+									<!-- 실험용 끝 -->
                                 </div>
                             </div>
                             <!-- End Single Product -->
@@ -279,7 +295,7 @@
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/2.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/2.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -301,12 +317,12 @@
                             </div>
                             <!-- End Single Product -->
                             <!-- Start Single Product -->
-                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--2">
+                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--3">
                                 <div class="product foo">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/3.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/3.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -328,12 +344,12 @@
                             </div>
                             <!-- End Single Product -->
                             <!-- Start Single Product -->
-                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--4">
+                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--2">
                                 <div class="product foo">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/4.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/4.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -360,7 +376,7 @@
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/5.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/5.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -382,12 +398,12 @@
                             </div>
                             <!-- End Single Product -->
                             <!-- Start Single Product -->
-                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--3">
+                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--1">
                                 <div class="product foo">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/6.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/6.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -414,7 +430,7 @@
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/7.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/7.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -441,7 +457,7 @@
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/8.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/8.jpg" alt="product images" style="width: 270px; height:270px;">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -463,12 +479,12 @@
                             </div>
                             <!-- End Single Product -->
                             <!-- Start Single Product -->
-                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--4">
+                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--3">
                                 <div class="product foo">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/9.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/9.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -490,12 +506,12 @@
                             </div>
                             <!-- End Single Product -->
                             <!-- Start Single Product -->
-                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--3">
+                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--2">
                                 <div class="product foo">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/10.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/10.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -517,12 +533,12 @@
                             </div>
                             <!-- End Single Product -->
                             <!-- Start Single Product -->
-                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--4">
+                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--1">
                                 <div class="product foo">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/11.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/11.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -549,7 +565,7 @@
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/12.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/12.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -576,7 +592,7 @@
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/13.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/13.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -598,12 +614,12 @@
                             </div>
                             <!-- End Single Product -->
                             <!-- Start Single Product -->
-                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--4">
+                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--2">
                                 <div class="product foo">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/14.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/14.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -625,12 +641,12 @@
                             </div>
                             <!-- End Single Product -->
                             <!-- Start Single Product -->
-                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--4">
+                            <div class="col-md-3 single__pro col-lg-3 col-sm-4 col-xs-12 cat--2">
                                 <div class="product foo">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/15.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/15.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">
@@ -652,12 +668,12 @@
                             </div>
                             <!-- End Single Product -->
                             <!-- Start Single Product -->
-                            <div class="col-md-3 single__pro col-lg-3 hidden-sm col-xs-12 cat--3">
+                            <div class="col-md-3 single__pro col-lg-3 hidden-sm col-xs-12 cat--2">
                                 <div class="product foo">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
                                             <a href="#">
-                                                <img src="${pageContext.request.contextPath}/myweb/images/product/16.png" alt="product images">
+                                                <img src="${pageContext.request.contextPath}/myweb/images/product-main/16.jpg" alt="product images">
                                             </a>
                                         </div>
                                         <div class="product__hover__info">

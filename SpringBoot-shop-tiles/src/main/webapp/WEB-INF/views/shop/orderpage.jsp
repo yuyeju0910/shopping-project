@@ -314,12 +314,7 @@
 										</tr>
 									</tbody>
 								</table>
-								<div class="wc-proceed-to-checkout">
-									<a href="#">Proceed to Checkout</a>
-
-								</div>
-
-
+								
 							</div>
 						</div>
 					</div>

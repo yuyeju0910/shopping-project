@@ -320,7 +320,7 @@
 											<td class="thumb">
     										<img src="${orderView.gdsThumbImg}" />
    											</td>
-											<td clas="product-name">
+											<td class="product-name">
 												${orderView.gdsName}
 											</td>
 											
