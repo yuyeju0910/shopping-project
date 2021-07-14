@@ -209,6 +209,28 @@ public class ShopController {
 		
 		
 	}
+
+	
+	
+	
+	
+	//주문자만
+	@RequestMapping("/views/shop/orderUserList")
+	public String orderUserList(@RequestParam("n") String orderId,OrderVO order, Model model) {
+		MemberVO member = (MemberVO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String id =member.getId();
+		
+		order.setId(id);
+		order.setOrderId(orderId);
+		
+		List<OrderListVO> orderView =shopserivce.orderView(order);
+		
+		model.addAttribute("orderView", orderView);
+		
+		return "shop/orderView.tiles";
+		
+		
+	}
 	
 	
 	// 주문 상세 목록 - 상태 변경

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.kosta.myproject.model.GoodsViewVO;
+import org.kosta.myproject.model.MemberVO;
 import org.kosta.myproject.model.CategoryVO;
 import org.kosta.myproject.model.GoodsVO;
 
@@ -16,4 +17,5 @@ public interface AdminService {
 	void productUpdate(GoodsVO goods);
 	List<Map<String, String>>showcategory(String middlecateCode);
 	void deletePost(int n);
+	List<MemberVO>memberList();
 }

@@ -248,7 +248,7 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">상품후기</a></p>
+                                            <p class="blog__des"><a href="${pageContext.request.contextPath}/views/shop/orderList">주문관리</a></p>
                                             <ul class="bl__meta">
                                                 <li>By :<a href="#">Admin</a></li>
                                                 <li>Product</li>
@@ -279,7 +279,7 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">회원 리스트</a></p>
+                                            <p class="blog__des"><a href="${pageContext.request.contextPath}/admin/goods/memberList">회원 리스트</a></p>
                                             <ul class="bl__meta">
                                                 <li>By :<a href="#">Admin</a></li>
                                                 <li>Product</li>

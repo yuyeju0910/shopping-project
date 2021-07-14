@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import org.kosta.myproject.model.GoodsViewVO;
+import org.kosta.myproject.model.MemberVO;
 import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.model.mapper.AdminMapper;
 import org.springframework.stereotype.Service;
@@ -47,6 +48,11 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public void deletePost(int n) {
 		adminMapper.deletePost(n);
+	}
+	@Override
+	public List<MemberVO> memberList() {
+		
+		return adminMapper.memberList();
 	}
 
 

@@ -6,6 +6,8 @@ select *from tbl_goods;
 select *from tbl_reply;
 select *from tbl_member;
 ---
+select *from tbl_member;
+
 
 select * from tbl_goods where gdsName=#{value};
 select *
@@ -239,7 +241,8 @@ create table middle_category(
 middlecateCode varchar2(30)  not null primary key,
  middlecateName  varchar2(20) not null,
  cateCode 			varchar2(30) not null,
- constraint fk_goods_category foreign key (cateCode) references goods_category(cateCode)
+ constraint fk_goods_category foreign key (cateCode) references goods_
+(cateCode)
 );
 --------------
 select *from middle_category;

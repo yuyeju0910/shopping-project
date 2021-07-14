@@ -82,7 +82,10 @@ where  m.middlecateCode=#{middlecateCode}
 		WHERE gdsNum=#{gdsNum}
 	</delete>
 
-
+<select id="memberList" resultType="memberVO">
+	select id,password,name,phone 
+	from tbl_member
+</select>
 
 </mapper>
 

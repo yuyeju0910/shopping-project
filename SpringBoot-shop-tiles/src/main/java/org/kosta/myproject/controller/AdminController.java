@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.kosta.myproject.controller.utils.UpLoadFileUtils;
 import org.kosta.myproject.model.CategoryVO;
 import org.kosta.myproject.model.GoodsVO;
+import org.kosta.myproject.model.MemberVO;
 import org.kosta.myproject.service.AdminService;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
@@ -111,6 +112,13 @@ public class AdminController {
 		model.addAttribute("productList", productlist);
 		return "admin/goods/productList.tiles";
 	}
+	@RequestMapping("goods/memberList")
+	public String memberList(Model model) {
+	List<MemberVO>memberList =adminService.memberList();
+	model.addAttribute("mlist", memberList);
+	return "admin/goods/memberList.tiles";
+	
+}
 	
 	@RequestMapping("goods/view")
 	public String view(@RequestParam("n") int gNum,Model model) {

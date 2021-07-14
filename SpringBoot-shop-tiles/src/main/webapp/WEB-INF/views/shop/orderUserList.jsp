@@ -5,17 +5,47 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
-	<style>
-	.orderInfo { border:5px solid #eee; padding:20px; }
-.orderInfo .inputArea { margin:10px 0; }
-.orderInfo .inputArea label { display:inline-block; width:120px; margin-right:10px; }
-.orderInfo .inputArea input { font-size:14px; padding:5px; }
-#userAddr2, #userAddr3 { width:250px; }
+<style>
+.orderInfo {
+	border: 5px solid #eee;
+	padding: 20px;
+}
 
-.orderInfo .inputArea:last-child { margin-top:30px; }
-.orderInfo .inputArea button { font-size:20px; border:2px solid #ccc; padding:5px 10px; background:#fff; margin-right:20px;}
+.orderInfo .inputArea {
+	margin: 10px 0;
+}
 
-	</style>
+.orderInfo .inputArea label {
+	display: inline-block;
+	width: 120px;
+	margin-right: 10px;
+}
+
+.orderInfo .inputArea input {
+	font-size: 14px;
+	padding: 5px;
+}
+
+#userAddr2, #userAddr3 {
+	width: 250px;
+}
+
+.orderInfo .inputArea:last-child {
+	margin-top: 30px;
+}
+
+.orderInfo .inputArea button {
+	font-size: 20px;
+	border: 2px solid #ccc;
+	padding: 5px 10px;
+	background: #fff;
+	margin-right: 20px;
+}
+
+.deliveryChange { text-align:right; }
+.delivery1_btn,
+.delivery2_btn { font-size:16px; background:#fff; border:1px solid #999; margin-left:10px; }
+</style>
 
 <div class="body__overlay"></div>
 <!-- Start Offset Wrapper -->
@@ -203,64 +233,108 @@
 <div class="cart-main-area ptb--120 bg__white">
 	<div class="container">
 		<div class="row">
-
 			<div class="col-md-12 col-sm-12 col-xs-12">
 					<div class="table-content table-responsive">
-
+						<!-- 배송정보 start -->
 						<table>
-
 							<thead>
 								<tr>
-									<th class="order-number">Order Number</th>
 									<th class="customer-name">Customer Name</th>
-									<th class="product-price">Price</th>
 									<th class="customer-address1">Zip code</th>
 									<th class="customer-address2&3">Address</th>
-									<th class="delivery-process">process</th>
+									<th class="product-price">Price</th>
+									<th class="delivery-process">Process</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${orderList}" var="list">
-									<tr>
-								
-										<td class="order-number"><a href="/views/shop/orderView?n=${list.orderId}">${list.orderId}</a><!-- <img src="#"> --></td>
-									
-							
-								<td class="customer-name"><a href="/views/shop/orderView?n=${list.orderId}">${list.orderRec}</a></td>
-										<td class="product-price"><span class="amount">
-												<%-- ${list.gdsPrice} --%>
-												<fmt:formatNumber pattern="###,###,###" value="${list.amount}" />
-										</span>
-										<td class="customer-address1">
-											${list.addr1}
-										</td>
-										<td class="customer-address2&3">
-											${list.addr2} ${list.addr3}
-										</td>
-										<td class="delivery-process">
-										  ${list.delivery}
-										</td>
-										
-									</tr>
-									
-
+								<c:forEach items="${orderView}" var="orderView" varStatus="status">
+									<c:if test="${status.first}">
+										<tr>
+											<td>
+												${orderView.orderRec}
+											</td>
+											<td class="customer-address1">
+												${orderView.addr1}
+											</td>
+											<td class="customer-address2&3">
+												${orderView.addr2} ${orderView.addr3}
+											</td>
+											<td>
+												$ <fmt:formatNumber pattern="###,###,###" value="${orderView.amount}" />
+											</td>
+											<td>
+												${orderView.delivery}
+											</td>
+										</tr>
+									</tbody>
+											<%-- <td class="delivery-process">
+										  		${list.delivery}
+											</td> --%>
+										<form role="form" class="deliveryForm" action="${pageContext.request.contextPath}/views/shop/orderViewdelivery">
+						
+  						<input type="hidden" name="orderId" value="${orderView.orderId}" />
+ 			 			<input type="hidden" name="delivery" class="delivery" value="" />
+			
+						<div class="buttons-cart" style="margin-left: 1000px;">		
+							<button type="button" class="delivery1_btn">배송중</button>
+							<button type="button" class="delivery2_btn">배송완료</button>
+						</div>		
+						<script>
+						
+						$(".delivery1_btn").click(function() {
+							$(".delivery").val("배송중");
+							run();
+						});
+						
+						$(".delivery2_btn").click(function() {
+							$(".delivery").val("배송완료");
+							run();
+						});
+						
+						function run (){
+							$(".deliveryForm").submit();
+						}
+						
+						</script>
+						</form>	
+									</c:if>
 								</c:forEach>
 							</tbody>
-
 						</table>
-					</div>
-					<div class="row">
-						<div class="col-md-8 col-sm-7 col-xs-12">
-							<div class="buttons-cart">
-								<a href="/home">Main</a>
-								<a href="/admin/main">Admin Page</a>
-							</div>
+						<!-- 배송정보 end -->
+						<!-- 구매상품 정보 start -->
+						<table>
+							<thead>
+								<tr>
+									<th class="thumb">Image</th>
+									<th class="product-name">Product Name</th>
+									<th class="product-price">Product Price</th>
+									<th class="quantity">Quantity</th>
+									<th class="final-price">Final Price</th>
 
-						</div>
-						
-					</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- cart-main-area end -->
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${orderView}" var="orderView">  
+										<tr>
+											<td class="thumb">
+    										<img src="${orderView.gdsThumbImg}" />
+   											</td>
+											<td clas="product-name">
+												${orderView.gdsName}
+											</td>
+											
+											<td class="product-price">
+												$ <fmt:formatNumber pattern="###,###,###" value="${orderView.gdsPrice}" /><br />
+											</td>
+											<td class="quantity">
+												${orderView.cartStock} 개<br />
+											</td>
+											<td class="final-price">
+												$ <fmt:formatNumber pattern="###,###,###" value="${orderView.gdsPrice * orderView.cartStock}" />
+											</td>
+										</tr></c:forEach>
+									</tbody></table>
+								<!-- 구매상품 정보 end -->
+					</div></div></div></div></div>
+<br><br>&nbsp;

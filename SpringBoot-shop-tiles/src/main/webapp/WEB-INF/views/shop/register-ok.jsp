@@ -3,5 +3,5 @@
 
 <script type="text/javascript">
 alert("주문이 완료되었습니다");
-location.href="${pageContext.request.contextPath}/views/shop/cartList";
+location.href="${pageContext.request.contextPath}/views/shop/list?c=100";
 </script>
