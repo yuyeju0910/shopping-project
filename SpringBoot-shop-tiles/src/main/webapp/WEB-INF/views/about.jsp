@@ -38,16 +38,7 @@
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
                     </div>
-                    <ul class="sidebar__thumd">
-                        <li><a href="#"><img src="images/sidebar-img/1.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/2.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/3.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/4.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/5.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/6.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/7.jpg" alt="sidebar images"></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/8.jpg" alt="sidebar images"></a></li>
-                    </ul>
+                    
                     <div class="offset__widget">
                         <div class="offset__single">
                             <h4 class="offset__title">Language</h4>

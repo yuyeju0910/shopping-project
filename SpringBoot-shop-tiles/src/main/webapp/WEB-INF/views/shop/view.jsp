@@ -52,7 +52,6 @@
  section.replyList div.userInfo .date { color:#999; display:inline-block; margin-left:10px; }
  section.replyList div.replyContent { padding:10px; margin:20px 0; }
  section.replyList div.replyFooter button { font-size:14px; border: 1px solid #999; background:none; margin-right:10px; }
- 
     </style>
 </head>
 <div class="body__overlay"></div>

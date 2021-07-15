@@ -42,6 +42,7 @@
                                 <img src="${pageContext.request.contextPath}/myweb/images/logo/logo.png" alt="logo">
                             </a>
                         </div>
+                        
                         <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
                     </div>
                     <ul class="sidebar__thumd">
