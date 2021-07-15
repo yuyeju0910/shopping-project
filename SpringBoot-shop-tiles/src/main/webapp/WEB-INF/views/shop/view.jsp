@@ -317,7 +317,7 @@ span.name {
                   </div>
                </div>
                <ul class="pro__dtl__btn">
-                  <li class="buy__now__btn"><a href="#">buy now</a></li>
+                  <li class="buy__now__btn"><a href="/views/shop/cartList">buy now</a></li>
                   <li><a href="#"><span class="ti-heart"></span></a></li>
                   <script>
             
@@ -344,7 +344,7 @@ span.name {
                             xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
                         },
                         success: function(result){
-                            alert(result);
+                            /* alert(result); */
                            if(result ==1){
                            alert("카트에 상품이 담겼습니다");
                            $(".cart-plus-minus-box").val("1");
