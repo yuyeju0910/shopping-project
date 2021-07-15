@@ -41,11 +41,11 @@
     <style>
      section.replyForm { padding:30px 0; }
  section.replyForm div.input_area { margin:10px 0; }
- section.replyForm textarea { font-size:16px; font-family:'맑은 고딕', verdana; padding:10px; width:1000px;; height:150px; }
+ section.replyForm textarea { background: transparent; font-size:16px; font-family:'맑은 고딕', verdana; padding:10px; width:1000px;; height:150px; }
  section.replyForm button { font-size:20px; padding:5px 10px; margin:10px 0; background:#fff; border:1px solid #ccc; }
  
  section.replyList { padding:30px 0; }
- section.replyList ol { padding:0; margin:0; }
+ section.replyList ol { padding:0; margin:0; list-style:none; }
  section.replyList ol li { padding:10px 0; border-bottom:2px solid #eee; }
  section.replyList div.userInfo { }
  section.replyList div.userInfo .userName { font-size:24px; font-weight:bold; }
@@ -235,72 +235,21 @@
       <div class="row">
          <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
             <div class="product__details__container">
-               <!-- Start Small images -->
-               <ul class="product__small__images" role="tablist">
-                  <li role="presentation" class="pot-small-img active"><a
-                     href="#img-tab-1" role="tab" data-toggle="tab"> <img
-                        src="${goods.gdsThumbImg}" alt="small-image">
-                  </a></li>
-                  <li role="presentation" class="pot-small-img"><a
-                     href="#img-tab-2" role="tab" data-toggle="tab"> <img
-                        src="${goods.gdsThumbImg}" alt="small-image">
-                  </a></li>
-                  <li role="presentation" class="pot-small-img hidden-xs"><a
-                     href="#img-tab-3" role="tab" data-toggle="tab"> <img
-                        src="${goods.gdsThumbImg}" alt="small-image">
-                  </a></li>
-                  <li role="presentation" class="pot-small-img hidden-xs hidden-sm">
-                     <a href="#img-tab-4" role="tab" data-toggle="tab"> <img
-                        src="${goods.gdsThumbImg}" alt="small-image">
-                  </a>
-                  </li>
-               </ul>
-               <!-- End Small images -->
+              
                <div class="product__big__images">
                   <div class="portfolio-full-image tab-content">
                      <div role="tabpanel"
                         class="tab-pane fade in active product-video-position"
                         id="img-tab-1">
                         <img src="${goods.gdsImg}" alt="full-image">
-                        <div class="product-video">
-                           <a class="video-popup"
-                              href="https://www.youtube.com/watch?v=cDDWvj_q-o8"> <i
-                              class="zmdi zmdi-videocam"></i> View Video
-                           </a>
-                        </div>
+                        
                      </div>
                      <div role="tabpanel" class="tab-pane fade product-video-position"
                         id="img-tab-2">
                         <img src="${goods.gdsThumbImg}" alt="full-image">
-                        <div class="product-video">
-                           <a class="video-popup"
-                              href="https://www.youtube.com/watch?v=cDDWvj_q-o8"> <i
-                              class="zmdi zmdi-videocam"></i> View Video
-                           </a>
-                        </div>
+                     
                      </div>
-                     <div role="tabpanel" class="tab-pane fade product-video-position"
-                        id="img-tab-3">
-                        <img
-                           src="${pageContext.request.contextPath}/myweb/images/product-details/big-img/11.jpg"
-                           alt="full-image">
-                        <div class="product-video">
-                           <a class="video-popup"
-                              href="https://www.youtube.com/watch?v=cDDWvj_q-o8"> <i
-                              class="zmdi zmdi-videocam"></i> View Video
-                           </a>
-                        </div>
-                     </div>
-                     <div role="tabpanel" class="tab-pane fade product-video-position"
-                        id="img-tab-4">
-                        <img src="${goods.gdsThumbImg}" alt="full-image">
-                        <div class="product-video">
-                           <a class="video-popup"
-                              href="https://www.youtube.com/watch?v=cDDWvj_q-o8"> <i
-                              class="zmdi zmdi-videocam"></i> View Video
-                           </a>
-                        </div>
-                     </div>
+              
                   </div>
                </div>
             </div>
@@ -333,27 +282,7 @@
                   <li class="old__prize">$15.21</li>
                   <li>$10.00</li>
                </ul>
-               <div class="pro__dtl__color">
-                  <h2 class="title__5">Choose Colour</h2>
-                  <ul class="pro__choose__color">
-                     <li class="red"><a href="#"><i class="zmdi zmdi-circle"></i></a></li>
-                     <li class="blue"><a href="#"><i class="zmdi zmdi-circle"></i></a></li>
-                     <li class="perpal"><a href="#"><i
-                           class="zmdi zmdi-circle"></i></a></li>
-                     <li class="yellow"><a href="#"><i
-                           class="zmdi zmdi-circle"></i></a></li>
-                  </ul>
-               </div>
-               <div class="pro__dtl__size">
-                  <h2 class="title__5">Size</h2>
-                  <ul class="pro__choose__size">
-                     <li><a href="#">xl</a></li>
-                     <li><a href="#">m</a></li>
-                     <li><a href="#">ml</a></li>
-                     <li><a href="#">lm</a></li>
-                     <li><a href="#">xxl</a></li>
-                  </ul>
-               </div>
+               
                <div class="product-action-wrap">
                   <div class="prodict-statas">
                      <span>Quantity :</span>
@@ -412,8 +341,7 @@
                            alert("카트 담기 실패");
                         }
                       });
-                      
-                     
+                                     
                   });
                   </script>
                   <li><a href="#"><span class="ti-email"></span></a></li>
@@ -516,7 +444,7 @@
                    <div class="pro__review">
                         <div class="review__thumb">
                            <img
-                              src="${pageContext.request.contextPath}/myweb/images/review/1.jpg"
+                              src="${pageContext.request.contextPath}/myweb/images/review/1.png"
                               alt="review images">
                         </div>
                      		<div id="reply">
@@ -530,7 +458,7 @@
 							   </div>
 							   
 							   <div class="input_area">
-							    <button type="button" id="reply_btn">댓글써라</button>
+							    <button type="button" id="reply_btn">review</button>
 							    <script>
 									 $("#reply_btn").click(function(){
 									  

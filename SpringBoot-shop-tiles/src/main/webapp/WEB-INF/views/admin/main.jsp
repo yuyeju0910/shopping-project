@@ -176,7 +176,7 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.html">
-                                            <img src="${pageContext.request.contextPath}/myweb/images/blog/blog-img/1.jpg" alt="blog images">
+                                            <img src="${pageContext.request.contextPath}/myweb/images/admin/1.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
                                             <div class="post__time--inner">
@@ -207,7 +207,7 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.html">
-                                            <img src="${pageContext.request.contextPath}/myweb/images/blog/blog-img/2.jpg" alt="blog images">
+                                            <img src="${pageContext.request.contextPath}/myweb/images/admin/2.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
                                             <div class="post__time--inner">
@@ -238,7 +238,7 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.html">
-                                            <img src="${pageContext.request.contextPath}/myweb/images/blog/blog-img/3.jpg" alt="blog images">
+                                            <img src="${pageContext.request.contextPath}/myweb/images/admin/3.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
                                             <div class="post__time--inner">
@@ -269,7 +269,7 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.html">
-                                            <img src="${pageContext.request.contextPath}/myweb/images/blog/blog-img/3.jpg" alt="blog images">
+                                            <img src="${pageContext.request.contextPath}/myweb/images/admin/4.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
                                             <div class="post__time--inner">
@@ -300,7 +300,7 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.html">
-                                            <img src="${pageContext.request.contextPath}/myweb/images/blog/blog-img/2.jpg" alt="blog images">
+                                            <img src="${pageContext.request.contextPath}/myweb/images/admin/5.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
                                             <div class="post__time--inner">
@@ -334,11 +334,11 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.html">
-                                            <img src="${pageContext.request.contextPath}/myweb/images/blog/blog-img/2.jpg" alt="blog images">
+                                            <img src="${pageContext.request.contextPath}/myweb/images/admin/6.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
                                             <div class="post__time--inner">
-                                                <span class="date">14</span>
+                                                <span class="date"></span>
                                                 <span class="month">sep</span>
                                             </div>
                                         </div>
@@ -359,23 +359,10 @@
                             </div>
                         </div>
                         <!-- End Single Blog -->
-                        <!-- Start Single Blog -->
                        
-                        <!-- End Single Blog -->
-                        <!-- Start Single Blog -->
-                  >
-                        <!-- End Single Blog -->
                     </div>
                 </div>
-                <!-- Start Load More BTn -->
-                <div class="row mt--60">
-                    <div class="col-md-12">
-                        <div class="htc__loadmore__btn">
-                            <a href="#">load more</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Load More BTn -->
+                
             </div>
         </div>
 
