@@ -27,8 +27,7 @@
                      + "<div class='replyContent'>" + this.repCon + "</div>"
                      
                      + "<div class='replyFooter'>"
-                     + "<button type='button' class='modify' data-repNum='" + this.repNum + "'>M</button>"
-                     + "<button type='button' class='delete' data-repNum='" + this.repNum + "'>D</button>"
+                     + "<button type='button' class='delete' data-repNum='" + this.repNum + "'>delete</button>"
                      + "</div>"
                      
                      + "</li>";           
@@ -43,15 +42,32 @@
  section.replyForm div.input_area { margin:10px 0; }
  section.replyForm textarea { background: transparent; font-size:16px; font-family:'맑은 고딕', verdana; padding:10px; width:1000px;; height:150px; }
  section.replyForm button { font-size:20px; padding:5px 10px; margin:10px 0; background:#fff; border:1px solid #ccc; }
- 
+ span.date {
+    float: left;
+    margin-top:2%;
+}
+button.delete {
+    position: relative;
+    left:50%;
+}
+
+span.name {
+    float: left;
+    font-size:24px;
+    margin-top:15px;
+}
  section.replyList { padding:30px 0; }
  section.replyList ol { padding:0; margin:0; list-style:none; }
  section.replyList ol li { padding:10px 0; border-bottom:2px solid #eee; }
  section.replyList div.userInfo { }
- section.replyList div.userInfo .userName { font-size:24px; font-weight:bold; }
+ section.replyList div.userInfo .userName { font-size:20px; font-weight:bold;  }
  section.replyList div.userInfo .date { color:#999; display:inline-block; margin-left:10px; }
- section.replyList div.replyContent { padding:10px; margin:20px 0; }
+ section.replyList div.replyContent { padding:25px; margin:30px 0;      position: relative; left: -47%;}
  section.replyList div.replyFooter button { font-size:14px; border: 1px solid #999; background:none; margin-right:10px; }
+ .replyFooter{
+ margin-top: -70px;
+ }
+ 
     </style>
 </head>
 <div class="body__overlay"></div>

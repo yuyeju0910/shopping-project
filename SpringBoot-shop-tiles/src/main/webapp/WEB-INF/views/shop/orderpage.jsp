@@ -239,7 +239,7 @@
 
 							<thead>
 								<tr>
-									<th class="product-thumbnail">Image</th>
+								
 									<th class="product-name">Product</th>
 									<th class="product-price">Price</th>
 									<th class="product-quantity">Quantity</th>
@@ -250,8 +250,7 @@
 							<tbody>
 								<c:forEach items="${cartList}" var="list">
 									<tr>
-										<td class="product-thumbnail"><a href="#"><img
-												src="${list.gdsThumImg}" /></a></td>
+								
 										<td class="product-name"><a href="#">${list.gdsName}</a></td>
 										<td class="product-price"><span class="amount"> <%-- ${list.gdsPrice} --%>
 												<fmt:formatNumber pattern="###,###,###"
