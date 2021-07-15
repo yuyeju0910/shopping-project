@@ -217,6 +217,7 @@
 									<th class="customer-address1">Zip code</th>
 									<th class="customer-address2&3">Address</th>
 									<th class="delivery-process">process</th>
+									<th class="my-id">My ID</th>
 								</tr>
 							</thead>
 							<tbody>

@@ -152,7 +152,7 @@
                                 <nav class="bradcaump-inner">
                                  		<sec:authorize access="hasRole('ROLE_ADMIN')">
 					<sec:authentication var="mvo" property="principal" />  
- 					${mvo.name} 관리자님  admin 메인화면입니다. 
+ 					${mvo.name} 관리자님 admin 메인화면입니다. 
 			</sec:authorize>
                                 </nav>
                             </div>
@@ -175,25 +175,19 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="/admin/goods/registerProductForm">
                                             <img src="${pageContext.request.contextPath}/myweb/images/admin/1.jpg" alt="blog images">
                                         </a>
-                                        <div class="blog__post__time">
-                                            <div class="post__time--inner">
-                                                <span class="date">14</span>
-                                                <span class="month">sep</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="${pageContext.request.contextPath}/admin/goods/registerProductForm">상품 등록</a></p>
+                                            <p class="blog__des"><a href="${pageContext.request.contextPath}/admin/goods/registerProductForm">상품등록</a></p>
                                             <ul class="bl__meta">
                                                 <li>By :<a href="#">Admin</a></li>
                                                 <li>Product</li>
                                             </ul>
                                             <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
+                                                <a class="read__more__btn" href="/admin/goods/registerProductForm">read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -206,25 +200,19 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="/admin/goods/productList">
                                             <img src="${pageContext.request.contextPath}/myweb/images/admin/2.jpg" alt="blog images">
                                         </a>
-                                        <div class="blog__post__time">
-                                            <div class="post__time--inner">
-                                                <span class="date">14</span>
-                                                <span class="month">sep</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="${pageContext.request.contextPath}/admin/goods/productList">상품 목록</a></p>
+                                            <p class="blog__des"><a href="${pageContext.request.contextPath}/admin/goods/productList">상품목록</a></p>
                                             <ul class="bl__meta">
                                                 <li>By :<a href="#">Admin</a></li>
                                                 <li>Product</li>
                                             </ul>
                                             <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
+                                                <a class="read__more__btn" href="/admin/goods/productList">read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -237,25 +225,19 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="/views/shop/orderCheckList">
                                             <img src="${pageContext.request.contextPath}/myweb/images/admin/3.jpg" alt="blog images">
                                         </a>
-                                        <div class="blog__post__time">
-                                            <div class="post__time--inner">
-                                                <span class="date">14</span>
-                                                <span class="month">sep</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
                                             <p class="blog__des"><a href="${pageContext.request.contextPath}/views/shop/orderCheckList">주문관리</a></p>
                                             <ul class="bl__meta">
-                                                <li>By :<a href="#">Admin</a></li>
+                                                <li>By :<a href="#">Order</a></li>
                                                 <li>Product</li>
                                             </ul>
                                             <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
+                                                <a class="read__more__btn" href="/views/shop/orderCheckList">read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -268,25 +250,20 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="/admin/goods/memberList">
                                             <img src="${pageContext.request.contextPath}/myweb/images/admin/4.jpg" alt="blog images">
                                         </a>
-                                        <div class="blog__post__time">
-                                            <div class="post__time--inner">
-                                                <span class="date">14</span>
-                                                <span class="month">sep</span>
-                                            </div>
-                                        </div>
+                                      
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="${pageContext.request.contextPath}/admin/goods/memberList">회원 리스트</a></p>
+                                            <p class="blog__des"><a href="${pageContext.request.contextPath}/admin/goods/memberList">회원관리</a></p>
                                             <ul class="bl__meta">
-                                                <li>By :<a href="#">Admin</a></li>
+                                                <li>By :<a href="#">Customer</a></li>
                                                 <li>Product</li>
                                             </ul>
                                             <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
+                                                <a class="read__more__btn" href="/admin/goods/memberList">read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -299,25 +276,20 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="/myweb/images/others/2.png">
                                             <img src="${pageContext.request.contextPath}/myweb/images/admin/5.jpg" alt="blog images">
                                         </a>
-                                        <div class="blog__post__time">
-                                            <div class="post__time--inner">
-                                                <span class="date">14</span>
-                                                <span class="month">sep</span>
-                                            </div>
-                                        </div>
+                                       
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">블랙리스트</a></p>
+                                            <p class="blog__des"><a href="/myweb/images/others/2.png">블랙리스트</a></p>
                                             <ul class="bl__meta">
                                                 <li>By :<a href="#">Admin</a></li>
-                                                <li>Product</li>
+                                                <li>Customer</li>
                                             </ul>
                                             <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
+                                                <a class="read__more__btn" href="/myweb/images/others/2.png">read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -333,25 +305,19 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="/myweb/images/others/2.png">
                                             <img src="${pageContext.request.contextPath}/myweb/images/admin/6.jpg" alt="blog images">
                                         </a>
-                                        <div class="blog__post__time">
-                                            <div class="post__time--inner">
-                                                <span class="date"></span>
-                                                <span class="month">sep</span>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">제휴사관리</a></p>
+                                            <p class="blog__des"><a href="/myweb/images/others/2.png">제휴사관리</a></p>
                                             <ul class="bl__meta">
                                                 <li>By :<a href="#">Admin</a></li>
-                                                <li>Product</li>
+                                                <li>Affiliate</li>
                                             </ul>
                                             <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
+                                                <a class="read__more__btn" href="/myweb/images/others/2.png">read more</a>
                                             </div>
                                         </div>
                                     </div>
