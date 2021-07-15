@@ -3,6 +3,8 @@
  * 회원 가입시 비즈니스 계층(서비스)에서  회원가입과 권한을 함께 insert하도록 처리한다 (트랜잭션 처리 필요!)
  */
 select *from tbl_goods;
+delete from tbl_goods;
+delete *from tbl_goods;
 select *from tbl_reply;
 select *from tbl_member;
 ---
@@ -30,6 +32,7 @@ select *
      where gdsNum =23
 
 --댓글
+delete from tbl_reply;
 create table tbl_reply (
     gdsNum      number          not null,
     id     varchar2(50)    not null,
@@ -71,7 +74,12 @@ add(
 alter table 
 --
 select *from tbl_cart;
-
+select *from tbl_order;
+select *from tbl_order;
+select *from tbl_order_details;
+delete tbl_order
+where id='admin';
+-------
 
 ---주문테이블생성
 --orderRec 수신자
@@ -89,6 +97,7 @@ primary key(orderId)
 );
 ----------------------------
 select *from tbl_order;
+select *
 --주문테이블과 멤버테이블 참조 설정
 alter table tbl_order
 add constraint tbl_order_id foreign key(id)
@@ -102,12 +111,25 @@ gdsNum  number not null,
 cartStock number not null,
 primary key(orderDetailsNum)
 );
+----
+
+
+
+  
+  select *from tbl_order;   
+  delete from tbl_order;
+  select *from tbl_order_details;       
+
+
 --주문 상세번호 시퀀스
 create sequence tbl_order_details_seq;
+drop table tbl_order_details;
+drop table tbl_order;
 --주문상세 테이블 주문
 alter table tbl_order_details
 add constraint tbl_order_details_orderId foreign key(orderId)
-references tbl_order(orderId);
+references tbl_order(orderId) ON DELETE CASCADE ;
+
 
 -------------------
 //cart 카트테이블 생성
@@ -231,10 +253,10 @@ create table goods_category (
     cateCode     varchar2(30)    not null,  
     primary key(cateCode)
 );
-delete table goods_category;
-insert into goods_category(cateName,cateCode) values('Top',100);
-insert into goods_category(cateName,cateCode) values('bottom',200);
-insert into goods_category(cateName,cateCode) values('neckless',300);
+delete from goods_category;
+insert into goods_category(cateName,cateCode) values('Best',100);
+insert into goods_category(cateName,cateCode) values('Ring/Earings',200);
+insert into goods_category(cateName,cateCode) values('Necklaces',300);
 select *from goods_category;
 
 create table middle_category(
@@ -246,8 +268,16 @@ middlecateCode varchar2(30)  not null primary key,
 );
 --------------
 select *from middle_category;
-insert into middle_category(middlecatecode,middlecatename,catecode) values('301','gold',300);
-insert into middle_category(middlecatecode,middlecatename,catecode) values('101','neat',100);
+delete from middle_category;
+delete from goods_category;
+select *from goods_category;
+delete from tbl_goods;
+delete from middle_category;
+insert into middle_category(middlecatecode,middlecatename,catecode) values('301','Necklaces',300);
+insert into middle_category(middlecatecode,middlecatename,catecode) values('101','All',100);
+insert into middle_category(middlecatecode,middlecatename,catecode) values('102','etc',100);
+insert into middle_category(middlecatecode,middlecatename,catecode) values('201','Ring',200);
+insert into middle_category(middlecatecode,middlecatename,catecode) values('202','Earings',200);
 -------------------------
 create table tbl_goods (
     gdsNum       number          not null primary key,
@@ -280,6 +310,7 @@ order by gdsNum desc;
 
 insert
 select *from middle_category;
+select *from tbl_
 
 ----
 
@@ -313,7 +344,18 @@ select *from middle_category;
  select *from goods_category;
  select *from  middle_category;
  select *from tbl_goods;
- 
+  DELETE FROM tbl_goods   WHERE gdsNum=85;
+  -----------------
+  select
+    constraint_name,
+    table_name,
+    r_constraint_name
+from
+    user_constraints
+where
+    constraint_name = 'XXX';
+  
+  
  ---
  select g.gdsNum, g.gdsName, g.middlecateCode
  ,g.gdsStock

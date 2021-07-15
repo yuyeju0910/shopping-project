@@ -193,6 +193,36 @@ public class ShopController {
 	
 		
 	}
+	
+	@RequestMapping("/views/shop/orderCheckList")
+	public String orderCheckList(OrderVO order, Model model) {
+		MemberVO member = (MemberVO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String id =member.getId();
+		order.setId(id);
+		List<OrderVO> orderCheckList =shopserivce.orderCheckList(order);
+		System.out.println(orderCheckList);
+		List<CartListVO> cartList = shopserivce.cartList(id);
+		int totalPrice = 0;
+		for (int i = 0; i < cartList.size(); i++) {
+			System.out.println(cartList.get(i).getGdsPrice() * cartList.get(i).getCartStock());
+			int price = cartList.get(i).getGdsPrice() * cartList.get(i).getCartStock();
+
+			totalPrice += price;
+		}
+		System.out.println(totalPrice);
+		model.addAttribute("totalPrice", totalPrice);
+		model.addAttribute("orderCheckList", orderCheckList);
+		return "shop/orderCheckList.tiles";
+	
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	@RequestMapping("/views/shop/orderView")
 	public String getOrderList(@RequestParam("n") String orderId,OrderVO order, Model model) {
 		MemberVO member = (MemberVO) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -266,6 +296,18 @@ public class ShopController {
 	 
 	} 
 	
+	@RequestMapping("views/shop/deleteOrder")
+	public  String deleteOrder(String orderId) {
+		shopserivce.deleteOrder(orderId);
+		return "redirect:deleteOrderProduct";
+		
+	}
+	
+	@RequestMapping("views/shop/deleteOrderProduct")
+	public String deleteOrderProduct() {
+		return "shop/deleteOrder.tiles";
+	}
+
 	
 	
 	@RequestMapping("/views/shop/replyList")

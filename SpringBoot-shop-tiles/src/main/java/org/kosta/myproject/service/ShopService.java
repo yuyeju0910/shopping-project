@@ -31,4 +31,6 @@ public interface ShopService {
 	String replyUserIdCheck(int repNum);
 	List<GoodsVO> findGoods(String gdsName);
 	List<GoodsVO> searchGoods(String gdsName);
+	List<OrderVO>orderCheckList(OrderVO orderp);
+	void deleteOrder(String orderId); 
 }

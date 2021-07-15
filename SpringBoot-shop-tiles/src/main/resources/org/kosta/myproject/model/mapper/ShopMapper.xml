@@ -103,13 +103,24 @@ insert into tbl_order_details(orderDetailsNum, orderId, gdsNum, cartStock)
 	delete tbl_cart
 	 where  id=#{id}
 	</delete>
-	<!-- 특정 유저의 주문 목록 -->
+	
 	<select id="orderList" resultType="OrderVO">
 	select 
 		 orderId, id, orderRec, addr1, addr2, addr3,orderPhon,amount,orderDate,delivery
 	from tbl_order
-	where id =#{id}	 
+	 
 	</select>	
+	
+	<!-- 특정 유저의 주문 목록 -->
+	<select id="orderCheckList" resultType="OrderVO">
+		select 
+		 orderId, id, orderRec, addr1, addr2, addr3,orderPhon,amount,orderDate,delivery
+	from tbl_order
+		 where  id=#{id}
+	</select>
+	
+	
+	
 <!-- 특정 주문목록 -->	
 	<select id="orderView" resultType="OrderListVO">
 	 select
@@ -152,6 +163,19 @@ insert into tbl_order_details(orderDetailsNum, orderId, gdsNum, cartStock)
 	where repNum =#{repNum}
 	and id=#{id}
 </delete>
+
+<delete id="deleteOrder">
+<!-- DELETE FROM tbl_order A
+ WHERE EXISTS (
+        SELECT 1
+          FROM tbl_order_details B
+         WHERE A.orderId = B.orderId
+          
+        ) -->
+        delete tbl_order
+        where orderId =#{orderId}
+</delete>
+
 
 <!-- 아이디 확인 -->
 <select id="replyUserIdCheck" resultType="String">

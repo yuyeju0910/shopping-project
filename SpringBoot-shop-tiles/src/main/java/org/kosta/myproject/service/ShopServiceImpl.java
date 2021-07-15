@@ -121,6 +121,20 @@ public class ShopServiceImpl implements ShopService{
 		return shopMapper.searchGoods(gdsName);
 	}
 
+	@Override
+	public List<OrderVO> orderCheckList(OrderVO orderp) {
+		
+		return shopMapper.orderCheckList(orderp);
+	}
+
+	@Override
+	public void deleteOrder(String orderId) {
+		shopMapper.deleteOrder(orderId);
+	}
+
+
+
+
 	
 
 

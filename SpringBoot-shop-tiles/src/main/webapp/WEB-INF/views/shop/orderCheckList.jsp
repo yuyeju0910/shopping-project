@@ -220,30 +220,29 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${orderList}" var="list">
+								<c:forEach items="${orderCheckList}" var="list2">
 									<tr>
 								
-										<td class="order-number"><a href="/views/shop/orderView?n=${list.orderId}">${list.orderId}</a><!-- <img src="#"> --></td>
+										<td class="order-number"><a href="/views/shop/orderView?n=${list2.orderId}">${list2.orderId}</a><!-- <img src="#"> --></td>
 									
 							
-								<td class="customer-name"><a href="/views/shop/deleteOrder?orderId=${list.orderId}">${list.orderRec}</a></td>
+								<td class="customer-name"><a href="/views/shop/orderView?n=${list2.orderId}">${list2.orderRec}</a></td>
 										<td class="product-price"><span class="amount">
 												<%-- ${list.gdsPrice} --%>
-												<fmt:formatNumber pattern="###,###,###" value="${list.amount}" />
+												<fmt:formatNumber pattern="###,###,###" value="${list2.amount}" />
 										</span>
 										<td class="customer-address1">
-											${list.addr1}
+											${list2.addr1}
 										</td>
 										<td class="customer-address2&3">
-											${list.addr2} ${list.addr3}
+											${list2.addr2} ${list2.addr3}
 										</td>
 										<td class="delivery-process">
-										  ${list.delivery}
+										  ${list2.delivery}
 										</td>
-										<td class="delivery-process">
-										  ${list.id}
+									<td class="delivery-process">
+										  ${list2.id}
 										</td>
-									
 										
 									</tr>
 									

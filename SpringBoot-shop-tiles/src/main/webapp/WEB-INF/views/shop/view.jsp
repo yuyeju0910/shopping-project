@@ -41,7 +41,7 @@
     <style>
      section.replyForm { padding:30px 0; }
  section.replyForm div.input_area { margin:10px 0; }
- section.replyForm textarea { background-color: transparent; border: 1px solid #4b4b4b; font-size:16px; font-family:'맑은 고딕', verdana; padding:10px; width:500%; height:150px; }
+ section.replyForm textarea { font-size:16px; font-family:'맑은 고딕', verdana; padding:10px; width:1000px;; height:150px; }
  section.replyForm button { font-size:20px; padding:5px 10px; margin:10px 0; background:#fff; border:1px solid #ccc; }
  
  section.replyList { padding:30px 0; }
@@ -51,7 +51,7 @@
  section.replyList div.userInfo .userName { font-size:24px; font-weight:bold; }
  section.replyList div.userInfo .date { color:#999; display:inline-block; margin-left:10px; }
  section.replyList div.replyContent { padding:10px; margin:20px 0; }
-/* 이 부분 보기 section.replyList div.replyFooter button { font-size:14px; border: 1px solid #999; background:none; margin-right:10px; } */
+ section.replyList div.replyFooter button { font-size:14px; border: 1px solid #999; background:none; margin-right:10px; }
  
     </style>
 </head>
@@ -236,13 +236,39 @@
       <div class="row">
          <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
             <div class="product__details__container">
-             
+               <!-- Start Small images -->
+               <ul class="product__small__images" role="tablist">
+                  <li role="presentation" class="pot-small-img active"><a
+                     href="#img-tab-1" role="tab" data-toggle="tab"> <img
+                        src="${goods.gdsThumbImg}" alt="small-image">
+                  </a></li>
+                  <li role="presentation" class="pot-small-img"><a
+                     href="#img-tab-2" role="tab" data-toggle="tab"> <img
+                        src="${goods.gdsThumbImg}" alt="small-image">
+                  </a></li>
+                  <li role="presentation" class="pot-small-img hidden-xs"><a
+                     href="#img-tab-3" role="tab" data-toggle="tab"> <img
+                        src="${goods.gdsThumbImg}" alt="small-image">
+                  </a></li>
+                  <li role="presentation" class="pot-small-img hidden-xs hidden-sm">
+                     <a href="#img-tab-4" role="tab" data-toggle="tab"> <img
+                        src="${goods.gdsThumbImg}" alt="small-image">
+                  </a>
+                  </li>
+               </ul>
+               <!-- End Small images -->
                <div class="product__big__images">
                   <div class="portfolio-full-image tab-content">
                      <div role="tabpanel"
                         class="tab-pane fade in active product-video-position"
                         id="img-tab-1">
                         <img src="${goods.gdsImg}" alt="full-image">
+                        <div class="product-video">
+                           <a class="video-popup"
+                              href="https://www.youtube.com/watch?v=cDDWvj_q-o8"> <i
+                              class="zmdi zmdi-videocam"></i> View Video
+                           </a>
+                        </div>
                      </div>
                      <div role="tabpanel" class="tab-pane fade product-video-position"
                         id="img-tab-2">
@@ -299,13 +325,36 @@
                   <span class="rat__qun">(Based on 0 Ratings)</span>
                </div>
                <div class="pro__details">
-                  <p>상품설명</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit,
+                     sed do eiusmod temf incididunt ut labore et dolore magna aliqua.
+                     Ut enim ad minim veniam, nostr exercitation ullamco laboris nisi
+                     ut aliquip ex ea.</p>
                </div>
                <ul class="pro__dtl__prize">
                   <li class="old__prize">$15.21</li>
                   <li>$10.00</li>
                </ul>
-               
+               <div class="pro__dtl__color">
+                  <h2 class="title__5">Choose Colour</h2>
+                  <ul class="pro__choose__color">
+                     <li class="red"><a href="#"><i class="zmdi zmdi-circle"></i></a></li>
+                     <li class="blue"><a href="#"><i class="zmdi zmdi-circle"></i></a></li>
+                     <li class="perpal"><a href="#"><i
+                           class="zmdi zmdi-circle"></i></a></li>
+                     <li class="yellow"><a href="#"><i
+                           class="zmdi zmdi-circle"></i></a></li>
+                  </ul>
+               </div>
+               <div class="pro__dtl__size">
+                  <h2 class="title__5">Size</h2>
+                  <ul class="pro__choose__size">
+                     <li><a href="#">xl</a></li>
+                     <li><a href="#">m</a></li>
+                     <li><a href="#">ml</a></li>
+                     <li><a href="#">lm</a></li>
+                     <li><a href="#">xxl</a></li>
+                  </ul>
+               </div>
                <div class="product-action-wrap">
                   <div class="prodict-statas">
                      <span>Quantity :</span>
@@ -324,9 +373,8 @@
                   </div>
                </div>
                <ul class="pro__dtl__btn">
-                  <li class="buy__now__btn"><a href="/views/shop/orderpage">buy now</a></li>
+                  <li class="buy__now__btn"><a href="#">buy now</a></li>
                   <li><a href="#"><span class="ti-heart"></span></a></li>
-                  </ul>
                   <script>
             
                  
@@ -343,7 +391,7 @@
                             cartStock : cartStock
                       };
                       
-
+                   
                       $.ajax({
                         url :"/views/shop/addCart",
                         type:"post",
@@ -352,7 +400,7 @@
                             xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
                         },
                         success: function(result){
-                            /* alert(result); */
+                            alert(result);
                            if(result ==1){
                            alert("카트에 상품이 담겼습니다");
                            $(".cart-plus-minus-box").val("1");
@@ -365,12 +413,11 @@
                            alert("카트 담기 실패");
                         }
                       });
-   
+                      
+                     
                   });
-
                   </script>
-                  <!-- 공유 start -->
-                  <!-- <li><a href="#"><span class="ti-email"></span></a></li>
+                  <li><a href="#"><span class="ti-email"></span></a></li>
                </ul>
                <div class="pro__social__share">
                   <h2>Share :</h2>
@@ -379,8 +426,7 @@
                      <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
                      <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
                      <li><a href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
-                  </ul> -->
-                  <!-- 공유 end -->
+                  </ul>
                </div>
             </div>
          </div>
@@ -396,10 +442,10 @@
       <div class="row">
          <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <ul class="product__deatils__tab mb--60" role="tablist">
-               <!-- <li role="presentation" class="active"><a href="#description"
+               <li role="presentation" class="active"><a href="#description"
                   role="tab" data-toggle="tab">Description</a></li>
                <li role="presentation"><a href="#sheet" role="tab"
-                  data-toggle="tab">Data sheet</a></li> -->
+                  data-toggle="tab">Data sheet</a></li>
                <li role="presentation"><a href="#reviews" role="tab"
                   data-toggle="tab">Reviews</a></li>
             </ul>
@@ -408,6 +454,60 @@
       <div class="row"><!-- 상세설명 -->
          <div class="col-md-12">
             <div class="product__details__tab__content">
+               <!-- Start Single Content -->
+               <div role="tabpanel" id="description"
+                  class="product__tab__content fade in active">
+                  <div class="product__description__wrap">
+                     <div class="product__desc">
+                        <h2 class="title__6">Details</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                           sed do eiusmod tempor incididunt ut labore et dolore magna
+                           aliqua. Ut enim ad minim veniam, quis noexercit ullamco laboris
+                           nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                           in reprehenderit in voluptate velit esse cillum dolore eu
+                           fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                           proident, sunt in culpa qui officia deserunt mollit anim id.</p>
+                     </div>
+                     <div class="pro__feature">
+                        <h2 class="title__6">Features</h2>
+                        <ul class="feature__list">
+                           <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Duis
+                                 aute irure dolor in reprehenderit in voluptate velit esse</a></li>
+                           <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Irure
+                                 dolor in reprehenderit in voluptate velit esse</a></li>
+                           <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Sed
+                                 do eiusmod tempor incididunt ut labore et </a></li>
+                           <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Nisi
+                                 ut aliquip ex ea commodo consequat.</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <!-- End Single Content -->
+               <!-- Start Single Content -->
+               <div role="tabpanel" id="sheet" class="product__tab__content fade">
+                  <div class="pro__feature">
+                     <h2 class="title__6">Data sheet</h2>
+                     <ul class="feature__list">
+                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Duis
+                              aute irure dolor in reprehenderit in voluptate velit esse</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Irure
+                              dolor in reprehenderit in voluptate velit esse</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Irure
+                              dolor in reprehenderit in voluptate velit esse</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Sed
+                              do eiusmod tempor incididunt ut labore et </a></li>
+                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Sed
+                              do eiusmod tempor incididunt ut labore et </a></li>
+                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Nisi
+                              ut aliquip ex ea commodo consequat.</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Nisi
+                              ut aliquip ex ea commodo consequat.</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- End Single Content -->
+               <!-- Start Single Content -->
                
                <div role="tabpanel" id="reviews"
                   class="product__tab__content fade">
@@ -417,7 +517,7 @@
                    <div class="pro__review">
                         <div class="review__thumb">
                            <img
-                              src="${pageContext.request.contextPath}/myweb/images/review/2.png"
+                              src="${pageContext.request.contextPath}/myweb/images/review/1.jpg"
                               alt="review images">
                         </div>
                      		<div id="reply">
@@ -431,7 +531,7 @@
 							   </div>
 							   
 							   <div class="input_area">
-							    <button type="button" id="reply_btn">reply :)</button>
+							    <button type="button" id="reply_btn">댓글써라</button>
 							    <script>
 									 $("#reply_btn").click(function(){
 									  
@@ -505,10 +605,7 @@
 									});
 								
 						</script>
-									<div class="rating__send">
-                                                    <a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-                                                    <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                                </div>
+									
 									
 									 
 							 </section>
@@ -534,189 +631,6 @@
       </div>
     
    </div>
- ----------------
- <section class="htc__product__details__tab bg__white pb--120">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                        <ul class="product__deatils__tab mb--60" role="tablist">
-                            <li role="presentation" class="">
-                                <a href="#description" role="tab" data-toggle="tab" aria-expanded="false">Description</a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#sheet" role="tab" data-toggle="tab">Data sheet</a>
-                            </li>
-                            <li role="presentation" class="active">
-                                <a href="#reviews" role="tab" data-toggle="tab" aria-expanded="true">Reviews</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="product__details__tab__content">
-                            <!-- Start Single Content -->
-                            <div role="tabpanel" id="description" class="product__tab__content fade">
-                                <div class="product__description__wrap">
-                                    <div class="product__desc">
-                                        <h2 class="title__6">Details</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis noexercit ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.</p>
-                                    </div>
-                                    <div class="pro__feature">
-                                        <h2 class="title__6">Features</h2>
-                                        <ul class="feature__list">
-                                            <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Duis aute irure dolor in reprehenderit in voluptate velit esse</a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Irure dolor in reprehenderit in voluptate velit esse</a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Sed do eiusmod tempor incididunt ut labore et </a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Nisi ut aliquip ex ea commodo consequat.</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Content -->
-                            <!-- Start Single Content -->
-                            <div role="tabpanel" id="sheet" class="product__tab__content fade">
-                                <div class="pro__feature">
-                                        <h2 class="title__6">Data sheet</h2>
-                                        <ul class="feature__list">
-                                            <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Duis aute irure dolor in reprehenderit in voluptate velit esse</a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Irure dolor in reprehenderit in voluptate velit esse</a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Irure dolor in reprehenderit in voluptate velit esse</a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Sed do eiusmod tempor incididunt ut labore et </a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Sed do eiusmod tempor incididunt ut labore et </a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Nisi ut aliquip ex ea commodo consequat.</a></li>
-                                            <li><a href="#"><i class="zmdi zmdi-play-circle"></i>Nisi ut aliquip ex ea commodo consequat.</a></li>
-                                        </ul>
-                                    </div>
-                            </div>
-                            <!-- End Single Content -->
-                            <!-- Start Single Content -->
-                            <div role="tabpanel" id="reviews" class="product__tab__content fade active in">
-                                <div class="review__address__inner">
-                                    <!-- Start Single Review -->
-                                    <div class="pro__review">
-                                        <div class="review__thumb">
-                                            <img src="images/review/1.jpg" alt="review images">
-                                        </div>
-                                        <div class="review__details">
-                                            <div class="review__info">
-                                                <h4><a href="#">Gerald Barnes</a></h4>
-                                                <ul class="rating">
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star-half"></i></li>
-                                                    <li><i class="zmdi zmdi-star-half"></i></li>
-                                                </ul>
-                                                <div class="rating__send">
-                                                    <a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-                                                    <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="review__date">
-                                                <span>27 Jun, 2016 at 2:30pm</span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Review -->
-                                    <!-- Start Single Review -->
-                                    <div class="pro__review ans">
-                                        <div class="review__thumb">
-                                            <img src="images/review/2.jpg" alt="review images">
-                                        </div>
-                                        <div class="review__details">
-                                            <div class="review__info">
-                                                <h4><a href="#">Gerald Barnes</a></h4>
-                                                <ul class="rating">
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star"></i></li>
-                                                    <li><i class="zmdi zmdi-star-half"></i></li>
-                                                    <li><i class="zmdi zmdi-star-half"></i></li>
-                                                </ul>
-                                                <div class="rating__send">
-                                                    <a href="#"><i class="zmdi zmdi-mail-reply"></i></a>
-                                                    <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="review__date">
-                                                <span>27 Jun, 2016 at 2:30pm</span>
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas elese ifend. Phasellus a felis at estei to bibendum feugiat ut eget eni Praesent et messages in con sectetur posuere dolor non.</p>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Review -->
-                                </div>
-                                <!-- Start RAting Area -->
-                                <div class="rating__wrap">
-                                    <h2 class="rating-title">Write  A review</h2>
-                                    <h4 class="rating-title-2">Your Rating</h4>
-                                    <div class="rating__list">
-                                        <!-- Start Single List -->
-                                        <ul class="rating">
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                        </ul>
-                                        <!-- End Single List -->
-                                        <!-- Start Single List -->
-                                        <ul class="rating">
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                        </ul>
-                                        <!-- End Single List -->
-                                        <!-- Start Single List -->
-                                        <ul class="rating">
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                        </ul>
-                                        <!-- End Single List -->
-                                        <!-- Start Single List -->
-                                        <ul class="rating">
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                        </ul>
-                                        <!-- End Single List -->
-                                        <!-- Start Single List -->
-                                        <ul class="rating">
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                            <li><i class="zmdi zmdi-star-half"></i></li>
-                                        </ul>
-                                        <!-- End Single List -->
-                                    </div>
-                                </div>
-                                <!-- End RAting Area -->
-                                <div class="review__box">
-                                    <form id="review-form">
-                                        <div class="single-review-form">
-                                            <div class="review-box name">
-                                                <input type="text" placeholder="Type your name">
-                                                <input type="email" placeholder="Type your email">
-                                            </div>
-                                        </div>
-                                        <div class="single-review-form">
-                                            <div class="review-box message">
-                                                <textarea placeholder="Write your review"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="review-btn">
-                                            <a class="fv-btn" href="#">submit review</a>
-                                        </div>
-                                    </form>                                
-                                </div>
-                            </div>
-                            <!-- End Single Content -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
- ----------------------
+ 
    
 </section>
- 

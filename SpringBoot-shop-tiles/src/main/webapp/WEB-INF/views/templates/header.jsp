@@ -18,17 +18,17 @@
                                     <li class="drop"><a href="/">Home</a></li>
                                     <li class="drop"><a href="/views/shop/list?c=100">Best</a>
                                         <ul class="dropdown">
-                                            <li><a href="/views/shop/list2?m=101">Neat</a></li>
-                                            <li><a href="/views/list2?c=100&m=102">Single portfolio</a></li>
+                                            <li><a href="/views/shop/list2?m=101">All</a></li>
+                                            <li><a href="/views/shop/list2?m=102">etc</a></li>
                                         </ul>
                                     </li>
-                                    <li class="drop"><a href="/views/shop/list?c=200">Ring</a>
+                                    <li class="drop"><a href="/views/shop/list?c=200">Ring/Earrings</a>
                                         <ul class="dropdown">
-                                            <li><a href="/shop/list?c=200&m=201">blog 3 column</a></li>
-                                            <li><a href="blog-details.html">Blog details</a></li>
+                                            <li><a href="/views/shop/list2?m=201">Ring</a></li>
+                                            <li><a href="/views/shop/list2?m=202">Earrings</a></li>
                                         </ul>
                                     </li>
-                                    <li class="drop"><a href="/views/shop/list?c=300">Neckless</a>
+                                    <li class="drop"><a href="/views/shop/list?c=300">Necklaces</a>
                                         <ul class="dropdown mega_dropdown">
                                             <!-- Start Single Mega MEnu -->
                                             <li><a class="mega__title" href="shop.html">shop layout</a>
@@ -59,7 +59,7 @@
                                             <!-- End Single Mega MEnu -->
                                         </ul>
                                     </li>
-                                    <li class="drop"><a href="#">pages</a>
+                                    <li class="drop"><a href="#">Etc</a>
                                         <ul class="dropdown">
                                             <li><a href="about">about</a></li>
                                             <li><a href="#">testimonials <span><i class="zmdi zmdi-chevron-right"></i></span></a>
