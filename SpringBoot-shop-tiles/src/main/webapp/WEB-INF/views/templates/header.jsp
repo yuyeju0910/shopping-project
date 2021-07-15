@@ -19,7 +19,7 @@
                                     <li class="drop"><a href="/views/shop/list?c=100">Best</a>
                                         <ul class="dropdown">
                                             <li><a href="/views/shop/list2?m=101">All</a></li>
-                                            <li><a href="/views/shop/list2?m=102">etc</a></li>
+                                            
                                         </ul>
                                     </li>
                                     <li class="drop"><a href="/views/shop/list?c=200">Ring/Earrings</a>
@@ -40,7 +40,7 @@
                                             <!-- Start Single Mega MEnu -->
                                             <li><a class="mega__title" href="shop.html">product details layout</a>
                                                 <ul class="mega__item">
-                                                    <li><a href="product-details.html">tab style 1</a></li></li>
+                                                    <li><a href="product-details.html">tab style 1</a></li>
                                                 </ul>
                                             </li>
                                             <!-- End Single Mega MEnu -->
@@ -58,27 +58,21 @@
                                             </li>
                                             <!-- End Single Mega MEnu -->
                                         </ul>
-                                    </li>
-                                    <li class="drop"><a href="#">Etc</a>
+                                   
+                                   <li class="drop"><a href="/views/shop/list?c=400">ETC</a>
                                         <ul class="dropdown">
-                                            <li><a href="about">about</a></li>
-                                            <li><a href="#">testimonials <span><i class="zmdi zmdi-chevron-right"></i></span></a>
-                                                <ul class="lavel-dropdown">
-                                                    <li><a href="customer-review.html">customer review</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop.html">shop</a></li>
-                                            <li><a href="shop-sidebar.html">shop sidebar</a></li>
-                                            <li><a href="product-details.html">product details</a></li>
-                                            <li><a href="cart.html">cart</a></li>
-                                            <li><a href="wishlist.html">wishlist</a></li>
-                                            <li><a href="checkout.html">checkout</a></li>
-                                            <li><a href="team.html">team</a></li>
-                                            <li><a href="loginForm">login & register</a></li>
+                                            <li><a href="/views/shop/list2?m=401">ETC</a></li>
+                                           
                                         </ul>
                                     </li>
-                                    <li><a href="/contact">contact</a></li>
-                                </ul>
+
+                                            
+                                    <li class="drop"><a href="/contact">About Us</a>
+                                    	<ul class="dropdown">
+                                    	<li><a href="/contact">Contact Us</a></li>
+										<li><a href="about.html">Board</a></li>
+										</ul>
+									</li>
                             </nav>
                             <div class="mobile-menu clearfix visible-xs visible-sm">
                                 <nav id="mobile_dropdown">
