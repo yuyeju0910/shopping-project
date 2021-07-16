@@ -20,7 +20,7 @@
                                                 <i class="zmdi zmdi-pin"></i>
                                             </div>
                                             <div class="address-text">
-                                                <p>13637 경기 성남시 분당구 성남대로 34</p>
+                                                <p>(13637)<br> 경기 성남시 분당구 성남대로 34</p>
                                             </div>
                                         </li>
                                         <li>
@@ -55,24 +55,20 @@
                             <div class="ft__widget">
                                 <h2 class="ft__title">Categories</h2>
                                 <ul class="footer-categories">
-                                    <li><a href="shop-sidebar.html">Best</a></li>
-                                    <li><a href="shop-sidebar.html">Ring/Earrings</a></li>
-                                    <li><a href="shop-sidebar.html">Necklaces</a></li>
-                                    <li><a href="shop-sidebar.html">ETC</a></li>
+                                    <li><a href="/views/shop/list?c=100">Best</a></li>
+                                    <li><a href="/views/shop/list?c=200">Ring/Earrings</a></li>
+                                    <li><a href="/views/shop/list?c=300">Necklaces</a></li>
+                                    <li><a href="/views/shop/list?c=400">ETC</a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- Start Single Footer Widget -->
                         <div class="col-md-3 col-lg-2 col-sm-6 smt-30 xmt-30">
                             <div class="ft__widget">
-                                <h2 class="ft__title">Information</h2>
+                                <h2 class="ft__title">About Us</h2>
                                 <ul class="footer-categories">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Returns & Exchanges</a></li>
-                                    <li><a href="#">Shipping & Delivery</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+                                    <li><a href="#">Board</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -84,7 +80,7 @@
                                     <p>Subscribe to our newsletter and get 10% off your first purchase .</p>
                                     <div class="input__box">
                                         <div id="mc_embed_signup">
-                                            <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                            <form action="/myweb/images/others/2.png" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                                                 <div id="mc_embed_signup_scroll" class="htc__news__inner">
                                                     <div class="news__input">
                                                         <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required>
