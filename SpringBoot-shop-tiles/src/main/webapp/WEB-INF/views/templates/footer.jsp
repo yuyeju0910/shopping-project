@@ -9,8 +9,8 @@
                         <div class="col-md-3 col-lg-3 col-sm-6">
                             <div class="ft__widget">
                                 <div class="ft__logo">
-                                    <a href="index.html">
-                                        <img src="${pageContext.request.contextPath}/myweb/images/logo/logo2.png" alt="footer logo">
+                                    <a href="/home">
+                                        <img src="${pageContext.request.contextPath}/myweb/images/logo/logo3.png" alt="footer logo">
                                     </a>
                                 </div>
                                 <div class="footer-address">
@@ -20,7 +20,7 @@
                                                 <i class="zmdi zmdi-pin"></i>
                                             </div>
                                             <div class="address-text">
-                                                <p>194 Main Rd T, FS Rayed <br> VIC 3057, USA</p>
+                                                <p>13637 경기 성남시 분당구 성남대로 34</p>
                                             </div>
                                         </li>
                                         <li>
@@ -28,7 +28,7 @@
                                                 <i class="zmdi zmdi-email"></i>
                                             </div>
                                             <div class="address-text">
-                                                <a href="#"> info@example.com</a>
+                                                <a href="mailto:ekdud822@gmail.com">ekdud822@gmail.com</a>
                                             </div>
                                         </li>
                                         <li>
@@ -36,7 +36,7 @@
                                                 <i class="zmdi zmdi-phone-in-talk"></i>
                                             </div>
                                             <div class="address-text">
-                                                <p>+012 345 678 1022 </p>
+                                                <a href="tel:000-1111-2222">000-1111-2222 </a>
                                             </div>
                                         </li>
                                     </ul>
@@ -55,12 +55,10 @@
                             <div class="ft__widget">
                                 <h2 class="ft__title">Categories</h2>
                                 <ul class="footer-categories">
-                                    <li><a href="shop-sidebar.html">Men</a></li>
-                                    <li><a href="shop-sidebar.html">Women</a></li>
-                                    <li><a href="shop-sidebar.html">Accessories</a></li>
-                                    <li><a href="shop-sidebar.html">Shoes</a></li>
-                                    <li><a href="shop-sidebar.html">Dress</a></li>
-                                    <li><a href="shop-sidebar.html">Denim</a></li>
+                                    <li><a href="shop-sidebar.html">Best</a></li>
+                                    <li><a href="shop-sidebar.html">Ring/Earrings</a></li>
+                                    <li><a href="shop-sidebar.html">Necklaces</a></li>
+                                    <li><a href="shop-sidebar.html">ETC</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -127,3 +125,4 @@
                 <!-- End Copyright Area -->
             </div>
         </footer>
+
