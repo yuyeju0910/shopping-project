@@ -36,7 +36,7 @@
                                                 <i class="zmdi zmdi-phone-in-talk"></i>
                                             </div>
                                             <div class="address-text">
-                                                <p>+012 345 678 102 </p>
+                                                <p>+012 345 678 1022 </p>
                                             </div>
                                         </li>
                                     </ul>
