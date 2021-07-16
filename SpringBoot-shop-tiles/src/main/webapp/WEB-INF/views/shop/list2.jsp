@@ -181,13 +181,15 @@
          <div class="row">
             <div class="col-md-12">
                <div class="filter__menu__container">
-                 <!--  <div class="product__menu">
+                  <div class="product__menu">
                      <button data-filter="*" class="is-checked">All</button>
                      <button data-filter=".cat--1">Best</button>
                      <button data-filter=".cat--2">Ring/Earrings</button>
                      <button data-filter=".cat--3">Necklaces</button>
                      <button data-filter=".cat--4">ETC</button>
-                  </div> -->
+                  </div>
+                  <!--   <div class="filter__box">
+                     <a class="filter__menu" href="#">filter</a> -->
                </div>
             </div>
          </div>
