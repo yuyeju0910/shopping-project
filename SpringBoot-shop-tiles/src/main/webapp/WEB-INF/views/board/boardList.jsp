@@ -34,9 +34,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/myweb/css/custom.css">
 
 </head>
-<sec:authorize access="hasRole('ROLE_ADMIN')">
-   <sec:authentication var="mvo" property="principal" />
-   
+
 <body class="sb-nav-fixed">
             <div id="layoutSidenav_content">
                 <main>
@@ -67,16 +65,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                         <c:forEach items="${productList}" var="list">
-                     <tr>
-                        <td><a href="${pageContext.request.contextPath}/admin/goods/view?n=${list.gdsNum}">${list.gdsName}></a></td>
-                        <td>${list.gdsName}</td>
-                        <td>${list.middlecateCode}</td>
-                        <td>${list.gdsPrice}</td>
-                        <td>${list.gdsStock}</td>
-                        <td>${list.gdsDate}</td>
-                     </tr>
-                  </c:forEach>              
+                                      
+                     <tr>                     </tr>
+   
                                       
                                     </tbody>
                                 </table>
@@ -93,5 +84,3 @@
         <script src="${pageContext.request.contextPath}/myboard/js/datatables-simple-demo.js"></script>
     </body>
   
-   
-</sec:authorize>
