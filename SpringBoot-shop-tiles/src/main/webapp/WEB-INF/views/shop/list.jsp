@@ -38,48 +38,23 @@
          <div class="off__contact">
             <div class="logo">
                <a href="index.html"> <img
-                  src="${pageContext.request.contextPath}/myweb/images/logo/logo.png"
+                  src="${pageContext.request.contextPath}/myweb/images/logo/logo4.png"
                   alt="logo">
                </a>
             </div>
             <br>
-            <p>미뇽플레이스에 오신 것을 환영합니다</p>
-            <br>
-         </div>
-
-         <ul>
-            <li><a href="#"><img
-                  src="${pageContext.request.contextPath}/myweb/images/sidebar-img/cloth (1).png"
-                  alt="top"><br>top</a><br> <br></li>
-            <li><a href="#"><img
-                  src="${pageContext.request.contextPath}/myweb/images/sidebar-img/female-skirt (1).png"
-                  alt="bottom"><br>bottom</a><br> <br></li>
-            <li><a href="#"><img
-                  src="${pageContext.request.contextPath}/myweb/images/sidebar-img/decor (1).png"
-                  alt="decoration"><br>decoration</a></li>
-            <li><a href="#"><img
-                  src="${pageContext.request.contextPath}/myweb/images/sidebar-img/sunglasses (1).png"
-                  alt="accessories"><br>accessories</a></li>
-         </ul>
-         <!-- <div class="offset__widget">
-                        <div class="offset__single">
-                            <h4 class="offset__title">Language</h4>
-                            <ul>
-                                <li><a href="#"> English </a></li>
-                                <li><a href="#"> French </a></li>
-                                <li><a href="#"> German </a></li>
-                            </ul>
-                        </div>
-                        <div class="offset__single">
-                            <h4 class="offset__title">Currencies</h4>
-                            <ul>
-                                <li><a href="#"> USD : Dollar </a></li>
-                                <li><a href="#"> EUR : Euro </a></li>
-                                <li><a href="#"> POU : Pound </a></li>
-                            </ul>
-                        </div>
-                    </div> -->
-
+            <p>미뇽플레이스에 오신 것을 환영합니다</p><br>
+                    </div>
+                    <div style="font-size:18px;">
+                    	<ul>
+                        	<li><a href="/views/shop/list?c=100"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/flags.png" alt="Best"><br>Best</a><br><br></li>
+                        	<li><a href="/views/shop/list?c=200"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/ring (1).png" alt="Ring/Earrings"><br>Ring/Earrings</a><br><br></li>
+                        	<li><a href="/views/shop/list?c=300"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/pendant (2).png" alt="Necklaces"><br>Necklaces</a></li>
+                        	<li><a href="/views/shop/list?c=400"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/sunglasses (2).png" alt="ETC"><br>ETC</a></li>
+                    	 
+                    	</ul>
+                   </div><br><br>
+        
          <div class="offset__sosial__share">
             <h4 class="offset__title">Follow Us On Social</h4>
             <ul class="off__soaial__link">
@@ -303,8 +278,8 @@
                                     <div class="product__details">
                                         <h2><a href="/views/shop/view?n=${list.gdsNum}">${list.gdsName}</a></h2>
                                         <ul class="product__price">
-                                        	<li class="old__price" style="color:transparent">$16.00</li>
-                                            <li class="new__price" style="color:transparent">$10.00</li>
+                                        	<li class="old__price" style="visibility:hidden">$16.00</li>
+                                            <li class="new__price" style="visibility:hidden">$10.00</li>
                                             <li class="new__price">$${list.gdsPrice}</li>
                                         </ul>
                                     </div>
