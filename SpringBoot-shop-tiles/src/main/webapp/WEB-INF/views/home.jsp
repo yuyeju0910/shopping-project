@@ -31,19 +31,21 @@
                     <div class="off__contact">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="${pageContext.request.contextPath}/myweb/images/logo/logo.png" alt="logo">
+                                <img src="${pageContext.request.contextPath}/myweb/images/logo/logo4.png" alt="logo">
                             </a>
                         </div>
                         <br>
                         <p>미뇽플레이스에 오신 것을 환영합니다</p><br>
                     </div>
-                    
-                    <ul>
-                        <li><a href="#"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/cloth (1).png" alt="top"><br>top</a><br><br></li>
-                        <li><a href="#"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/female-skirt (1).png" alt="bottom"><br>bottom</a><br><br></li>
-                        <li><a href="#"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/decor (1).png" alt="decoration"><br>decoration</a></li>
-                        <li><a href="#"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/sunglasses (1).png" alt="accessories"><br>accessories</a></li>
-                    </ul>
+                    <div style="font-size:18px;">
+                    	<ul>
+                        	<li><a href="/views/shop/list?c=100"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/flags.png" alt="Best"><br>Best</a><br><br></li>
+                        	<li><a href="/views/shop/list?c=200"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/ring (1).png" alt="Ring/Earrings"><br>Ring/Earrings</a><br><br></li>
+                        	<li><a href="/views/shop/list?c=300"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/pendant (2).png" alt="Necklaces"><br>Necklaces</a></li>
+                        	<li><a href="/views/shop/list?c=400"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/sunglasses (2).png" alt="ETC"><br>ETC</a></li>
+                    	 
+                    	</ul>
+                   </div><br><br>
                     <!-- <div class="offset__widget">
                         <div class="offset__single">
                             <h4 class="offset__title">Language</h4>
@@ -164,6 +166,7 @@
                                     <button data-filter=".cat--1">Best</button>
                                     <button data-filter=".cat--2">Ring/Earrings</button>
                                     <button data-filter=".cat--3">Necklaces</button>
+                                    <button data-filter=".cat--4">ETC</button>
                                 </div>
                                 <div class="filter__box">
                                     <a class="filter__menu" href="#">filter</a>

@@ -5,9 +5,8 @@
                     <div class="row">
                         <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">
                             <div class="logo">
-                            
                                 <a href="${pageContext.request.contextPath}/home">
-                                    <img src="${pageContext.request.contextPath}/myweb/images/logo/logo.png" alt="logo">
+                                    <img src="${pageContext.request.contextPath}/myweb/images/logo/logo3.png" alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -67,10 +66,10 @@
                                     </li>
 
                                             
-                                    <li class="drop"><a href="contact">About Us</a>
+                                    <li class="drop"><a href="/contact">About Us</a>
                                     	<ul class="dropdown">
-                                    	<li><a href="contact">Contact Us</a></li>
-										<li><a href="/views/board/boardList">Board</a></li>
+                                    	<li><a href="/contact">Contact Us</a></li>
+										<li><a href="about.html">Board</a></li>
 										</ul>
 									</li>
                             </nav>

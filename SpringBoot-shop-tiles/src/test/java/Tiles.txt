@@ -135,7 +135,6 @@ public class TilesConfiguration {
 	}
 }
 
-
 5. Controller에 적용해 본다 
 
 

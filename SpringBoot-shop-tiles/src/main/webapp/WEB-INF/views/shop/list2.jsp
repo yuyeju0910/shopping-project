@@ -38,29 +38,22 @@
          <div class="off__contact">
             <div class="logo">
                <a href="index.html"> <img
-                  src="${pageContext.request.contextPath}/myweb/images/logo/logo.png"
+                  src="${pageContext.request.contextPath}/myweb/images/logo/logo4.png"
                   alt="logo">
                </a>
             </div>
             <br>
-            <p>미뇽플레이스에 오신 것을 환영합니다</p>
-            <br>
-         </div>
-
-         <ul>
-            <li><a href="#"><img
-                  src="${pageContext.request.contextPath}/myweb/images/sidebar-img/cloth (1).png"
-                  alt="top"><br>top</a><br> <br></li>
-            <li><a href="#"><img
-                  src="${pageContext.request.contextPath}/myweb/images/sidebar-img/female-skirt (1).png"
-                  alt="bottom"><br>bottom</a><br> <br></li>
-            <li><a href="#"><img
-                  src="${pageContext.request.contextPath}/myweb/images/sidebar-img/decor (1).png"
-                  alt="decoration"><br>decoration</a></li>
-            <li><a href="#"><img
-                  src="${pageContext.request.contextPath}/myweb/images/sidebar-img/sunglasses (1).png"
-                  alt="accessories"><br>accessories</a></li>
-         </ul>
+            <p>미뇽플레이스에 오신 것을 환영합니다</p><br>
+                    </div>
+                    <div style="font-size:18px;">
+                    	<ul>
+                        	<li><a href="/views/shop/list?c=100"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/flags.png" alt="Best"><br>Best</a><br><br></li>
+                        	<li><a href="/views/shop/list?c=200"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/ring (1).png" alt="Ring/Earrings"><br>Ring/Earrings</a><br><br></li>
+                        	<li><a href="/views/shop/list?c=300"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/pendant (2).png" alt="Necklaces"><br>Necklaces</a></li>
+                        	<li><a href="/views/shop/list?c=400"><img src="${pageContext.request.contextPath}/myweb/images/sidebar-img/sunglasses (2).png" alt="ETC"><br>ETC</a></li>
+                    	 
+                    	</ul>
+                   </div><br><br>
          <!-- <div class="offset__widget">
                         <div class="offset__single">
                             <h4 class="offset__title">Language</h4>
@@ -190,14 +183,13 @@
                <div class="filter__menu__container">
                   <div class="product__menu">
                      <button data-filter="*" class="is-checked">All</button>
-                     <button data-filter=".cat--1">Furnitures</button>
-                     <button data-filter=".cat--2">Bags</button>
-                     <button data-filter=".cat--3">Decoration</button>
-                     <button data-filter=".cat--4">Accessories</button>
+                     <button data-filter=".cat--1">Best</button>
+                     <button data-filter=".cat--2">Ring/Earrings</button>
+                     <button data-filter=".cat--3">Necklaces</button>
+                     <button data-filter=".cat--4">ETC</button>
                   </div>
-                  <div class="filter__box">
-                     <a class="filter__menu" href="#">filter</a>
-                  </div>
+                  <!--   <div class="filter__box">
+                     <a class="filter__menu" href="#">filter</a> -->
                </div>
             </div>
          </div>
@@ -287,23 +279,23 @@
                                 <div class="product foo">
                                     <div class="product__inner">
                                         <div class="pro__thumb">
-                                            <a href="#">
+                                            <a href="/views/shop/view?n=${list2.gdsNum}">
                                                 <img src="${list2.gdsThumbImg}" alt="product images">
                                             </a>
                                         </div>
+                                       </div>
                                         <div class="product__hover__info">
-                                            <ul class="product__action">
-                                                <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                <li><a title="Add TO Cart" href="cart"><span class="ti-shopping-cart"></span></a></li>
-                                                <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
-                                            </ul>
+                                            <div class="product__action">
+                                                <a href="/views/shop/view?n=${list2.gdsNum}">view details
+                                            </a>
+                                            </div>
                                         </div>
-                                    </div>
                                     <div class="product__details">
                                         <h2><a href="/views/shop/view?n=${list2.gdsNum}">${list2.gdsName}</a></h2>
                                         <ul class="product__price">
-                                            <li class="old__price">$16.00</li>
-                                            <li class="new__price">$10.00</li>
+                                        	<li class="old__price" style="visibility:hidden">$16.00</li>
+                                            <li class="new__price" style="visibility:hidden">$10.00</li>
+                                            <li class="new__price">$${list2.gdsPrice}</li>
                                         </ul>
                                     </div>
                                 </div>

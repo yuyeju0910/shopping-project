@@ -10,7 +10,6 @@ select *from tbl_member;
 ---
 select *from tbl_member;
 
-
 select * from tbl_goods where gdsName=#{value};
 select *
 		from tbl_goods
@@ -97,7 +96,9 @@ primary key(orderId)
 );
 ----------------------------
 select *from tbl_order;
-select *
+
+delete from tbl_order_details;
+delete from tbl_order;
 --주문테이블과 멤버테이블 참조 설정
 alter table tbl_order
 add constraint tbl_order_id foreign key(id)
@@ -186,7 +187,6 @@ select*from tbl_goods;
      where c.id = 'admin';
 
 ---
-
 
 ---------------------------
 

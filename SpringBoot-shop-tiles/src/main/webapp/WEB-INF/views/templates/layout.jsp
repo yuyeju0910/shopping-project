@@ -13,23 +13,8 @@
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-	<!--  -->
-   
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/myweb/css/bootstrap.min.css">
-    <!-- Owl Carousel main css -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/myweb/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/myweb/css/owl.theme.default.min.css">
-    <!-- This core.css file contents all plugings css file. -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/myweb/css/core.css">
-    <!-- Theme shortcodes/elements style -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/myweb/css/shortcode/shortcodes.css">
 
-<!--  -->
+
     <!-- All css files are included here. -->
     <!-- Bootstrap fremwork main css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/myweb/css/bootstrap.min.css">
@@ -64,12 +49,18 @@
 	</header>
 	<div class="container-fluid text-center">
 		<div class="row content">
-	
+			<div id="left" class="col-sm-3 sidenav">
+				<!-- Tiles left 영역 
+				<tiles:insertAttribute name="left" />-->
+			</div>
 			<div id="main">
 				<!-- Tiles main 영역 -->
 				<tiles:insertAttribute name="main" />
 			</div>
-	
+			<div id="right" class="col-sm-2 sidenav">
+				<!-- Tiles right 영역 
+				<tiles:insertAttribute name="right" />-->
+			</div>
 		</div>
 	</div>
 	<div id="footer">
@@ -90,11 +81,6 @@
     <script src="${pageContext.request.contextPath}/myweb/js/waypoints.min.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="${pageContext.request.contextPath}/myweb/js/main.js"></script>
-    
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="${pageContext.request.contextPath}/js/scripts.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="${pageContext.request.contextPath}/js/datatables-simple-demo.js"></script>
 
 </body>
 </html>

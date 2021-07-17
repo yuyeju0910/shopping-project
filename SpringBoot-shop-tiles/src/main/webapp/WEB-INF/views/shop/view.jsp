@@ -278,7 +278,7 @@ span.name {
                <div class="pro__detl__title">
                   <h2>${goods.gdsName}</h2>
                </div>
-               <div class="pro__dtl__rating">
+               <!-- <div class="pro__dtl__rating">
                   <ul class="pro__rating">
                      <li><span class="ti-star"></span></li>
                      <li><span class="ti-star"></span></li>
@@ -287,7 +287,7 @@ span.name {
                      <li><span class="ti-star"></span></li>
                   </ul>
                   <span class="rat__qun">(Based on 0 Ratings)</span>
-               </div>
+               </div> -->
                <div class="pro__details">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit,
                      sed do eiusmod temf incididunt ut labore et dolore magna aliqua.
@@ -295,7 +295,7 @@ span.name {
                      ut aliquip ex ea.</p>
                </div>
                <ul class="pro__dtl__prize">
-                  <li class="old__prize">$15.21</li>
+                  <li class="old__prize" style="display:none">$15.21</li>
                   <li>$10.00</li>
                </ul>
                
