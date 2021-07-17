@@ -4,7 +4,7 @@
   <interface id="1" language="java" name="org.kosta.myproject.model.mapper.AdminMapper" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/mapper/AdminMapper.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="232" width="310" x="26" y="118"/>    
+    <position height="-1" width="-1" x="3987" y="1074"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -14,7 +14,7 @@
   <interface id="2" language="java" name="org.kosta.myproject.model.mapper.MemberMapper" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/mapper/MemberMapper.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="250" width="327" x="376" y="118"/>    
+    <position height="-1" width="-1" x="4345" y="1083"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -24,7 +24,7 @@
   <interface id="3" language="java" name="org.kosta.myproject.model.mapper.ShopMapper" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/mapper/ShopMapper.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="859" y="334"/>    
+    <position height="-1" width="-1" x="4665" y="1174"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -34,7 +34,7 @@
   <interface id="4" language="java" name="org.kosta.myproject.service.AdminService" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/service/AdminService.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1383" y="1222"/>    
+    <position height="-1" width="-1" x="5189" y="2062"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -44,7 +44,7 @@
   <class id="5" language="java" name="org.kosta.myproject.service.ShopServiceImpl" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/service/ShopServiceImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="850" y="829"/>    
+    <position height="-1" width="-1" x="4656" y="1669"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -54,7 +54,7 @@
   <class id="6" language="java" name="org.kosta.myproject.service.MemberServiceImpl" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/service/MemberServiceImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="515" y="732"/>    
+    <position height="-1" width="-1" x="4321" y="1572"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -64,7 +64,7 @@
   <interface id="7" language="java" name="org.kosta.myproject.service.ShopService" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/service/ShopService.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="689" y="1321"/>    
+    <position height="-1" width="-1" x="4495" y="2161"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -74,7 +74,7 @@
   <class id="8" language="java" name="org.kosta.myproject.service.AdminServiceImpl" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/service/AdminServiceImpl.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="170" y="728"/>    
+    <position height="-1" width="-1" x="3976" y="1568"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,7 +84,7 @@
   <interface id="9" language="java" name="org.kosta.myproject.service.MemberService" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/service/MemberService.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1024" y="1213"/>    
+    <position height="-1" width="-1" x="4830" y="2053"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -94,7 +94,7 @@
   <class id="10" language="java" name="org.kosta.myproject.model.CategoryVO" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/CategoryVO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="196" width="173" x="1112" y="-58"/>    
+    <position height="-1" width="-1" x="5004" y="880"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -104,7 +104,7 @@
   <class id="11" language="java" name="org.kosta.myproject.model.ReplyVO" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/ReplyVO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="376" width="158" x="1325" y="-58"/>    
+    <position height="-1" width="-1" x="5210" y="970"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -114,7 +114,7 @@
   <class id="12" language="java" name="org.kosta.myproject.model.GoodsVO" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/GoodsVO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="592" width="205" x="1523" y="-58"/>    
+    <position height="-1" width="-1" x="5431" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -124,7 +124,7 @@
   <class id="13" language="java" name="org.kosta.myproject.model.MemberVO" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/MemberVO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="610" width="431" x="1768" y="-58"/>    
+    <position height="-1" width="-1" x="5789" y="1087"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -134,7 +134,7 @@
   <class id="14" language="java" name="org.kosta.myproject.model.Authority" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/Authority.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="250" width="171" x="2239" y="-58"/>    
+    <position height="-1" width="-1" x="6130" y="907"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -144,7 +144,7 @@
   <class id="15" language="java" name="org.kosta.myproject.model.OrderListVO" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/OrderListVO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="970" width="196" x="2450" y="-58"/>    
+    <position height="-1" width="-1" x="6354" y="1267"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -154,7 +154,7 @@
   <class id="16" language="java" name="org.kosta.myproject.model.ReplyListVO" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/ReplyListVO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="430" width="158" x="2686" y="-58"/>    
+    <position height="-1" width="-1" x="6571" y="997"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -164,7 +164,7 @@
   <class id="17" language="java" name="org.kosta.myproject.model.CartVO" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/CartVO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="376" width="155" x="2884" y="-58"/>    
+    <position height="-1" width="-1" x="6767" y="970"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -174,7 +174,7 @@
   <class id="18" language="java" name="org.kosta.myproject.model.GoodsViewVO" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/GoodsViewVO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="574" width="205" x="3079" y="-58"/>    
+    <position height="-1" width="-1" x="6987" y="1069"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -184,7 +184,7 @@
   <class id="19" language="java" name="org.kosta.myproject.model.CartListVO" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/CartListVO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="592" width="189" x="3324" y="-58"/>    
+    <position height="-1" width="-1" x="7224" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -194,7 +194,7 @@
   <class id="20" language="java" name="org.kosta.myproject.model.OrderVO" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/OrderVO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="646" width="174" x="3553" y="-58"/>    
+    <position height="-1" width="-1" x="7446" y="1105"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -204,7 +204,7 @@
   <class id="21" language="java" name="org.kosta.myproject.model.OrderDetailVO" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/model/OrderDetailVO.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="322" width="191" x="3767" y="-58"/>    
+    <position height="-1" width="-1" x="7668" y="943"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -215,7 +215,7 @@
     project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/controller/utils/UpLoadFileUtils.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2104" y="855"/>    
+    <position height="-1" width="-1" x="5900" y="1831"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -225,7 +225,7 @@
   <class id="23" language="java" name="org.kosta.myproject.controller.ShopController" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/controller/ShopController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="520" y="1865"/>    
+    <position height="-1" width="-1" x="4326" y="2705"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -235,7 +235,7 @@
   <class id="24" language="java" name="org.kosta.myproject.controller.BoardController" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/controller/BoardController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="785" y="1676"/>    
+    <position height="-1" width="-1" x="3919" y="2537"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -245,7 +245,7 @@
   <class id="25" language="java" name="org.kosta.myproject.controller.HomeController" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/controller/HomeController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1002" y="1757"/>    
+    <position height="-1" width="-1" x="4808" y="2597"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -255,7 +255,7 @@
   <class id="26" language="java" name="org.kosta.myproject.controller.MemberController" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/controller/MemberController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1321" y="1757"/>    
+    <position height="-1" width="-1" x="5127" y="2597"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -265,7 +265,7 @@
   <class id="27" language="java" name="org.kosta.myproject.controller.AdminController" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/controller/AdminController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1795" y="1766"/>    
+    <position height="-1" width="-1" x="5601" y="2606"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -276,7 +276,7 @@
     project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/config/security/AjaxAuthenticationEntryPoint.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1322" y="828"/>    
+    <position height="-1" width="-1" x="5128" y="1668"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -287,7 +287,7 @@
     project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/config/security/MemberAuthenticationProvider.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="142" width="282" x="1758" y="1042"/>    
+    <position height="-1" width="-1" x="5067" y="1825"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -298,7 +298,7 @@
     project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/config/security/WebSecurityConfig.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="142" width="286" x="1758" y="860"/>    
+    <position height="-1" width="-1" x="5485" y="1835"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -309,7 +309,7 @@
     project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/SpringBootStudy4TilesApplication.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="106" width="266" x="1274" y="587"/>    
+    <position height="-1" width="-1" x="5213" y="1480"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -319,7 +319,7 @@
   <class id="32" language="java" name="org.kosta.myproject.TilesConfiguration" project="SpringBoot-shop-tiles" 
     file="/SpringBoot-shop-tiles/src/main/java/org/kosta/myproject/TilesConfiguration.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="124" width="269" x="1580" y="587"/>    
+    <position height="-1" width="-1" x="5520" y="1489"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -327,97 +327,125 @@
     </display>  
   </class>  
   <association id="33">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="34" name="shopserivce">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </attribute>      
+      <multiplicity id="35" minimum="0" maximum="1">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="36">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <association id="37">    
     <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="34" name="adminService"/>      
-      <multiplicity id="35" minimum="0" maximum="1"/>    
+      <attribute id="38" name="adminService">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </attribute>      
+      <multiplicity id="39" minimum="0" maximum="1">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="36">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="37" name="shopserivce"/>      
-      <multiplicity id="38" minimum="0" maximum="1"/>    
+  <association id="40">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="41" name="shopserivce">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </attribute>      
+      <multiplicity id="42" minimum="0" maximum="1">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="39">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="40" name="shopserivce"/>      
-      <multiplicity id="41" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="42">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="43" name="memberService"/>      
-      <multiplicity id="44" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="45">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="9"/>  
-  </realization>  
-  <association id="46">    
+  <association id="43">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="47" name="adminMapper"/>      
-      <multiplicity id="48" minimum="0" maximum="1"/>    
+      <attribute id="44" name="adminMapper">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </attribute>      
+      <multiplicity id="45" minimum="0" maximum="1">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="49">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="50" name="shopMapper"/>      
-      <multiplicity id="51" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="52">    
+  <realization id="46">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <realization id="47">    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="7"/>  
   </realization>  
-  <association id="53">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="54" name="shopserivce"/>      
-      <multiplicity id="55" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="56">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="57" name="memberMapper"/>      
-      <multiplicity id="58" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="59">    
+  <association id="48">    
     <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="60" name="memberService"/>      
-      <multiplicity id="61" minimum="0" maximum="1"/>    
+      <attribute id="49" name="memberService">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </attribute>      
+      <multiplicity id="50" minimum="0" maximum="1">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="62">    
+  <association id="51">    
     <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="63" name="authenticationProvider"/>      
-      <multiplicity id="64" minimum="0" maximum="1"/>    
+      <attribute id="52" name="authenticationProvider">        
+        <position height="0" width="0" x="3168" y="712"/>      
+      </attribute>      
+      <multiplicity id="53" minimum="0" maximum="1">        
+        <position height="0" width="0" x="3168" y="712"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="29" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="65">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="4"/>  
-  </realization>  
+  <association id="54">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="55" name="shopMapper">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </attribute>      
+      <multiplicity id="56" minimum="0" maximum="1">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="57">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="58" name="memberMapper">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </attribute>      
+      <multiplicity id="59" minimum="0" maximum="1">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="60">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="61" name="memberService">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </attribute>      
+      <multiplicity id="62" minimum="0" maximum="1">        
+        <position height="0" width="0" x="3806" y="840"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

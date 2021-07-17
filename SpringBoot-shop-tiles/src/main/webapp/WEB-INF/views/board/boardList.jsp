@@ -49,28 +49,47 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                DataTable for Admin
+                                DataTable for Admin      
+                                    
                             </div>
+                            
                             <div class="card-body">
+                          
                              <sec:csrfInput/>
                                 <table id="datatablesSimple">
+                      				
                                     <thead>
-                                        <tr>
-                                            <th>상품정보</th>
-                                            <th>상품명</th>
-                                            <th>상품코드</th>
-                                            <th>상품가격</th>
-                                            <th>상품재고</th>
-                                            <th>업데이트시간</th>
+                                        <tr>  
+                                            <th>No</th>
+                                            <th>Object</th>
+                                            <th>Name</th>
+                                            <th>Date</th>
+                                            <th>Hits</th>
+                                        
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      
-                     <tr>                     </tr>
-   
-                                      
+                                      <c:forEach var="pvo" items="${postlist}">
+                     <tr>            
+                     <td>${pvo.boardNo}</td>
+                     <td>
+                     <a href="${pageContext.request.contextPath}/views/board/getDetailPostByNo?boardNo=${pvo.boardNo}">
+                     	${pvo.title}
+                     </a>
+                     </td>
+                    
+                     <td>${pvo.memberVO.id}</td>
+                      <td>${pvo.timePosted}</td>
+                  
+
+                              </tr>
+   									</c:forEach>
+                                          
                                     </tbody>
                                 </table>
+                              <ul class="pro__dtl__btn">
+                            <li><a href="${pageContext.request.contextPath}/views/board/registerPostForm"><span class="ti-email"></span></a></li>
+                            </ul>
                             </div>
                         </div>
                     </div>
