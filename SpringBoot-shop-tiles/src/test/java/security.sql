@@ -10,18 +10,19 @@ select *from tbl_member;
 ---
 select *from tbl_member;
 
+
 select * from tbl_goods where gdsName=#{value};
 select *
-		from tbl_goods
-		where gdsName like '니트여유';
-		
+      from tbl_goods
+      where gdsName like '니트여유';
+      
 select *
-		from tbl_goods
-		where gdsName '%'||#{value}||'%'
+      from tbl_goods
+      where gdsName '%'||#{value}||'%'
 ---
-	select *
-		from post p, a_member m
-		where title like '%'||#{value}||'%' and p.member_id=m.member_id
+   select *
+      from post p, a_member m
+      where title like '%'||#{value}||'%' and p.member_id=m.member_id
 ---
  select
      r.gdsNum, r.id, r.repNum, r.repCon, r.repDate, m.name
@@ -32,6 +33,10 @@ select *
 
 --댓글
 delete from tbl_reply;
+-------------------
+
+
+--------------
 create table tbl_reply (
     gdsNum      number          not null,
     id     varchar2(50)    not null,
@@ -52,10 +57,10 @@ alter table tbl_reply
     ---
 
  select *from tbl_goods--------------------------------------------------------51
- 	add constraint tbl_goods_id foreign key(id)
+    add constraint tbl_goods_id foreign key(id)
     references tbl_member(id);
     
-    ALTER TABLE tbl_goods ADD id VARCHAR(25);
+    ALTER TABLE tbl_board ADD name VARCHAR(25);
     
     ---
   select *from tbl_member;
@@ -67,7 +72,7 @@ alter table tbl_reply
 --tbl_order에 새로운 컬럼추가
 alter table tbl_order
 add(
-  	delivery varchar2(20) default '배송준비'
+     delivery varchar2(20) default '배송준비'
 );
 ---gds price 추가
 alter table 
@@ -96,9 +101,7 @@ primary key(orderId)
 );
 ----------------------------
 select *from tbl_order;
-
-delete from tbl_order_details;
-delete from tbl_order;
+select *
 --주문테이블과 멤버테이블 참조 설정
 alter table tbl_order
 add constraint tbl_order_id foreign key(id)
@@ -188,6 +191,7 @@ select*from tbl_goods;
 
 ---
 
+
 ---------------------------
 
 
@@ -200,10 +204,10 @@ create table tbl_member (
     password    varchar2(100)   not null,
     name    varchar2(30)    not null,
     phone    varchar2(20)    not null,
-    info	  varchar2(300)    null,
+    info     varchar2(300)    null,
     addr1   varchar2(20)    null,
-   	addr2   varchar2(50)    null,
-   	addr3   varchar2(50)    null,
+      addr2   varchar2(50)    null,
+      addr3   varchar2(50)    null,
     regidate    date            default sysdate,
     enabled int default 1 not null ,
     primary key(id)
@@ -214,18 +218,18 @@ create table tbl_member (
 drop table authorities;
 
 create table authorities(
-	username varchar(100) not null,
-	authority varchar(30) not null,
-	constraint fk_authorities foreign key(username) references security_member(id),
-	constraint member_authorities primary key(username,authority)
+   username varchar(100) not null,
+   authority varchar(30) not null,
+   constraint fk_authorities foreign key(username) references security_member(id),
+   constraint member_authorities primary key(username,authority)
 )
 
 
 create table authorities(
-	username varchar(100) not null,
-	authority varchar(30) not null,
-	constraint fk_authorities foreign key(username) references tbl_member(id),
-	constraint member_authorities primary key(username,authority)
+   username varchar(100) not null,
+   authority varchar(30) not null,
+   constraint fk_authorities foreign key(username) references tbl_member(id),
+   constraint member_authorities primary key(username,authority)
 )
 delete * from authorities;
 -- -- 어플리케이션에서 회원가입을 하면 ROLE_MEMBER가 등록된다 
@@ -262,7 +266,7 @@ select *from goods_category;
 create table middle_category(
 middlecateCode varchar2(30)  not null primary key,
  middlecateName  varchar2(20) not null,
- cateCode 			varchar2(30) not null,
+ cateCode          varchar2(30) not null,
  constraint fk_goods_category foreign key (cateCode) references goods_
 (cateCode)
 );
@@ -279,6 +283,8 @@ insert into middle_category(middlecatecode,middlecatename,catecode) values('102'
 insert into middle_category(middlecatecode,middlecatename,catecode) values('201','Ring',200);
 insert into middle_category(middlecatecode,middlecatename,catecode) values('202','Earings',200);
 -------------------------
+tbl_board
+
 create table tbl_goods (
     gdsNum       number          not null primary key,
     gdsName      varchar2(50)    not null, 
@@ -290,6 +296,48 @@ create table tbl_goods (
     gdsDate      date            default sysdate, 
   constraint fk_middle_category foreign key (middlecateCode) references middle_category(middlecateCode)
 );
+---------------
+CREATE SEQUENCE tbl_board_seq;
+drop table tbl_board;
+CREATE TABLE  tbl_board(
+    board_no number primary key,
+   title varchar2(100) not null,
+   time_posted date not null,
+   content clob not null,
+   hits number default 0,
+   id varchar2(100) not null,
+   img varchar2(100),
+   CONSTRAINT tbl_board_fk foreign key(id) references tbl_member(id) on delete cascade
+);
+select *from tbl_board;
+insert into tbl_board(no,title,content,id) values(tbl_board_seq.nextval,'고구마','맛잇음','admin');
+insert into tbl_board(no,title,content,id,name) values(tbl_board_seq.nextval,'고구마','맛잇음','admin','관리자');
+alter table
+
+
+select *from tbl_member;
+
+
+
+
+
+
+drop table tbl_board;
+
+
+
+insert into tbl_board(pnum,title,content,hits,id)  values(tbl_board_seq.nextval,'한소희귀걸이','진짜예쁘다',0,'admin');
+select *from tbl_board;
+---
+insert into tbl_goods (gdsNum ,gdsName,middlecateCode,gdsPrice,gdsStock,gdsDes)
+values(tbl_goods_seq.nextval,'pinkneat',101,23000,30,'상품설명');
+----
+create sequence tbl_board_seq;
+
+select *from tbl_board;
+
+drop table tbl_board;
+
 
 select *from tbl_goods;
 
@@ -332,7 +380,7 @@ where  m.middlecateCode=101;
 --------------
 middlecateCode varchar2(30)  not null primary key,
  middlecateName  varchar2(20) not null,
- cateCode 			varchar2(30) not null,
+ cateCode          varchar2(30) not null,
  ---------------------
  
 
