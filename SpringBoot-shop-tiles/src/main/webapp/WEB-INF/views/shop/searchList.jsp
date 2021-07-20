@@ -291,19 +291,22 @@
                                                 <img src="${list.gdsThumbImg}" alt="product images">
                                             </a>
                                         </div>
-                                        <div class="product__hover__info">
-                                            <ul class="product__action">
-                                                <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                <li><a title="Add TO Cart" href="cart"><span class="ti-shopping-cart"></span></a></li>
-                                                <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
-                                            </ul>
+                                       <div class="product__hover__info">
+                                            <div class="product__action">
+                                                <a href="/views/shop/view?n=${list.gdsNum}">view details
+                                            </a>
+                                            </div>
                                         </div>
+
                                     </div>
                                     <div class="product__details">
                                         <h2><a href="/views/shop/view?n=${list.gdsNum}">${list.gdsName}</a></h2>
                                         <ul class="product__price">
-                                            <li class="old__price">${list.gdsPrice}</li>
-                                            <li class="new__price">${list.gdsPrice}}</li>
+                                            <li class="old__price" style="visibility:hidden">${list.gdsPrice}</li>
+                                            <li class="new__price"  style="visibility:hidden">${list.gdsPrice}}</li>
+                                            <li class="new__price"  style="visibility:hidden">${list.gdsPrice}}</li>
+                                            <li class="new__price">$${list.gdsPrice}</li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
