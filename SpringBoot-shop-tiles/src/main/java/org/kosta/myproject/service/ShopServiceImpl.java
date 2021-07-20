@@ -133,6 +133,11 @@ public class ShopServiceImpl implements ShopService{
 	}
 
 
+	@Override
+	public List<OrderListVO> orderView2(OrderVO order) {
+		
+		return shopMapper.orderView2(order);
+	}
 
 
 	

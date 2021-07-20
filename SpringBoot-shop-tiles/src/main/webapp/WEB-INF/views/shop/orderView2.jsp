@@ -260,7 +260,36 @@
 											</td>
 										</tr>
 									</tbody>
-			
+											<%-- <td class="delivery-process">
+										  		${list.delivery}
+											</td> --%>
+										<form role="form" class="deliveryForm" action="${pageContext.request.contextPath}/views/shop/orderViewdelivery">
+
+  						<input type="hidden" name="orderId" value="${orderView.orderId}" />
+ 			 			<input type="hidden" name="delivery" class="delivery" value="" />
+
+						<div class="buttons-cart" style="margin-left: 1000px;">		
+							<button type="button" class="delivery1_btn">배송중</button>
+							<button type="button" class="delivery2_btn">배송완료</button>
+						</div>		
+						<script>
+						
+						$(".delivery1_btn").click(function() {
+							$(".delivery").val("배송중");
+							run();
+						});
+						
+						$(".delivery2_btn").click(function() {
+							$(".delivery").val("배송완료");
+							run();
+						});
+						
+						function run (){
+							$(".deliveryForm").submit();
+						}
+						
+						</script>
+						</form>	
 									</c:if>
 								</c:forEach>
 							</tbody>

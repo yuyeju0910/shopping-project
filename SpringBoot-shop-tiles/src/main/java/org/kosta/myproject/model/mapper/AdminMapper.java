@@ -6,6 +6,8 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.model.MemberVO;
+import org.kosta.myproject.model.OrderListVO;
+import org.kosta.myproject.model.OrderVO;
 @Mapper
 public interface AdminMapper {
 
@@ -18,4 +20,5 @@ public interface AdminMapper {
 	List<Map<String, String>>showcategory(String middlecateCode); 
 	void deletePost(int n);
 	List<MemberVO>memberList();
+	
 }

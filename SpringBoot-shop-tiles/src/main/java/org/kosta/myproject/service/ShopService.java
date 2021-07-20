@@ -33,4 +33,5 @@ public interface ShopService {
 	List<GoodsVO> searchGoods(String gdsName);
 	List<OrderVO>orderCheckList(OrderVO orderp);
 	void deleteOrder(String orderId); 
+	public List<OrderListVO> orderView2(OrderVO order);
 }

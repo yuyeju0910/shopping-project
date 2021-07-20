@@ -14,7 +14,7 @@
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        
+
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="${pageContext.request.contextPath}/myboard/css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
@@ -49,32 +49,27 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                DataTable for Admin      
-                                    
+                                DataTable for Admin
                             </div>
-                            
                             <div class="card-body">
-                          
                              <sec:csrfInput/>
                                 <table id="datatablesSimple">
-                      				
                                     <thead>
-                                        <tr>  
+                                        <tr>
                                             <th>No</th>
-                                            <th>Object</th>
-                                            <th>Name</th>
+                                            <th>ContentName</th>
+                                            <th>ID</th>
                                             <th>Date</th>
-                                            <th>Hits</th>
-                                        
+                                      
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                     <tbody>
                                       <c:forEach var="pvo" items="${postlist}">
                      <tr>            
                      <td>${pvo.boardNo}</td>
                      <td>
                      <a href="${pageContext.request.contextPath}/views/board/getDetailPostByNo?boardNo=${pvo.boardNo}">
-                     	${pvo.title}
+                        ${pvo.title}
                      </a>
                      </td>
                     
@@ -83,13 +78,11 @@
                   
 
                               </tr>
-   									</c:forEach>
+                              </c:forEach>
                                           
                                     </tbody>
+
                                 </table>
-                              <ul class="pro__dtl__btn">
-                            <li><a href="${pageContext.request.contextPath}/views/board/registerPostForm"><span class="ti-email"></span></a></li>
-                            </ul>
                             </div>
                         </div>
                     </div>
@@ -102,4 +95,3 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="${pageContext.request.contextPath}/myboard/js/datatables-simple-demo.js"></script>
     </body>
-  

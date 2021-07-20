@@ -240,6 +240,22 @@ public class ShopController {
 		
 	}
 
+	// 주문 상세 목록
+	@RequestMapping("/views/shop/orderView2")
+	public String getOrderList2(@RequestParam("n") String orderId,
+							OrderVO order, Model model) throws Exception {
+	
+		
+		order.setOrderId(orderId);		
+		List<OrderListVO> orderView2 = shopserivce.orderView2(order);
+		
+		model.addAttribute("orderView", orderView2);
+		return "shop/orderView2.tiles";
+	}
+	
+	
+	
+	
 	
 	
 	

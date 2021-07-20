@@ -69,7 +69,7 @@
                                     <li class="drop"><a href="/contact">About Us</a>
                                     	<ul class="dropdown">
                                     	<li><a href="/contact">Contact Us</a></li>
-										<li><a href="about.html">Board</a></li>
+										<li><a href=/views/board/boardList>Board</a></li>
 										</ul>
 									</li>
                             </nav>

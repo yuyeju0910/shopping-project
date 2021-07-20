@@ -191,7 +191,7 @@
 								<c:forEach items="${orderList}" var="list">
 									<tr>
 								
-										<td class="order-number"><a href="/views/shop/orderView?n=${list.orderId}">${list.orderId}</a><!-- <img src="#"> --></td>
+										<td class="order-number"><a href="/views/shop/orderView2?n=${list.orderId}">${list.orderId}</a><!-- <img src="#"> --></td>
 									
 							
 								<td class="customer-name"><a href="/views/shop/deleteOrder?orderId=${list.orderId}">${list.orderRec}</a></td>

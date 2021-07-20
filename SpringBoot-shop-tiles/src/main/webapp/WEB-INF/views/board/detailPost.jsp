@@ -257,7 +257,7 @@ input#gdsName {
 			
 			<div class="btnArea" style="margin-left:125px;">
 		
-			<%-- <sec:authentication property="principal.id" var="memberId"/> --%>
+			 <sec:authentication property="principal.id" var="memberId"/> 
 			<c:if test="${viewDetailPost.memberVO.id==memberId}">
 				<button form="updateForm" type="submit" class="btn-register">수정</button>
 				<button form="deleteForm" type="submit" class="btn-register">삭제</button>

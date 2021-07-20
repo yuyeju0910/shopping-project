@@ -2,18 +2,17 @@ package org.kosta.myproject.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale.Category;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.kosta.myproject.controller.utils.UpLoadFileUtils;
-import org.kosta.myproject.model.CategoryVO;
 import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.model.MemberVO;
+import org.kosta.myproject.model.OrderListVO;
+import org.kosta.myproject.model.OrderVO;
 import org.kosta.myproject.service.AdminService;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
@@ -24,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
@@ -187,6 +185,8 @@ public class AdminController {
 		adminService.deletePost(n);
 		return "redirect:/admin/goods/productList";
 	}
+	
+	
 
 	
 }

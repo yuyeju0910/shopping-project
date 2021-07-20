@@ -6,6 +6,8 @@ import java.util.Map;
 import javax.annotation.Resource;
 import org.kosta.myproject.model.GoodsViewVO;
 import org.kosta.myproject.model.MemberVO;
+import org.kosta.myproject.model.OrderListVO;
+import org.kosta.myproject.model.OrderVO;
 import org.kosta.myproject.model.GoodsVO;
 import org.kosta.myproject.model.mapper.AdminMapper;
 import org.springframework.stereotype.Service;

@@ -135,6 +135,24 @@ insert into tbl_order_details(orderDetailsNum, orderId, gdsNum, cartStock)
      where o.id = #{id}
          and o.orderId = #{orderId}
 </select>
+<!-- 특정 주문admin 목록 -->
+	<select id="orderView2" resultType="OrderListVO">
+		select 
+		    o.orderId, o.id, o.orderRec,
+		    o.addr1, o.addr2, o.addr3,
+		    o.orderPhon, o.amount, o.orderDate, o.delivery,
+		    d.orderDetailsNum, d.gdsNum, d.cartStock,
+		    g.gdsName, g.gdsThumbImg, g.gdsPrice
+		from tbl_order o
+		        inner join tbl_order_details d
+		            on o.orderId = d.orderId
+		        inner join tbl_goods g
+		            on d.gdsNum = g.gdsNum
+		    where o.orderId = #{orderId}
+	</select>
+	
+
+
 
 <update id="delivery">
  update tbl_order
